@@ -1,92 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMMERCE LEAGUE</title>
-    <meta name="description" content="Commerce League — Learn Commerce. Build Your Future.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #000;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            min-height: 100vh;
-        }
-
-        header {
-            padding: 28px 8%;
-            border-bottom: 1px solid #222;
-        }
-
-        header h2 {
-            letter-spacing: 3px;
-            font-size: 20px;
-        }
-
-        main {
-            min-height: 75vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 30px 20px;
-        }
-
-        .tag {
-            color: #aaa;
-            letter-spacing: 4px;
-            font-size: 12px;
-            margin-bottom: 25px;
-        }
-
-        h1 {
-            font-size: clamp(42px, 9vw, 90px);
-            letter-spacing: 5px;
-            margin-bottom: 20px;
-        }
-
-        main p {
-            color: #bbb;
-            font-size: 18px;
-            line-height: 1.7;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: #777;
-            border-top: 1px solid #222;
-            font-size: 13px;
-        }
-
-        footer p + p {
-            margin-top: 8px;
-        }
-    </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#07090d">
+<meta name="description" content="Commerce League turns commerce learning into a competitive arena. Train your skills, take on challenges, and rise through the ranks.">
+<title>COMMERCE LEAGUE — Enter the Arena</title>
+<style>
+:root{--bg:#07090d;--panel:#10141c;--line:#252c38;--text:#f5f7fb;--muted:#a0a9b8;--blue:#76e4ff;--lime:#d8ff68}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,90%);margin:auto}header{border-bottom:1px solid #202630;background:#090b10}.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:15px;font-weight:900;letter-spacing:3px}.brand span{color:var(--blue)}nav{display:flex;gap:28px;color:var(--muted);font-size:13px}nav a:hover{color:var(--blue)}.nav-cta{border:1px solid #3b485b;padding:10px 15px;font-size:12px;font-weight:700;letter-spacing:1px}.hero{position:relative;overflow:hidden;padding:100px 0 86px;border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 80% 25%,rgba(40,125,255,.18),transparent 42%),radial-gradient(ellipse at 15% 75%,rgba(118,228,255,.08),transparent 35%)}.eyebrow,.kicker{color:var(--blue);font-size:11px;letter-spacing:4px;font-weight:800;margin-bottom:22px}h1{font-size:clamp(44px,8vw,92px);line-height:.98;letter-spacing:-3px;max-width:850px;text-transform:uppercase}h1 em{font-style:normal;color:var(--blue)}.hero-copy{max-width:590px;color:var(--muted);font-size:17px;margin:26px 0 30px}.actions{display:flex;gap:12px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;border:1px solid var(--blue);background:var(--blue);color:#071018}.button.secondary{background:transparent;color:var(--text);border-color:#394252}.hero-note{margin-top:22px;color:#778293;font-size:11px;letter-spacing:1px}section{padding:76px 0}.section-top{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}.kicker{font-size:10px;margin-bottom:10px}h2{font-size:clamp(28px,4vw,42px);line-height:1.1;letter-spacing:-1px}.section-desc{max-width:420px;color:var(--muted);font-size:14px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(145deg,#121823,#0b0e14);border:1px solid var(--line);padding:25px;min-height:245px;position:relative}.card-no{font-size:11px;color:var(--blue);letter-spacing:2px;font-weight:800}.card h3{font-size:22px;margin:35px 0 9px}.card p{font-size:13px;color:var(--muted);max-width:290px}.card .bottom{position:absolute;bottom:22px;left:25px;right:25px;display:flex;justify-content:space-between;align-items:center;color:#d8dee8;font-size:11px;letter-spacing:1px}.arrow{font-size:20px;color:var(--blue)}.steps{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line)}.step{padding:25px;border-right:1px solid var(--line)}.step:last-child{border-right:0}.step-number{color:var(--lime);font-size:12px;letter-spacing:2px;font-weight:900}.step h3{font-size:17px;margin:17px 0 7px}.step p{font-size:13px;color:var(--muted)}.ladder{background:#0b0f16;border:1px solid var(--line);padding:30px;display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center}.ladder p{color:var(--muted);font-size:14px;margin-top:10px;max-width:600px}.preview{border:1px solid #46546a;color:var(--blue);font-size:10px;letter-spacing:2px;padding:10px 12px;white-space:nowrap}.final-cta{text-align:center;padding:75px 20px;background:radial-gradient(ellipse at center,rgba(40,125,255,.14),transparent 65%);border-top:1px solid var(--line)}.final-cta p{color:var(--muted);margin:15px auto 25px;max-width:520px}footer{border-top:1px solid var(--line);padding:24px 0;color:#778293;font-size:11px}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}@media(max-width:760px){.nav{padding:17px 0;flex-wrap:wrap}.nav-cta{display:none}nav{gap:16px;font-size:12px}.hero{padding:75px 0 65px}h1{letter-spacing:-1.5px}.section-top{align-items:start;flex-direction:column}.cards{grid-template-columns:1fr}.card{min-height:210px}.steps{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.ladder{grid-template-columns:1fr}.preview{justify-self:start}}
+</style>
 </head>
 <body>
-    <header>
-        <h2>COMMERCE LEAGUE</h2>
-    </header>
-
-    <main>
-        <div class="tag">WELCOME TO THE FUTURE OF COMMERCE</div>
-        <h1>COMMERCE<br>LEAGUE</h1>
-        <p>Learn Commerce. Build Your Future.</p>
-        <p>A new journey in commerce education begins here.</p>
-    </main>
-
-    <footer>
-        <p>© 2026 COMMERCE LEAGUE. All rights reserved.</p>
-        <p>Built step by step. More coming soon.</p>
-    </footer>
-</body>
-</html>
+<header><div class="wrap nav"><a class="brand" href="#top">COMMERCE <span>LEAGUE</span></a><nav aria-label="Main navigation"><a href="#arena">The Arena</a><a href="#how">How It Works</a><a href="#rankings">Rankings</a></nav><a class="nav-cta" href="#arena">EXPLORE THE ARENA ↗</a></div></header>
+<main id="top">
+<section class="hero"><div class="wrap"><p class="eyebrow">A NEW KIND OF COMMERCE LEARNING</p><h1>DON'T JUST<br>STUDY THE GAME.<br><em>MASTER IT.</em></h1><p class="hero-copy">A competitive arena for commerce students. Sharpen your concepts, solve challenges under pressure, and prove what you know—one round at a time.</p><div class="actions"><a class="button" href="#arena">Enter the Arena ↗</a><a class="button secondary" href="#how">See How It Works</a></div><p class="hero-note">ACCOUNTING · ECONOMICS · BUSINESS · STRATEGY</p></div></section>
+<section id="arena"><div class="wrap"><div class="section-top"><div><p class="kicker">01 / CHOOSE YOUR DISCIPLINE</p><h2>THE ARENA</h2></div><p class="section-desc">Different skills. Different challenges. One place to test your commerce instincts. Competition modes are being developed.</p></div><div class="cards">
+<article class="card"><span class="card-no">MODE 01 / ACCOUNTS</span><h3>Numbers Under Pressure</h3><p>Build accuracy and speed with accounting concepts, journal entries, and practical problems.</p><div class="bottom"><span>PRECISION &amp; LOGIC</span><span class="arrow">↗</span></div></article>
+<article class="card"><span class="card-no">MODE 02 / ECONOMICS</span><h3>Think in Systems</h3><p>Test your understanding of markets, incentives, data, and the decisions that shape economies.</p><div class="bottom"><span>ANALYSIS &amp; INSIGHT</span><span class="arrow">↗</span></div></article>
+<article class="card"><span class="card-no">MODE 03 / BUSINESS</span><h3>Make the Call</h3><p>Take on business scenarios where strategy, reasoning, and smart decisions matter.</p><div class="bottom"><span>STRATEGY &amp; JUDGMENT</span><span class="arrow">↗</span></div></article>
+</div></div></section>
+<section id="how"><div class="wrap"><div class="section-top"><div><p class="kicker">02 / THE SYSTEM</p><h2>TRAIN. COMPETE. RISE.</h2></div><p class="section-desc">The goal is to make learning feel active: practice your skills, challenge yourself, and track your progress.</p></div><div class="steps">
+<article class="step"><span class="step-number">STEP 01</span><h3>Train Your Skills</h3><p>Strengthen core commerce concepts with focused practice and clear explanations.</p></article>
+<article class="step"><span class="step-number">STEP 02</span><h3>Take on Challenges</h3><p>Test yourself with timed rounds, topic battles, and problem-solving challenges as they launch.</p></article>
+<article class="step"><span class="step-number">STEP 03</span><h3>Track Your Progress</h3><p>Build consistency, learn from mistakes, and work toward future league rankings.</p></article>
+</div></div></section>
+<section id="rankings"><div class="wrap"><div class="ladder"><div><p class="kicker">03 / YOUR NEXT LEVEL</p><h2>THE LEAGUE LADDER</h2><p>Rankings, student profiles, and head-to-head competitions are planned features—not active yet. We're building the foundation first.</p></div><span class="preview">RANKINGS: COMING SOON</span></div></div></section>
+<section class="final-cta"><div class="wrap"><p class="kicker">YOUR POTENTIAL IS NOT A THEORY</p><h2>READY TO PROVE YOUR THINKING?</h2><p>Commerce League is at the starting line. The arena will grow step by step, with learning and fair competition at its core.</p><a class="button" href="#arena">Explore the Disciplines ↗</a></div></section>
+</main>
+<footer><div class="wrap foot"><span>© 2026 COMMERCE LEAGUE. ALL RIGHTS RESERVED.</span><span>BUILT STEP BY STEP. MORE COMING SOON.</span></div></footer>
+</body></html>
