@@ -5,5 +5,5 @@
   "compatibility_date":"2026-10-17",
   "workers_dev":true,
   "assets":{"directory":"../","binding":"ASSETS","run_worker_first":["/api/*"]},
-  "d1_databases":[{"binding":"DB","database_name":"commerce-league-students","database_id":"REPLACE_AFTER_CREATING_D1"}]
+  "d1_databases":[{"binding":"DB","database_name":"commerce-league-students","database_id":"d59c0fb8-44df-403f-96ca-31a539a0a656"}]
 }
