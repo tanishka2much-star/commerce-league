@@ -53,10 +53,10 @@ export default {async fetch(req,env) {
    const b=await req.json(),clId=clean(b.clId,24).toUpperCase(),code=clean(b.recoveryCode,100);
    const u=await env.DB.prepare("SELECT id,recovery_hash FROM users WHERE cl_id=?").bind(clId).first();
    if(!u||!u.recovery_hash||await hash(code)!==u.recovery_hash)return json({error:"CL ID or recovery code is incorrect."},401);
-   const accessCode=token(16);
+   const accessCode=token(16),recoveryCode=token(16);
    await env.DB.prepare("DELETE FROM sessions WHERE user_id=?").bind(u.id).run();
-   await env.DB.prepare("UPDATE users SET password_hash=?,recovery_hash=NULL WHERE id=?").bind(await hash(accessCode),u.id).run();
-   return json({ok:true,accessCode,notice:"Save the new access code. Your recovery code has been used."});
+   await env.DB.prepare("UPDATE users SET password_hash=?,recovery_hash=? WHERE id=?").bind(await hash(accessCode),await hash(recoveryCode),u.id).run();
+   return json({ok:true,accessCode,recoveryCode,notice:"Save the new access and recovery codes. The previous recovery code has been used."});
   }
   if(url.pathname==="/api/logout"&&req.method==="POST"){
    const s=readCookie(req);if(s)await env.DB.prepare("DELETE FROM sessions WHERE token_hash=?").bind(await hash(s)).run();
