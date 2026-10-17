@@ -51,6 +51,25 @@ app.use((req, _res, next) => {
 });
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+let answerKeys;
+try {
+  answerKeys = JSON.parse(process.env.PRACTICE_ANSWER_KEYS || "{}");
+} catch {
+  throw new Error("PRACTICE_ANSWER_KEYS must be valid JSON.");
+}
+if (
+  !answerKeys ||
+  typeof answerKeys !== "object" ||
+  Array.isArray(answerKeys) ||
+  Object.values(answerKeys).some((key) =>
+    !Array.isArray(key) ||
+    key.length < 1 ||
+    key.length > 100 ||
+    key.some((answer) => !Number.isInteger(answer) || answer < 0 || answer > 3)
+  )
+) {
+  throw new Error("PRACTICE_ANSWER_KEYS must map quiz codes to answer indexes from 0 to 3.");
+}
 const createAccountLimit = rateLimit({
   windowMs: 60 * 60 * 1000,
   limit: 5,
@@ -249,26 +268,34 @@ app.get("/api/progress", requireStudent, asyncRoute(async (req, res) => {
 
 app.post("/api/attempts", requireStudent, asyncRoute(async (req, res) => {
   const quizCode = typeof req.body.quizCode === "string" ? req.body.quizCode.trim() : "";
-  const score = Number(req.body.score);
-  const totalQuestions = Number(req.body.totalQuestions);
+  const answers = req.body.answers;
+  const answerKey = answerKeys[quizCode];
   if (
-    !/^[a-z0-9-]{1,50}$/i.test(quizCode) ||
-    !Number.isInteger(score) ||
-    !Number.isInteger(totalQuestions) ||
-    totalQuestions < 1 ||
-    totalQuestions > 100 ||
-    score < 0 ||
-    score > totalQuestions
+    !answerKey ||
+    !Array.isArray(answers) ||
+    answers.length !== answerKey.length ||
+    answers.some((answer) => !Number.isInteger(answer) || answer < 0 || answer > 3)
   ) {
-    return res.status(400).json({ error: "Invalid practice result." });
+    return res.status(400).json({ error: "Invalid practice answers." });
   }
 
+  const score = answers.reduce(
+    (total, answer, index) => total + (answer === answerKey[index] ? 1 : 0),
+    0
+  );
+  const totalQuestions = answerKey.length;
   const id = randomUUID();
   await pool.query(
     "INSERT INTO practice_attempts (id, student_id, quiz_code, score, total_questions, is_official) VALUES ($1, $2, $3, $4, $5, FALSE)",
     [id, req.studentId, quizCode, score, totalQuestions]
   );
-  res.status(201).json({ id, quizCode, score, totalQuestions, isOfficial: false });
+  res.status(201).json({
+    id,
+    quizCode,
+    score,
+    totalQuestions,
+    isOfficial: false
+  });
 }));
 
 app.post("/api/recovery/reset", recoveryLimit, asyncRoute(async (req, res) => {
