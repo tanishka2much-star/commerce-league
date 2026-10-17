@@ -23,6 +23,7 @@ async function userFor(req,env) {
 export default {async fetch(req,env) {
  const url=new URL(req.url);
  if(!url.pathname.startsWith("/api/"))return env.ASSETS.fetch(req);
+ if(!env.AUTH_PEPPER)return json({error:"Service configuration is incomplete."},503);
  const origin=req.headers.get("Origin");
  if(origin&&origin!==url.origin)return json({error:"Request not allowed."},403);
  if(req.method==="OPTIONS")return new Response(null,{status:204});
@@ -40,6 +41,7 @@ export default {async fetch(req,env) {
   }
   if(url.pathname==="/api/login"&&req.method==="POST"){
    if(!await limited(req,env,"login",30))return json({error:"Too many attempts. Try again tomorrow."},429);
+   await env.DB.prepare("DELETE FROM sessions WHERE expires_at<=datetime('now')").run();
    const b=await req.json(),clId=clean(b.clId,24).toUpperCase(),code=clean(b.accessCode,100);
    const u=await env.DB.prepare("SELECT id,password_hash FROM users WHERE cl_id=?").bind(clId).first();
    if(!u||await hash(code)!==u.password_hash)return json({error:"CL ID or access code is incorrect."},401);
@@ -52,6 +54,7 @@ export default {async fetch(req,env) {
    const u=await env.DB.prepare("SELECT id,recovery_hash FROM users WHERE cl_id=?").bind(clId).first();
    if(!u||!u.recovery_hash||await hash(code)!==u.recovery_hash)return json({error:"CL ID or recovery code is incorrect."},401);
    const accessCode=token(16);
+   await env.DB.prepare("DELETE FROM sessions WHERE user_id=?").bind(u.id).run();
    await env.DB.prepare("UPDATE users SET password_hash=?,recovery_hash=NULL WHERE id=?").bind(await hash(accessCode),u.id).run();
    return json({ok:true,accessCode,notice:"Save the new access code. Your recovery code has been used."});
   }
