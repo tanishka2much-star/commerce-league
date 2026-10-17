@@ -76,6 +76,21 @@
 @media(max-width:800px){#welcome{min-height:auto;padding:24px 22px 18px}.home-hero-grid{grid-template-columns:1fr;gap:36px;padding:48px 0}.hero-board{justify-self:stretch;max-width:none}.hero-copy h1{font-size:clamp(50px,11vw,82px)}.cl-large{font-size:clamp(70px,16vw,110px)}.home-bottomline{align-items:flex-start;flex-direction:column;gap:8px}.home-disclaimer{text-align:left}#details{min-height:auto;padding:56px 22px}}
 @media(max-width:520px){.home-topline{font-size:8px;letter-spacing:1px}.home-season{font-size:7px}.home-mark{width:29px;height:29px}.home-hero-grid{padding:42px 0}.hero-board{padding:22px 18px}.hero-actions{align-items:flex-start;flex-direction:column}.board-row small{font-size:9px}.home-bottomline{font-size:8px}#details{padding:48px 20px}}
 
+
+/* Full-width practice status bar */
+.top.statusbar{display:block;position:relative;z-index:5;padding:0;border:0;border-bottom:1px solid rgba(118,228,255,.2);background:rgba(4,8,14,.96)}
+.statusbar-inner{width:100%;min-height:62px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:9px clamp(22px,2.4vw,44px)}
+.statusbar .brand{font-size:11px;letter-spacing:2px;gap:10px}
+.statusbar .mark{width:34px;height:34px;font-size:15px}
+.statusbar .brand small{font-size:8px;letter-spacing:2px}
+.statusbar-meta{display:flex;align-items:center;justify-content:flex-end;gap:clamp(14px,2.2vw,34px);color:#9ba9bb;font-size:9px;letter-spacing:1.5px;font-weight:800}
+.statusbar-meta b{color:var(--blue)}
+.statusbar-live{display:inline-flex;align-items:center;gap:8px;color:#dce6f1}
+.statusbar-live i{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px rgba(216,255,104,.7)}
+.statusbar-note{padding:7px 9px;border:1px solid rgba(118,228,255,.22);color:var(--blue);font-size:8px;letter-spacing:1.2px}
+@media(max-width:640px){.statusbar-inner{min-height:56px;gap:12px;padding:9px 18px}.statusbar .brand{font-size:9px;letter-spacing:1px}.statusbar .brand small{font-size:7px;letter-spacing:1px}.statusbar .mark{width:30px;height:30px}.statusbar-meta{gap:10px;font-size:8px;letter-spacing:.7px}.statusbar-meta>span:nth-child(2){display:none}.statusbar-note{padding:5px 6px;font-size:7px}}
+@media(max-width:390px){.statusbar-note{display:none}}
+
 </style>
 </head>
 <body>
@@ -93,7 +108,16 @@
   </div>
 </section>
 <div id="siteHome">
-<header class="top"><div class="wrap"><div class="brand"><div class="mark">CL</div><div>COMMERCE LEAGUE<small>LEARN · COMPETE · RISE</small></div></div></div></header>
+<header class="top statusbar" aria-label="Commerce League status">
+<div class="statusbar-inner">
+  <div class="brand"><div class="mark">CL</div><div>COMMERCE LEAGUE<small>LEARN · COMPETE · RISE</small></div></div>
+  <div class="statusbar-meta">
+    <span class="statusbar-live"><i aria-hidden="true"></i>PRACTICE MODE</span>
+    <span>ROUND 01 <b>·</b> 5 QUESTIONS</span>
+    <span class="statusbar-note">UNOFFICIAL PROTOTYPE</span>
+  </div>
+</div>
+</header>
 <main class="stage"><div class="wrap">
 <section class="panel" id="welcome">
 <div class="home-topline"><span class="home-brand"><span class="home-mark">CL</span> COMMERCE LEAGUE</span><span class="home-season"><i></i> STUDENT PRACTICE / SEASON 01</span></div>
