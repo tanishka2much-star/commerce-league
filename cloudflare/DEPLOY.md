@@ -7,9 +7,9 @@ Cloudflare will process and store these records after deployment. Review the Clo
 ## Deployment
 
 1. Create a Cloudflare D1 database named `commerce-league-students` and copy its ID into `database_id` here.
-2. Install Wrangler and authenticate to the intended Cloudflare account.
+2. Install Wrangler and authenticate to the intended Cloudflare account with `npx wrangler login`.
 3. From this directory, run `npx wrangler d1 execute commerce-league-students --remote --file=./schema.sql`.
-4. Set Worker secrets through Wrangler: `AUTH_PEPPER` must be a fresh random value of at least 32 bytes. Set the private `ANSWER_KEY_JSON` secret to the correct option indexes for the current round. Enter it only through Wrangler’s secret prompt; never put its value in GitHub, a public file, or a screenshot. Never commit either secret.
+4. Set Worker secrets through Wrangler: run `npx wrangler secret put AUTH_PEPPER` and enter a fresh random value of at least 32 bytes. Then run `npx wrangler secret put ANSWER_KEY_JSON` and enter the correct option indexes for the current round at the private prompt. Never put either value in GitHub, a public file, or a screenshot.
 5. Deploy with `npx wrangler deploy`. The Worker serves the site and API at its `workers.dev` address.
 
 Accounts receive a random CL ID, random access code, and one-time recovery code. Save them privately when shown. Recovery consumes the old recovery code and issues a new access code. The Worker stores SHA-256 hashes of these random high-entropy values and session tokens. Sessions use HttpOnly cookies. Do not replace generated codes with short student-chosen passwords without adding an appropriate password hashing scheme.
