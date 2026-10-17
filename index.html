@@ -91,6 +91,30 @@
 @media(max-width:640px){.statusbar-inner{min-height:56px;gap:12px;padding:9px 18px}.statusbar .brand{font-size:9px;letter-spacing:1px}.statusbar .brand small{font-size:7px;letter-spacing:1px}.statusbar .mark{width:30px;height:30px}.statusbar-meta{gap:10px;font-size:8px;letter-spacing:.7px}.statusbar-meta>span:nth-child(2){display:none}.statusbar-note{padding:5px 6px;font-size:7px}}
 @media(max-width:390px){.statusbar-note{display:none}}
 
+
+/* Commerce League manifesto */
+.manifesto{position:relative;overflow:hidden;padding:clamp(54px,8vw,112px) clamp(22px,5vw,88px) 28px;background:linear-gradient(115deg,#0b131e,#101923 56%,#0b121b);border-top:1px solid rgba(118,228,255,.18);border-bottom:1px solid rgba(118,228,255,.18)}
+.manifesto:before{content:"";position:absolute;right:-14vw;top:6%;width:min(48vw,680px);aspect-ratio:1;border:1px solid rgba(118,228,255,.08);border-radius:50%;box-shadow:0 0 0 42px rgba(118,228,255,.018),0 0 0 84px rgba(118,228,255,.012);pointer-events:none}
+.manifesto-head{display:flex;justify-content:space-between;align-items:center;gap:16px;max-width:1650px;margin:0 auto 46px;padding-bottom:16px;border-bottom:1px solid rgba(118,228,255,.18)}
+.manifesto-head .eyebrow{margin:0}
+.manifesto-index{font-size:9px;letter-spacing:1.8px;color:#8291a5;font-weight:800}
+.manifesto-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(38px,8vw,130px);max-width:1650px;margin:auto}
+.manifesto-opening,.manifesto-story{position:relative;z-index:1}
+.manifesto-callout{font-size:10px;letter-spacing:2px;font-weight:900;color:var(--blue);margin:0 0 18px}
+.manifesto-opening h2{font-size:clamp(38px,5.2vw,76px);line-height:.99;letter-spacing:-.055em;margin:0 0 24px}
+.manifesto-copy{max-width:560px;color:#a5afbf;font-size:clamp(15px,1.25vw,18px);line-height:1.8}
+.manifesto-pillars{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:30px;color:#dfe7f1;font-size:9px;letter-spacing:1.5px;font-weight:900}
+.manifesto-pillars b{color:var(--blue);margin-right:6px}
+.manifesto-story{max-width:760px;padding-left:clamp(0px,2vw,30px);border-left:1px solid rgba(118,228,255,.24);color:#c2cbd8;font-size:clamp(15px,1.15vw,17px);line-height:1.85}
+.manifesto-story>p{margin:0 0 24px}
+.manifesto-story strong{color:#f4f7fb}
+.manifesto-closer{font-size:clamp(17px,2vw,25px);font-weight:900;line-height:1.55;letter-spacing:.04em;color:#f4f7fb!important;margin:34px 0 24px!important}
+.manifesto-closer span{color:var(--blue)}
+.manifesto-story .btn{margin-top:6px;text-decoration:none}
+.manifesto-disclaimer{max-width:1650px;margin:48px auto 0;padding-top:14px;border-top:1px solid rgba(118,228,255,.12);color:#7f8ca0;font-size:10px;letter-spacing:.3px}
+@media(max-width:800px){.manifesto{padding:58px 22px 24px}.manifesto-head{margin-bottom:34px}.manifesto-grid{grid-template-columns:1fr;gap:34px}.manifesto-story{max-width:none;padding-left:0;border-left:0;border-top:1px solid rgba(118,228,255,.24);padding-top:28px}.manifesto-disclaimer{margin-top:34px}}
+@media(max-width:520px){.manifesto{padding:46px 20px 22px}.manifesto-head{align-items:flex-start;flex-direction:column;gap:5px}.manifesto-opening h2{font-size:42px}.manifesto-closer{font-size:16px}}
+
 </style>
 </head>
 <body>
@@ -144,6 +168,28 @@
 </div>
 <div class="home-bottomline"><span>FOUNDATION ROUND <b>//</b> OPEN TO LEARNERS</span><span>01 THINK <b>→</b> 02 APPLY <b>→</b> 03 IMPROVE</span></div>
 <p class="note home-disclaimer">Prototype practice only. Results stay in this session and are not official rankings or qualifications.</p>
+</section>
+
+<section class="manifesto" id="manifesto" aria-labelledby="manifesto-title">
+  <div class="manifesto-head">
+    <p class="eyebrow">WHY COMMERCE LEAGUE / THE ARENA</p>
+    <span class="manifesto-index">CL / MANIFESTO 001</span>
+  </div>
+  <div class="manifesto-grid">
+    <div class="manifesto-opening">
+      <p class="manifesto-callout">COMMERCE STUDENTS—<br>YOUR ARENA AWAITS.</p>
+      <h2 id="manifesto-title">Commerce lives<br>in every choice.</h2>
+      <p class="manifesto-copy">How we use resources. How we read a market. How we solve a problem and shape what happens next. To understand commerce takes curiosity. To master it takes practice, courage, and the will to keep improving.</p>
+      <div class="manifesto-pillars"><span><b>01</b> LEARN</span><span><b>02</b> PRACTISE</span><span><b>03</b> CONNECT</span></div>
+    </div>
+    <div class="manifesto-story">
+      <p><strong>Commerce League is the arena we’re building for you.</strong> A place to learn on your own terms, put your thinking to the test, and connect with fellow students who are ready to grow. Each challenge brings healthy, intense competition—and a chance to see what you know, where you can improve, and what you’re capable of becoming.</p>
+      <p>We call that inner drive <strong>ego</strong>: the belief that your potential is worth discovering and refining. Give that drive focus. Put in the work. Return to the arena. Round by round, knowledge becomes judgement, practice becomes instinct, and effort can open the way to <strong>flow</strong>—your finest form in motion.</p>
+      <p class="manifesto-closer">LEARN WITH INTENT.<br>PRACTISE WITH COURAGE.<br>COMPETE WITH RESPECT.<br><span>FIND YOUR EDGE. GET INTO FLOW.</span></p>
+      <a class="btn" href="#details">Enter the arena <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <p class="manifesto-disclaimer">Commerce League is an independent project in development. The current quiz is an unofficial practice prototype; official rankings and certifications are not active.</p>
 </section>
 
 <section class="panel" id="details">
