@@ -9,10 +9,11 @@ const readCookie = r => ((r.headers.get("Cookie")||"").match(/(?:^|;\s*)cl_sessi
 const cookie = (v,age) => "cl_session="+v+"; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age="+age;
 async function limited(req,env,route,max) {
  const ip=req.headers.get("CF-Connecting-IP")||"unknown";
- const key=await hash(ip+":"+env.AUTH_PEPPER+":"+route+":"+new Date().toISOString().slice(0,10));
- const row=await env.DB.prepare("SELECT hits FROM rate_limits WHERE rate_key=?").bind(key).first();
- if((row?.hits||0)>=max)return false;
- await env.DB.prepare("INSERT INTO rate_limits(rate_key,hits,day) VALUES(?,1,date('now')) ON CONFLICT(rate_key) DO UPDATE SET hits=hits+1").bind(key).run();
+ const day=new Date().toISOString().slice(0,10);
+ const key=await hash(ip+":"+env.AUTH_PEPPER+":"+route);
+ const row=await env.DB.prepare("SELECT hits,day FROM rate_limits WHERE rate_key=?").bind(key).first();
+ if(row?.day===day&&(row.hits||0)>=max)return false;
+ await env.DB.prepare("INSERT INTO rate_limits(rate_key,hits,day) VALUES(?,1,?) ON CONFLICT(rate_key) DO UPDATE SET hits=CASE WHEN rate_limits.day=excluded.day THEN rate_limits.hits+1 ELSE 1 END,day=excluded.day").bind(key,day).run();
  return true;
 }
 async function userFor(req,env) {
@@ -29,7 +30,7 @@ export default {async fetch(req,env) {
  if(req.method==="OPTIONS")return new Response(null,{status:204});
  try {
   if(url.pathname==="/api/account"&&req.method==="POST"){
-   if(!await limited(req,env,"create",10))return json({error:"Please try again tomorrow."},429);
+   if(!await limited(req,env,"create",100))return json({error:"Please try again tomorrow."},429);
    const b=await req.json(),name=clean(b.name,60),grade=clean(b.grade,40);
    if(!name||!grade)return json({error:"Enter your name and class or grade."},400);
    const id=crypto.randomUUID(),clId="CL-"+token(8).replace(/[-_]/g,"").slice(0,10).toUpperCase();
@@ -40,7 +41,7 @@ export default {async fetch(req,env) {
    return json({ok:true,clId,accessCode,recoveryCode,user:{name,grade},notice:"Save your CL ID, access code, and recovery code privately. They are shown only once."},201,{"Set-Cookie":cookie(session,DAYS*86400)});
   }
   if(url.pathname==="/api/login"&&req.method==="POST"){
-   if(!await limited(req,env,"login",30))return json({error:"Too many attempts. Try again tomorrow."},429);
+   if(!await limited(req,env,"login",300))return json({error:"Too many attempts. Try again tomorrow."},429);
    await env.DB.prepare("DELETE FROM sessions WHERE expires_at<=datetime('now')").run();
    const b=await req.json(),clId=clean(b.clId,24).toUpperCase(),code=clean(b.accessCode,100);
    const u=await env.DB.prepare("SELECT id,password_hash FROM users WHERE cl_id=?").bind(clId).first();
@@ -49,7 +50,7 @@ export default {async fetch(req,env) {
    return json({ok:true},200,{"Set-Cookie":cookie(s,DAYS*86400)});
   }
   if(url.pathname==="/api/recover"&&req.method==="POST"){
-   if(!await limited(req,env,"recover",20))return json({error:"Too many attempts. Try again tomorrow."},429);
+   if(!await limited(req,env,"recover",60))return json({error:"Too many attempts. Try again tomorrow."},429);
    const b=await req.json(),clId=clean(b.clId,24).toUpperCase(),code=clean(b.recoveryCode,100);
    const u=await env.DB.prepare("SELECT id,recovery_hash FROM users WHERE cl_id=?").bind(clId).first();
    if(!u||!u.recovery_hash||await hash(code)!==u.recovery_hash)return json({error:"CL ID or recovery code is incorrect."},401);
