@@ -115,7 +115,7 @@
 @media(max-width:800px){.manifesto{padding:58px 22px 24px}.manifesto-head{margin-bottom:34px}.manifesto-grid{grid-template-columns:1fr;gap:34px}.manifesto-story{max-width:none;padding-left:0;border-left:0;border-top:1px solid rgba(118,228,255,.24);padding-top:28px}.manifesto-disclaimer{margin-top:34px}}
 @media(max-width:520px){.manifesto{padding:46px 20px 22px}.manifesto-head{align-items:flex-start;flex-direction:column;gap:5px}.manifesto-opening h2{font-size:42px}.manifesto-closer{font-size:16px}}
 
-</style>
+.credential-box{white-space:pre-line;padding:18px;border:1px solid rgba(118,228,255,.35);background:#080c12;color:var(--blue);font:700 15px/1.9 monospace;max-width:760px;margin:22px 0}\n</style>
 </head>
 <body>
 <section class="splash" id="splash" aria-label="Commerce League introduction">
@@ -167,7 +167,7 @@
   </aside>
 </div>
 <div class="home-bottomline"><span>FOUNDATION ROUND <b>//</b> OPEN TO LEARNERS</span><span>01 THINK <b>→</b> 02 APPLY <b>→</b> 03 IMPROVE</span></div>
-<p class="note home-disclaimer">Prototype practice only. Results stay in this session and are not official rankings or qualifications.</p>
+<p class="note home-disclaimer">Prototype practice only. Saved practice results are unofficial and are not rankings or qualifications.</p>
 </section>
 
 <section class="manifesto" id="manifesto" aria-labelledby="manifesto-title">
@@ -193,17 +193,23 @@
 </section>
 
 <section class="panel" id="details">
-<p class="eyebrow">YOUR NEXT STEP / STUDENT DETAILS</p><h1>Ready for a practice challenge?</h1><p class="muted">Add your name and class or grade before starting. Email is optional.</p>
-
+<p class="eyebrow">YOUR NEXT STEP / STUDENT ACCOUNT</p><h1>Save your practice progress.</h1><p class="muted">Create a free CL ID with your name and class or grade. No email is collected. Your records will be stored by Cloudflare when this service is deployed.</p>
 <form id="detailsForm">
-<div class="field"><label for="displayName">Student name</label><input id="displayName" name="displayName" maxlength="60" autocomplete="name" required placeholder="Your name"></div>
-<div class="field"><label for="level">Class / grade</label><select id="level" name="level" required><option value="">Choose your class or grade</option><option>Class 9–10</option><option>Class 11</option><option>Class 12</option><option>College / University</option><option>Other</option></select></div>
-<div class="field"><label for="studentEmail">Email (optional)</label><input id="studentEmail" name="email" type="email" maxlength="254" autocomplete="email" placeholder="you@example.com"></div>
-<label class="consent"><input id="permission" type="checkbox" required><span>I understand this is a short commerce practice challenge and choose to begin. I need at least 3 out of 5 correct answers to pass this round.</span></label>
-<div class="actions"><button class="btn secondary" type="button" id="backWelcome">Back</button><button class="btn" type="submit">I agree — start test ↗</button></div>
-<p class="note">Your details stay in this browser session. They are not sent to a server or saved after you leave the page.</p>
-</form>
+<div class="field"><label for="displayName">Student name</label><input id="displayName" maxlength="60" autocomplete="name" required placeholder="Your name"></div>
+<div class="field"><label for="level">Class / grade</label><select id="level" required><option value="">Choose your class or grade</option><option>Class 9–10</option><option>Class 11</option><option>Class 12</option><option>College / University</option><option>Other</option></select></div>
+<label class="consent"><input id="permission" type="checkbox" required><span>I agree to have my name, class or grade, account details, and practice progress stored by Cloudflare to provide this account. My score is unofficial practice only.</span></label>
+<div class="actions"><button class="btn secondary" type="button" id="backWelcome">Back</button><button class="btn" type="submit">Create CL ID & start ↗</button></div></form>
+<div class="actions"><button class="btn secondary" type="button" id="showLogin">I already have a CL ID</button><button class="btn secondary" type="button" id="showRecovery">Recover access</button></div>
+<p id="accountMessage" class="feedback" aria-live="polite"></p>
+<div id="loginBox" class="hidden"><h2>Sign in to your CL account</h2><form id="loginForm">
+<div class="field"><label for="loginId">CL ID</label><input id="loginId" required autocomplete="username" placeholder="CL-XXXXXXXXXX"></div>
+<div class="field"><label for="loginCode">Access code</label><input id="loginCode" required autocomplete="current-password" placeholder="Your private access code"></div><div class="actions"><button class="btn" type="submit">Sign in & start ↗</button></div></form></div>
+<div id="recoveryBox" class="hidden"><h2>Recover your access code</h2><form id="recoveryForm">
+<div class="field"><label for="recoveryId">CL ID</label><input id="recoveryId" required placeholder="CL-XXXXXXXXXX"></div>
+<div class="field"><label for="recoveryCode">One-time recovery code</label><input id="recoveryCode" required autocomplete="off" placeholder="Your recovery code"></div><div class="actions"><button class="btn" type="submit">Generate new access code</button></div></form><p id="recoveryResult" class="note" aria-live="polite"></p></div>
 </section>
+
+<section class="panel hidden" id="credentials"><p class="eyebrow">KEEP THESE DETAILS SAFE</p><h1>Your CL account is ready.</h1><p class="muted">Save your CL ID, access code, and one-time recovery code now. They will not be shown again. Keep them private.</p><div id="credentialValues" class="credential-box"></div><label class="consent"><input id="credentialsSaved" type="checkbox"><span>I have saved these details somewhere private.</span></label><div class="actions"><button class="btn" type="button" id="beginChallenge" disabled>Begin practice challenge ↗</button></div></section>
 
 <section class="panel hidden" id="quiz">
 <p class="eyebrow">PRACTICE CHALLENGE / 02</p><div class="qmeta"><span id="qCount">QUESTION 1 OF 5</span><span>3 OF 5 TO PASS</span></div><div class="progress"><span id="progressBar"></span></div>
@@ -212,7 +218,7 @@
 </section>
 
 <section class="panel hidden" id="result">
-<p class="eyebrow">PRACTICE CHALLENGE / RESULT</p><div id="resultStatus" class="status"></div><div class="result-score" id="scoreText">0/5</div><h1 id="resultTitle"></h1><p class="intro muted" id="resultMessage"></p><div class="actions" id="resultActions"></div>
+<p class="eyebrow">PRACTICE CHALLENGE / RESULT</p><div id="resultStatus" class="status"></div><div class="result-score" id="scoreText">0/5</div><h1 id="resultTitle"></h1><p class="intro muted" id="resultMessage"></p><div id="attemptHistory"></div><div class="actions" id="resultActions"></div>
 </section>
 
 <section class="panel hidden" id="league">
@@ -221,28 +227,38 @@
 <article class="league-card"><span class="eyebrow">DISCIPLINE 01</span><b>Accounting</b><p>Build precision with concepts, entries, and calculations.</p></article>
 <article class="league-card"><span class="eyebrow">DISCIPLINE 02</span><b>Economics</b><p>Explore markets, incentives, and economic reasoning.</p></article>
 <article class="league-card"><span class="eyebrow">DISCIPLINE 03</span><b>Business</b><p>Practise strategy and decision-making through scenarios.</p></article>
-</div><p class="note">This prototype does not create student accounts, save scores, or run official rankings or competitions.</p><div class="actions"><button class="btn secondary" id="returnHome">Return to intro</button></div>
+</div><p class="note">Recent practice attempts are saved to your CL account. Scores and groups are unofficial practice only.</p><div class="actions"><button class="btn secondary" id="returnHome">Return to intro</button></div>
 </section>
 </div></main>
 <footer class="footer"><div class="wrap"><span>© 2026 COMMERCE LEAGUE</span><span>FAIR PLAY. REAL LEARNING. EARN YOUR PLACE.</span></div></footer>
 </div>
 <script>
 const questions=[
-{q:"Which financial statement shows a business's assets and liabilities at a point in time?",a:["Income statement","Balance sheet","Cash book","Sales journal"],correct:1},
-{q:"If total revenue is ₹1,000 and total cost is ₹700, what is the profit?",a:["₹200","₹300","₹700","₹1,700"],correct:1},
-{q:"Which of these is generally considered a factor of production?",a:["Land","Discount","Invoice","Dividend"],correct:0},
-{q:"What does demand usually describe in economics?",a:["How much sellers have produced","The cost of making a product","How much buyers are willing and able to buy at different prices","A business's annual profit"],correct:2},
-{q:"A business compares two plans before choosing one. This is an example of:",a:["Decision-making","Bookkeeping only","Advertising only","Depreciation"],correct:0}
+{q:"Which financial statement shows a business's assets and liabilities at a point in time?",a:["Income statement","Balance sheet","Cash book","Sales journal"]},
+{q:"If total revenue is ₹1,000 and total cost is ₹700, what is the profit?",a:["₹200","₹300","₹700","₹1,700"]},
+{q:"Which of these is generally considered a factor of production?",a:["Land","Discount","Invoice","Dividend"]},
+{q:"What does demand usually describe in economics?",a:["How much sellers have produced","The cost of making a product","How much buyers are willing and able to buy at different prices","A business's annual profit"]},
+{q:"A business compares two plans before choosing one. This is an example of:",a:["Decision-making","Bookkeeping only","Advertising only","Depreciation"]}
 ];
-const ids=["welcome","details","quiz","result","league"];let current=0,selected=null,answers=[],displayName="",studyLevel="";
+const ids=["welcome","details","credentials","quiz","result","league"];let current=0,selected=null,answers=[],displayName="",studyLevel="",lastResult=null;
 function revealHomepage(){const splash=document.getElementById("splash");if(!splash||splash.classList.contains("hidden"))return;splash.classList.add("splash-leaving");window.setTimeout(()=>{splash.classList.add("hidden");window.scrollTo({top:0,behavior:"instant"});},450);}document.getElementById("enterSite").addEventListener("click",revealHomepage);window.setTimeout(revealHomepage,3200);
 function show(id){ids.forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id));window.scrollTo({top:0,behavior:"smooth"});}
 document.getElementById("startIntro")?.addEventListener("click",()=>show("details"));
 document.getElementById("backWelcome").addEventListener("click",()=>show("welcome"));
-document.getElementById("detailsForm").addEventListener("submit",e=>{e.preventDefault();if(!e.currentTarget.reportValidity())return;displayName=document.getElementById("displayName").value.trim();studyLevel=document.getElementById("level").value;current=0;answers=[];renderQuestion();show("quiz");});
+async function api(path,body){const r=await fetch("/api/"+path,{method:body?"POST":"GET",credentials:"same-origin",headers:body?{"content-type":"application/json"}:{},body:body?JSON.stringify(body):undefined});const d=await r.json().catch(()=>({error:"Service unavailable."}));if(!r.ok)throw new Error(d.error||"Request failed.");return d;}
+function setAccountMessage(t){document.getElementById("accountMessage").textContent=t;}
+function beginQuiz(){current=0;answers=[];renderQuestion();show("quiz");}
+document.getElementById("detailsForm").addEventListener("submit",async e=>{e.preventDefault();if(!e.currentTarget.reportValidity())return;const b=e.currentTarget.querySelector('button[type="submit"]');b.disabled=true;setAccountMessage("Creating your account…");try{const d=await api("account",{name:document.getElementById("displayName").value.trim(),grade:document.getElementById("level").value});displayName=d.user.name;studyLevel=d.user.grade;document.getElementById("credentialValues").textContent="CL ID: "+d.clId+"\nAccess code: "+d.accessCode+"\\nRecovery code (one use): "+d.recoveryCode;document.getElementById("credentialsSaved").checked=false;document.getElementById("beginChallenge").disabled=true;show("credentials");}catch(err){setAccountMessage(err.message);}finally{b.disabled=false;}});
+document.getElementById("credentialsSaved").addEventListener("change",e=>document.getElementById("beginChallenge").disabled=!e.target.checked);
+document.getElementById("beginChallenge").addEventListener("click",beginQuiz);
+document.getElementById("showLogin").addEventListener("click",()=>{document.getElementById("loginBox").classList.toggle("hidden");document.getElementById("recoveryBox").classList.add("hidden");});
+document.getElementById("showRecovery").addEventListener("click",()=>{document.getElementById("recoveryBox").classList.toggle("hidden");document.getElementById("loginBox").classList.add("hidden");});
+document.getElementById("loginForm").addEventListener("submit",async e=>{e.preventDefault();if(!e.currentTarget.reportValidity())return;const b=e.currentTarget.querySelector('button[type="submit"]');b.disabled=true;setAccountMessage("Signing in…");try{await api("login",{clId:document.getElementById("loginId").value.trim(),accessCode:document.getElementById("loginCode").value});const d=await api("me");displayName=d.user.name;studyLevel=d.user.grade;beginQuiz();}catch(err){setAccountMessage(err.message);}finally{b.disabled=false;}});
+document.getElementById("recoveryForm").addEventListener("submit",async e=>{e.preventDefault();if(!e.currentTarget.reportValidity())return;const b=e.currentTarget.querySelector('button[type="submit"]');b.disabled=true;try{const d=await api("recover",{clId:document.getElementById("recoveryId").value.trim(),recoveryCode:document.getElementById("recoveryCode").value});document.getElementById("recoveryResult").textContent="New access code (save it now): "+d.accessCode+" · new recovery code (save it now): "+d.recoveryCode+" — old recovery code used.";document.getElementById("recoveryCode").value="";}catch(err){document.getElementById("recoveryResult").textContent=err.message;}finally{b.disabled=false;}});
+
 function renderQuestion(){selected=null;const q=questions[current];document.getElementById("qCount").textContent="QUESTION "+(current+1)+" OF "+questions.length;document.getElementById("progressBar").style.width=(current/questions.length*100)+"%";document.getElementById("question").textContent=q.q;document.getElementById("quizFeedback").textContent="Choose one answer to continue.";const box=document.getElementById("options");box.innerHTML="";q.a.forEach((answer,i)=>{const b=document.createElement("button");b.type="button";b.className="option";b.innerHTML='<span class="letter">'+String.fromCharCode(65+i)+'</span><span></span>';b.querySelector("span:last-child").textContent=answer;b.addEventListener("click",()=>{selected=i;box.querySelectorAll(".option").forEach(el=>el.classList.remove("selected"));b.classList.add("selected");document.getElementById("nextQuestion").disabled=false;});box.appendChild(b);});document.getElementById("nextQuestion").textContent=current===questions.length-1?"Submit challenge ↗":"Lock answer ↗";document.getElementById("nextQuestion").disabled=true;}
 document.getElementById("nextQuestion").addEventListener("click",()=>{if(selected===null)return;answers[current]=selected;current++;if(current<questions.length)renderQuestion();else showResult();});
-function showResult(){const score=answers.reduce((sum,a,i)=>sum+(a===questions[i].correct?1:0),0);const percent=Math.round(score/questions.length*100);document.getElementById("progressBar").style.width="100%";document.getElementById("scoreText").textContent=score+"/"+questions.length+" · "+percent+"%";const passed=percent>=60;const status=document.getElementById("resultStatus");status.textContent=passed?"PRACTICE PASSED":"KEEP PRACTISING";status.className="status "+(passed?"pass":"fail");document.getElementById("resultTitle").textContent=passed?"Good work, "+displayName+".":"Keep building your basics, "+displayName+".";document.getElementById("resultMessage").textContent=passed?"You got at least 3 out of 5 correct. This is an unofficial practice result shown only in this session.": "You need at least 3 correct answers out of 5 to pass this practice challenge. Review the basics and try again.";const actions=document.getElementById("resultActions");actions.innerHTML="";const b=document.createElement("button");b.className="btn";b.textContent=passed?"Continue ↗":"Try again ↗";b.addEventListener("click",()=>{if(passed){document.getElementById("welcomeLeague").textContent="Welcome, "+displayName+" ("+studyLevel+").";show("league");}else{current=0;answers=[];renderQuestion();show("quiz");}});actions.appendChild(b);if(passed){const home=document.createElement("button");home.className="btn secondary";home.textContent="Review result";home.addEventListener("click",()=>show("result"));actions.appendChild(home);}show("result");}
+async function showResult(){document.getElementById("progressBar").style.width="100%";document.getElementById("resultTitle").textContent="Checking your practice result…";document.getElementById("resultMessage").textContent="Your answers are being scored by the practice service.";document.getElementById("resultActions").replaceChildren();show("result");try{lastResult=await api("attempt",{answers});const score=lastResult.score,percent=Math.round(score/lastResult.total*100),passed=lastResult.passed;document.getElementById("scoreText").textContent=score+"/"+lastResult.total+" · "+percent+"%";const status=document.getElementById("resultStatus");status.textContent=passed?"PRACTICE PASSED":"KEEP PRACTISING";status.className="status "+(passed?"pass":"fail");document.getElementById("resultTitle").textContent=passed?"Good work, "+displayName+".":"Keep building your basics, "+displayName+".";document.getElementById("resultMessage").textContent=(passed?"You got at least 3 out of 5 correct. ":"Review the basics and try again. ")+"Practice group: "+lastResult.practiceGroup+". Unofficial practice only; this is not a ranking or qualification.";const actions=document.getElementById("resultActions"),btn=document.createElement("button");btn.className="btn";btn.textContent=passed?"Continue ↗":"Try again ↗";btn.addEventListener("click",()=>{if(passed){document.getElementById("welcomeLeague").textContent="Welcome, "+displayName+" ("+studyLevel+").";show("league");}else beginQuiz();});actions.appendChild(btn);const hist=await api("me"),box=document.getElementById("attemptHistory");box.replaceChildren();const h=document.createElement("h2");h.textContent="Saved practice progress";box.appendChild(h);hist.attempts.forEach((a,i)=>{const row=document.createElement("p");row.className="note";row.textContent="Attempt "+(hist.attempts.length-i)+": "+a.score+"/"+a.total+" · "+a.practice_group+" · "+a.created_at;box.appendChild(row);});}catch(err){document.getElementById("resultStatus").textContent="RESULT NOT SAVED";document.getElementById("resultStatus").className="status fail";document.getElementById("resultTitle").textContent="We couldn't save this attempt.";document.getElementById("resultMessage").textContent=err.message+" The result is not confirmed as saved. Please sign in and retry.";const retry=document.createElement("button");retry.className="btn";retry.textContent="Return to sign in";retry.addEventListener("click",()=>show("details"));document.getElementById("resultActions").appendChild(retry);}}
 document.getElementById("returnHome").addEventListener("click",()=>show("welcome"));
 </script>
 </body>
