@@ -28,6 +28,13 @@
 @keyframes arrowDown{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 @media(prefers-reduced-motion:reduce){.splash-inner,.splash-arrow{animation:none}}
 @media(max-height:700px){.splash-emblem{width:clamp(78px,13vh,110px);margin-bottom:8px}.splash-cl{font-size:clamp(50px,8vh,72px)}.splash-tagline{margin-bottom:12px}.splash-divider{margin-bottom:0}}
+
+.auth-area{margin:26px 0 34px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);max-width:760px}
+.auth-area h2{margin-bottom:8px}.auth-area .auth-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.auth-area .field{margin:12px 0}.auth-status{font-size:13px;color:var(--blue);margin:12px 0;min-height:1.4em}
+.auth-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.auth-small{font-size:11px;color:var(--muted);margin-top:10px}
+@media(max-width:620px){.auth-area .auth-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -54,11 +61,35 @@
 <div class="rule"></div><p class="eyebrow">OUR AIM</p><h2>Make commerce a skill, not just a subject.</h2><p class="muted">Our aim is to make accounting, economics, and business more engaging through clear learning, practical thinking, and challenges that reward understanding and consistency.</p>
 <div class="rule"></div><p class="eyebrow">INSIGHTS / WHAT YOU’LL BUILD</p><div class="league-grid"><article class="league-card"><span class="eyebrow">01</span><b>Think analytically</b><p>Read a question carefully, connect concepts, and choose with reason.</p></article><article class="league-card"><span class="eyebrow">02</span><b>Understand the why</b><p>Connect commerce concepts to decisions businesses make every day.</p></article><article class="league-card"><span class="eyebrow">03</span><b>Improve by practice</b><p>Use each challenge to spot gaps and strengthen your foundations.</p></article></div>
 <div class="rule"></div><p class="muted">At the end of this page, you can choose to take the five-question entry test. The qualifying score is <strong style="color:#f4f7fb">60% (3 out of 5)</strong>.</p>
-<p class="note">This is an early version of Commerce League. Your answers and details are not saved to a server.</p>
+<p class="note">This is an early version of Commerce League. Sign-in and test-attempt status are being connected; official competition rankings are not active yet.</p>
 </section>
 
 <section class="panel" id="details">
 <p class="eyebrow">YOUR NEXT STEP / ENTRY PERMISSION</p><h1>Ready for the entry test?</h1><p class="muted">Tell us a little about your learning level and confirm that you want to take the entry challenge. Keep your details minimal—no email or phone number is needed.</p>
+
+<div class="auth-area" id="authArea">
+  <p class="eyebrow">STUDENT ACCOUNT</p>
+  <h2 id="authHeading">Create your account or sign in</h2>
+  <p class="muted">Use your own email address. Your account lets us associate your entry-test progress with you. Never use someone else's account.</p>
+  <div class="auth-grid">
+    <div>
+      <div class="field"><label for="authEmail">Email address</label><input id="authEmail" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"></div>
+      <div class="field"><label for="authPassword">Password (at least 8 characters)</label><input id="authPassword" type="password" autocomplete="new-password" minlength="8" required placeholder="Create or enter a password"></div>
+      <div class="auth-buttons">
+        <button class="btn" type="button" id="signUpButton">Create account</button>
+        <button class="btn secondary" type="button" id="signInButton">Sign in</button>
+      </div>
+    </div>
+    <div>
+      <p class="muted">Prefer Google?</p>
+      <button class="btn secondary" type="button" id="googleSignInButton">Continue with Google ↗</button>
+      <p class="auth-small">Email confirmation may be required before your first sign-in. Google sign-in also requires valid Google credentials in Supabase.</p>
+      <div class="auth-buttons"><button class="btn secondary hidden" type="button" id="signOutButton">Sign out</button></div>
+    </div>
+  </div>
+  <p class="auth-status" id="authStatus" role="status" aria-live="polite">Checking account connection…</p>
+</div>
+
 <form id="detailsForm">
 <div class="field"><label for="displayName">What should we call you? (optional)</label><input id="displayName" name="displayName" maxlength="30" autocomplete="nickname" placeholder="Your display name"></div>
 <div class="field"><label for="level">Your current study level</label><select id="level" name="level" required><option value="">Choose your level</option><option>Class 9–10</option><option>Class 11</option><option>Class 12</option><option>College / University</option><option>Self-study / Other</option></select></div>
@@ -89,7 +120,73 @@
 </div></main>
 <footer class="footer"><div class="wrap"><span>© 2026 COMMERCE LEAGUE</span><span>FAIR PLAY. REAL LEARNING. EARN YOUR PLACE.</span></div></footer>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
+const SUPABASE_URL = "https://ghujetxaohmrhoiczyrs.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_gDI1pPBPtJrjLo9rX61H8A__zFrevvM";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+let signedInUser = null;
+let activeAttemptId = null;
+const authStatus = document.getElementById("authStatus");
+function setAuthStatus(message, isError=false){authStatus.textContent=message;authStatus.style.color=isError?"var(--red)":"var(--blue)";}
+function updateAuthUI(user){
+  signedInUser = user || null;
+  const signOutButton=document.getElementById("signOutButton");
+  if(user){
+    setAuthStatus("Signed in as "+(user.email || "your account")+". Your test progress can now be linked to this account.");
+    signOutButton.classList.remove("hidden");
+    document.getElementById("authHeading").textContent="Your student account";
+    document.getElementById("authEmail").value=user.email || "";
+    document.getElementById("authEmail").disabled=true;
+    document.getElementById("authPassword").classList.add("hidden");
+    document.getElementById("signUpButton").classList.add("hidden");
+    document.getElementById("signInButton").classList.add("hidden");
+    document.getElementById("googleSignInButton").classList.add("hidden");
+  } else {
+    setAuthStatus("Create an account or sign in before starting the entry test.");
+    signOutButton.classList.add("hidden");
+    document.getElementById("authHeading").textContent="Create your account or sign in";
+    document.getElementById("authEmail").disabled=false;
+    document.getElementById("authPassword").classList.remove("hidden");
+    document.getElementById("signUpButton").classList.remove("hidden");
+    document.getElementById("signInButton").classList.remove("hidden");
+    document.getElementById("googleSignInButton").classList.remove("hidden");
+  }
+}
+document.getElementById("signUpButton").addEventListener("click",async()=>{
+  const email=document.getElementById("authEmail").value.trim();
+  const password=document.getElementById("authPassword").value;
+  if(!email||password.length<8){setAuthStatus("Enter a valid email and a password of at least 8 characters.",true);return;}
+  setAuthStatus("Creating your account…");
+  const {data,error}=await supabaseClient.auth.signUp({email,password,options:{emailRedirectTo:window.location.origin}});
+  if(error){setAuthStatus(error.message,true);return;}
+  if(data.session){updateAuthUI(data.user);setAuthStatus("Account created and signed in.");}
+  else{setAuthStatus("Account request received. Check your email for a confirmation link, then return here and sign in.");}
+});
+document.getElementById("signInButton").addEventListener("click",async()=>{
+  const email=document.getElementById("authEmail").value.trim();
+  const password=document.getElementById("authPassword").value;
+  if(!email||!password){setAuthStatus("Enter your email and password.",true);return;}
+  setAuthStatus("Signing in…");
+  const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});
+  if(error){setAuthStatus(error.message,true);return;}
+  updateAuthUI(data.user);
+});
+document.getElementById("googleSignInButton").addEventListener("click",async()=>{
+  setAuthStatus("Opening Google sign-in…");
+  const {error}=await supabaseClient.auth.signInWithOAuth({provider:"google",options:{redirectTo:window.location.origin}});
+  if(error)setAuthStatus(error.message,true);
+});
+document.getElementById("signOutButton").addEventListener("click",async()=>{
+  const {error}=await supabaseClient.auth.signOut();
+  if(error){setAuthStatus(error.message,true);return;}
+  activeAttemptId=null;updateAuthUI(null);
+});
+supabaseClient.auth.getSession().then(({data,error})=>{
+  if(error){setAuthStatus("Could not check sign-in status: "+error.message,true);return;}
+  updateAuthUI(data.session?.user || null);
+});
+supabaseClient.auth.onAuthStateChange((_event,session)=>updateAuthUI(session?.user || null));
 const questions=[
 {q:"Which financial statement shows a business's assets and liabilities at a point in time?",a:["Income statement","Balance sheet","Cash book","Sales journal"],correct:1},
 {q:"If total revenue is ₹1,000 and total cost is ₹700, what is the profit?",a:["₹200","₹300","₹700","₹1,700"],correct:1},
@@ -102,10 +199,10 @@ function revealHomepage(){const splash=document.getElementById("splash");if(!spl
 function show(id){ids.forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id));window.scrollTo({top:0,behavior:"smooth"});}
 document.getElementById("startIntro")?.addEventListener("click",()=>show("details"));
 document.getElementById("backWelcome").addEventListener("click",()=>show("welcome"));
-document.getElementById("detailsForm").addEventListener("submit",e=>{e.preventDefault();if(!document.getElementById("permission").checked)return;displayName=document.getElementById("displayName").value.trim();current=0;answers=[];renderQuestion();show("quiz");});
+document.getElementById("detailsForm").addEventListener("submit",async e=>{e.preventDefault();if(!document.getElementById("permission").checked)return;if(!signedInUser){setAuthStatus("Please create an account or sign in before starting the test.",true);document.getElementById("authArea").scrollIntoView({behavior:"smooth",block:"center"});return;}displayName=document.getElementById("displayName").value.trim();current=0;answers=[];setAuthStatus("Saving your test attempt…");const {data,error}=await supabaseClient.from("test_attempts").insert({user_id:signedInUser.id,status:"started",total_questions:questions.length,started_at:new Date().toISOString()}).select("id").single();if(error){setAuthStatus("We couldn't save this test attempt: "+error.message,true);return;}activeAttemptId=data.id;setAuthStatus("Test attempt saved. You can begin.");renderQuestion();show("quiz");});
 function renderQuestion(){selected=null;const q=questions[current];document.getElementById("qCount").textContent="QUESTION "+(current+1)+" OF "+questions.length;document.getElementById("progressBar").style.width=(current/questions.length*100)+"%";document.getElementById("question").textContent=q.q;document.getElementById("quizFeedback").textContent="Choose one answer to continue.";const box=document.getElementById("options");box.innerHTML="";q.a.forEach((answer,i)=>{const b=document.createElement("button");b.type="button";b.className="option";b.innerHTML='<span class="letter">'+String.fromCharCode(65+i)+'</span><span></span>';b.querySelector("span:last-child").textContent=answer;b.addEventListener("click",()=>{selected=i;box.querySelectorAll(".option").forEach(el=>el.classList.remove("selected"));b.classList.add("selected");document.getElementById("nextQuestion").disabled=false;});box.appendChild(b);});document.getElementById("nextQuestion").textContent=current===questions.length-1?"Submit challenge ↗":"Lock answer ↗";document.getElementById("nextQuestion").disabled=true;}
 document.getElementById("nextQuestion").addEventListener("click",()=>{if(selected===null)return;answers[current]=selected;current++;if(current<questions.length)renderQuestion();else showResult();});
-function showResult(){const score=answers.reduce((sum,a,i)=>sum+(a===questions[i].correct?1:0),0);const percent=Math.round(score/questions.length*100);document.getElementById("progressBar").style.width="100%";document.getElementById("scoreText").textContent=score+"/"+questions.length+" · "+percent+"%";const passed=percent>=60;const status=document.getElementById("resultStatus");status.textContent=passed?"QUALIFIED":"NOT YET QUALIFIED";status.className="status "+(passed?"pass":"fail");document.getElementById("resultTitle").textContent=passed?"Your place is earned.":"Training comes first.";document.getElementById("resultMessage").textContent=passed?"You reached the 60% entry standard. You can now enter the Commerce League prototype.": "You need at least 3 correct answers out of 5 to enter. Review the basics and try the challenge again.";const actions=document.getElementById("resultActions");actions.innerHTML="";const b=document.createElement("button");b.className="btn";b.textContent=passed?"Enter the League ↗":"Try again ↗";b.addEventListener("click",()=>{if(passed){document.getElementById("welcomeLeague").textContent=displayName?"Welcome to the League, "+displayName+".":"Welcome to the League.";show("league");}else{current=0;answers=[];renderQuestion();show("quiz");}});actions.appendChild(b);if(passed){const home=document.createElement("button");home.className="btn secondary";home.textContent="Review result";home.addEventListener("click",()=>show("result"));actions.appendChild(home);}show("result");}
+function showResult(){const score=answers.reduce((sum,a,i)=>sum+(a===questions[i].correct?1:0),0);const percent=Math.round(score/questions.length*100);if(activeAttemptId&&signedInUser){supabaseClient.from("test_attempts").update({status:"completed",score,total_questions:questions.length,completed_at:new Date().toISOString()}).eq("id",activeAttemptId).eq("user_id",signedInUser.id).then(({error})=>{if(error){setAuthStatus("Your result is shown, but saving completion failed: "+error.message,true);}else{setAuthStatus("Your test result and completion status were saved to your account. Prototype scores are not yet verified for official rankings.");}activeAttemptId=null;});}document.getElementById("progressBar").style.width="100%";document.getElementById("scoreText").textContent=score+"/"+questions.length+" · "+percent+"%";const passed=percent>=60;const status=document.getElementById("resultStatus");status.textContent=passed?"QUALIFIED":"NOT YET QUALIFIED";status.className="status "+(passed?"pass":"fail");document.getElementById("resultTitle").textContent=passed?"Your place is earned.":"Training comes first.";document.getElementById("resultMessage").textContent=passed?"You reached the 60% entry standard. You can now enter the Commerce League prototype.": "You need at least 3 correct answers out of 5 to enter. Review the basics and try the challenge again.";const actions=document.getElementById("resultActions");actions.innerHTML="";const b=document.createElement("button");b.className="btn";b.textContent=passed?"Enter the League ↗":"Try again ↗";b.addEventListener("click",()=>{if(passed){document.getElementById("welcomeLeague").textContent=displayName?"Welcome to the League, "+displayName+".":"Welcome to the League.";show("league");}else{current=0;answers=[];renderQuestion();show("quiz");}});actions.appendChild(b);if(passed){const home=document.createElement("button");home.className="btn secondary";home.textContent="Review result";home.addEventListener("click",()=>show("result"));actions.appendChild(home);}show("result");}
 document.getElementById("returnHome").addEventListener("click",()=>show("welcome"));
 </script>
 </body>
