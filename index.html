@@ -112,7 +112,10 @@
 .manifesto-closer span{color:var(--blue)}
 .manifesto-story .btn{margin-top:6px;text-decoration:none}
 .manifesto-disclaimer{max-width:1650px;margin:48px auto 0;padding-top:14px;border-top:1px solid rgba(118,228,255,.12);color:#7f8ca0;font-size:10px;letter-spacing:.3px}
+.tiers{padding:clamp(48px,8vh,96px) clamp(22px,5vw,88px);background:#080d14;border-bottom:1px solid rgba(118,228,255,.18)}
+.tiers-inner{max-width:1650px;margin:auto}.tier-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(22px,4vw,56px);margin-top:32px}.tier-card{padding:clamp(22px,3vw,38px);border:1px solid rgba(118,228,255,.24);background:linear-gradient(145deg,rgba(15,29,43,.72),rgba(7,13,21,.72))}.tier-card h2{font-size:clamp(25px,3vw,38px)}.tier-card .eyebrow{margin-bottom:10px}.resource-list{display:grid;gap:12px;margin:22px 0}.resource-item{padding:13px 15px;border-left:2px solid var(--blue);background:rgba(118,228,255,.04)}.resource-item b{display:block;font-size:13px}.resource-item span{font-size:11px;color:var(--muted)}.tier-badge{display:inline-block;margin-bottom:12px;padding:4px 8px;border:1px solid rgba(216,255,104,.38);color:var(--lime);font-size:9px;font-weight:900;letter-spacing:1.4px}.local-warning{padding:16px 18px;margin:22px 0;border:1px solid rgba(255,209,102,.5);background:rgba(255,209,102,.06);color:#f5dfad;font-size:12px}.local-warning strong{display:block;margin-bottom:4px;color:#ffe29a}.local-tools{padding:20px 0;border-top:1px solid rgba(118,228,255,.16);margin-top:24px}.local-tools h3{font-size:18px;margin:0 0 6px}.local-id{font-size:16px;color:var(--blue);font-weight:900;letter-spacing:1px}.history-list{padding-left:18px;color:var(--muted);font-size:12px}.tool-status{min-height:1.5em;color:var(--lime);font-size:12px}.file-input{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 @media(max-width:800px){.manifesto{padding:58px 22px 24px}.manifesto-head{margin-bottom:34px}.manifesto-grid{grid-template-columns:1fr;gap:34px}.manifesto-story{max-width:none;padding-left:0;border-left:0;border-top:1px solid rgba(118,228,255,.24);padding-top:28px}.manifesto-disclaimer{margin-top:34px}}
+@media(max-width:800px){.tier-grid{grid-template-columns:1fr}.tiers{padding:52px 22px}}
 @media(max-width:520px){.manifesto{padding:46px 20px 22px}.manifesto-head{align-items:flex-start;flex-direction:column;gap:5px}.manifesto-opening h2{font-size:42px}.manifesto-closer{font-size:16px}}
 
 </style>
@@ -192,8 +195,37 @@
   <p class="manifesto-disclaimer">Commerce League is an independent project in development. The current quiz is an unofficial practice prototype; official rankings and certifications are not active.</p>
 </section>
 
+<section class="tiers" id="tiers" aria-labelledby="tiers-title">
+  <div class="tiers-inner">
+    <div class="manifesto-head"><p class="eyebrow">TWO WAYS TO TAKE PART / THE PATH</p><span class="manifesto-index">CL / TIERS 001</span></div>
+    <h2 id="tiers-title">Choose your path</h2>
+    <div class="tier-grid">
+      <article class="tier-card" id="tier-one">
+        <span class="tier-badge">TIER 1 · OPEN</span><p class="eyebrow">LEARN AT YOUR OWN PACE</p><h2>Open learning &amp; practice</h2>
+        <p class="muted">Start with the commerce foundations, then use the short practice round to check your understanding. No League membership is needed.</p>
+        <div class="resource-list" aria-label="Open commerce learning resources">
+          <div class="resource-item"><b>Accounting foundations</b><span>Balance sheets, revenue, costs, and profit</span></div>
+          <div class="resource-item"><b>Economics foundations</b><span>Demand, markets, incentives, and resources</span></div>
+          <div class="resource-item"><b>Business foundations</b><span>Comparing plans and making decisions</span></div>
+        </div>
+        <button class="btn" type="button" id="startOpenPractice">Start the open practice round ↗</button>
+      </article>
+      <article class="tier-card" id="tier-two">
+        <span class="tier-badge">TIER 2 · CL LEAGUE</span><p class="eyebrow">QUALIFY · PARTICIPATE · KEEP PRACTISING</p><h2>Commerce League</h2>
+        <p class="muted">The foundation round is a suggested entry checkpoint. League organizers set qualification, ongoing participation, and group schedules; this prototype does not certify standing.</p>
+        <div class="resource-list">
+          <div class="resource-item"><b>Qualification</b><span>Suggested starting point: score at least 3 of 5 in the foundation practice.</span></div>
+          <div class="resource-item"><b>Maintain participation</b><span>Keep practising and follow your organizer’s current League schedule.</span></div>
+          <div class="resource-item"><b>Group access</b><span>Ask your League organizer to add you to the group and provide any group credentials.</span></div>
+        </div>
+        <p class="note">A CL ID on this site is a device label only. It cannot grant group access or verify membership.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="panel" id="details">
-<p class="eyebrow">YOUR NEXT STEP / STUDENT DETAILS</p><h1>Ready for a practice challenge?</h1><p class="muted">Add your name and class or grade before starting. Email is optional.</p>
+<p class="eyebrow">TIER 1 / OPEN PRACTICE</p><h1>Ready for a practice challenge?</h1><p class="muted">Add a name for this session and choose your class or grade. Email is optional.</p>
 
 <form id="detailsForm">
 <div class="field"><label for="displayName">Student name</label><input id="displayName" name="displayName" maxlength="60" autocomplete="name" required placeholder="Your name"></div>
@@ -201,7 +233,7 @@
 <div class="field"><label for="studentEmail">Email (optional)</label><input id="studentEmail" name="email" type="email" maxlength="254" autocomplete="email" placeholder="you@example.com"></div>
 <label class="consent"><input id="permission" type="checkbox" required><span>I understand this is a short commerce practice challenge and choose to begin. I need at least 3 out of 5 correct answers to pass this round.</span></label>
 <div class="actions"><button class="btn secondary" type="button" id="backWelcome">Back</button><button class="btn" type="submit">I agree — start test ↗</button></div>
-<p class="note">Your details stay in this browser session. They are not sent to a server or saved after you leave the page.</p>
+<p class="note">Your name, grade, and email are used for this session only. They are not included in saved progress or sent to a server.</p>
 </form>
 </section>
 
@@ -216,12 +248,16 @@
 </section>
 
 <section class="panel hidden" id="league">
-<p class="eyebrow">PRACTICE COMPLETE / COMMERCE LEAGUE</p><div class="cl-large">C<span>L</span></div><h1 id="welcomeLeague">Welcome to the League.</h1><p class="intro muted">You passed this practice challenge. This prototype result is not an official qualification or competition ranking.</p>
+<p class="eyebrow">TIER 2 / CL LEAGUE PRACTICE</p><div class="cl-large">C<span>L</span></div><h1 id="welcomeLeague">Welcome to the League.</h1><p class="intro muted">You met this prototype’s suggested entry checkpoint. This is not an official qualification or competition ranking; your organizer confirms League membership and participation requirements.</p>
+<div class="local-warning"><strong>Your progress is stored on this device only.</strong> Browser data can be cleared or lost, and progress does not sync to another device. Export a backup regularly, then import it on the device you want to use. Scores and saved files are editable and are not verified by the League.</div>
+<div class="local-tools"><h3>Your device-only CL ID</h3><p class="muted">Use this as a label when contacting your organizer. It is generated in this browser and does not act as a password, account, membership check, or group invitation.</p><p class="local-id" id="localClId">Not generated</p><button class="btn secondary" type="button" id="generateClId">Generate / show my CL ID</button></div>
 <div class="rule"></div><h2>The training grounds</h2><div class="league-grid">
 <article class="league-card"><span class="eyebrow">DISCIPLINE 01</span><b>Accounting</b><p>Build precision with concepts, entries, and calculations.</p></article>
 <article class="league-card"><span class="eyebrow">DISCIPLINE 02</span><b>Economics</b><p>Explore markets, incentives, and economic reasoning.</p></article>
 <article class="league-card"><span class="eyebrow">DISCIPLINE 03</span><b>Business</b><p>Practise strategy and decision-making through scenarios.</p></article>
-</div><p class="note">This prototype does not create student accounts, save scores, or run official rankings or competitions.</p><div class="actions"><button class="btn secondary" id="returnHome">Return to intro</button></div>
+</div>
+<div class="local-tools"><h3>Progress on this device</h3><p class="muted">Completed practice rounds are saved locally in this browser. Export a JSON backup to carry them to another device. Import adds rounds to the history already on this device.</p><div class="actions"><button class="btn" type="button" id="exportProgress">Export Progress ↓</button><label class="btn secondary" for="importFile">Import Progress ↑</label><input class="file-input" id="importFile" type="file" accept="application/json,.json"><button class="btn secondary" type="button" id="returnHome">Return to open learning</button></div><p class="tool-status" id="progressStatus" aria-live="polite"></p><ol class="history-list" id="historyList"></ol></div>
+<p class="note">This static site cannot issue or check shared CL passwords or synchronize progress. Organizers must manage group access separately; a real shared account system requires a backend.</p>
 </section>
 </div></main>
 <footer class="footer"><div class="wrap"><span>© 2026 COMMERCE LEAGUE</span><span>FAIR PLAY. REAL LEARNING. EARN YOUR PLACE.</span></div></footer>
@@ -234,16 +270,24 @@ const questions=[
 {q:"What does demand usually describe in economics?",a:["How much sellers have produced","The cost of making a product","How much buyers are willing and able to buy at different prices","A business's annual profit"],correct:2},
 {q:"A business compares two plans before choosing one. This is an example of:",a:["Decision-making","Bookkeeping only","Advertising only","Depreciation"],correct:0}
 ];
-const ids=["welcome","details","quiz","result","league"];let current=0,selected=null,answers=[],displayName="",studyLevel="";
+const ids=["welcome","details","quiz","result","league"],STORAGE_KEY="commerceLeagueProgressV1";let current=0,selected=null,answers=[],displayName="",studyLevel="";
+function readProgress(){try{const value=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");return value&&value.version===1&&Array.isArray(value.attempts)?value:{version:1,clId:"",attempts:[]};}catch{return{version:1,clId:"",attempts:[]};}}
+function writeProgress(data){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(data));return true;}catch{return false;}}
+function renderLeagueTools(){const data=readProgress();document.getElementById("localClId").textContent=data.clId||"Not generated";const list=document.getElementById("historyList");list.replaceChildren();data.attempts.slice(-10).reverse().forEach(item=>{const li=document.createElement("li");const date=new Date(item.completedAt);li.textContent=`${date.toLocaleDateString()} — ${item.score}/${item.total} correct (${item.passed?"checkpoint met":"keep practising"})`;list.appendChild(li);});}
 function revealHomepage(){const splash=document.getElementById("splash");if(!splash||splash.classList.contains("hidden"))return;splash.classList.add("splash-leaving");window.setTimeout(()=>{splash.classList.add("hidden");window.scrollTo({top:0,behavior:"instant"});},450);}document.getElementById("enterSite").addEventListener("click",revealHomepage);window.setTimeout(revealHomepage,3200);
 function show(id){ids.forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id));window.scrollTo({top:0,behavior:"smooth"});}
 document.getElementById("startIntro")?.addEventListener("click",()=>show("details"));
+document.getElementById("startOpenPractice")?.addEventListener("click",()=>show("details"));
 document.getElementById("backWelcome").addEventListener("click",()=>show("welcome"));
 document.getElementById("detailsForm").addEventListener("submit",e=>{e.preventDefault();if(!e.currentTarget.reportValidity())return;displayName=document.getElementById("displayName").value.trim();studyLevel=document.getElementById("level").value;current=0;answers=[];renderQuestion();show("quiz");});
 function renderQuestion(){selected=null;const q=questions[current];document.getElementById("qCount").textContent="QUESTION "+(current+1)+" OF "+questions.length;document.getElementById("progressBar").style.width=(current/questions.length*100)+"%";document.getElementById("question").textContent=q.q;document.getElementById("quizFeedback").textContent="Choose one answer to continue.";const box=document.getElementById("options");box.innerHTML="";q.a.forEach((answer,i)=>{const b=document.createElement("button");b.type="button";b.className="option";b.innerHTML='<span class="letter">'+String.fromCharCode(65+i)+'</span><span></span>';b.querySelector("span:last-child").textContent=answer;b.addEventListener("click",()=>{selected=i;box.querySelectorAll(".option").forEach(el=>el.classList.remove("selected"));b.classList.add("selected");document.getElementById("nextQuestion").disabled=false;});box.appendChild(b);});document.getElementById("nextQuestion").textContent=current===questions.length-1?"Submit challenge ↗":"Lock answer ↗";document.getElementById("nextQuestion").disabled=true;}
 document.getElementById("nextQuestion").addEventListener("click",()=>{if(selected===null)return;answers[current]=selected;current++;if(current<questions.length)renderQuestion();else showResult();});
-function showResult(){const score=answers.reduce((sum,a,i)=>sum+(a===questions[i].correct?1:0),0);const percent=Math.round(score/questions.length*100);document.getElementById("progressBar").style.width="100%";document.getElementById("scoreText").textContent=score+"/"+questions.length+" · "+percent+"%";const passed=percent>=60;const status=document.getElementById("resultStatus");status.textContent=passed?"PRACTICE PASSED":"KEEP PRACTISING";status.className="status "+(passed?"pass":"fail");document.getElementById("resultTitle").textContent=passed?"Good work, "+displayName+".":"Keep building your basics, "+displayName+".";document.getElementById("resultMessage").textContent=passed?"You got at least 3 out of 5 correct. This is an unofficial practice result shown only in this session.": "You need at least 3 correct answers out of 5 to pass this practice challenge. Review the basics and try again.";const actions=document.getElementById("resultActions");actions.innerHTML="";const b=document.createElement("button");b.className="btn";b.textContent=passed?"Continue ↗":"Try again ↗";b.addEventListener("click",()=>{if(passed){document.getElementById("welcomeLeague").textContent="Welcome, "+displayName+" ("+studyLevel+").";show("league");}else{current=0;answers=[];renderQuestion();show("quiz");}});actions.appendChild(b);if(passed){const home=document.createElement("button");home.className="btn secondary";home.textContent="Review result";home.addEventListener("click",()=>show("result"));actions.appendChild(home);}show("result");}
+function showResult(){const score=answers.reduce((sum,a,i)=>sum+(a===questions[i].correct?1:0),0);const percent=Math.round(score/questions.length*100);document.getElementById("progressBar").style.width="100%";document.getElementById("scoreText").textContent=score+"/"+questions.length+" · "+percent+"%";const passed=percent>=60;const data=readProgress();data.attempts.push({score,total:questions.length,passed,completedAt:new Date().toISOString()});const saved=writeProgress(data);const status=document.getElementById("resultStatus");status.textContent=passed?"PRACTICE CHECKPOINT MET":"KEEP PRACTISING";status.className="status "+(passed?"pass":"fail");document.getElementById("resultTitle").textContent=passed?"Good work, "+displayName+".":"Keep building your basics, "+displayName+".";document.getElementById("resultMessage").textContent=passed?"You got at least 3 out of 5 correct. This meets the site’s suggested checkpoint; your League organizer confirms any official qualification.":"You need at least 3 correct answers out of 5 to meet this practice checkpoint. Review the basics and try again.";const actions=document.getElementById("resultActions");actions.replaceChildren();const b=document.createElement("button");b.className="btn";b.textContent=passed?"Continue to Tier 2 ↗":"Try again ↗";b.addEventListener("click",()=>{if(passed){document.getElementById("welcomeLeague").textContent="Welcome, "+displayName+" ("+studyLevel+").";renderLeagueTools();show("league");}else{current=0;answers=[];renderQuestion();show("quiz");}});actions.appendChild(b);if(passed){const home=document.createElement("button");home.className="btn secondary";home.textContent="Review result";home.addEventListener("click",()=>show("result"));actions.appendChild(home);}if(!saved)document.getElementById("resultMessage").textContent+=" Progress could not be saved in this browser.";show("result");}
 document.getElementById("returnHome").addEventListener("click",()=>show("welcome"));
+document.getElementById("generateClId").addEventListener("click",()=>{const data=readProgress();if(!data.clId){const bytes=new Uint8Array(4);crypto.getRandomValues(bytes);data.clId="CL-"+Array.from(bytes,b=>b.toString(16).padStart(2,"0")).join("").toUpperCase();writeProgress(data);}renderLeagueTools();document.getElementById("progressStatus").textContent="Your device-only CL ID is ready. Share it with your organizer only if they ask for it.";});
+document.getElementById("exportProgress").addEventListener("click",()=>{const data=readProgress();const blob=new Blob([JSON.stringify({product:"Commerce League",version:1,exportedAt:new Date().toISOString(),progress:data},null,2)],{type:"application/json"});const link=document.createElement("a");link.href=URL.createObjectURL(blob);link.download="commerce-league-progress.json";link.click();window.setTimeout(()=>URL.revokeObjectURL(link.href),1000);document.getElementById("progressStatus").textContent="Progress backup downloaded. Keep it somewhere safe.";});
+document.getElementById("importFile").addEventListener("change",async event=>{const file=event.currentTarget.files[0];if(!file)return;const status=document.getElementById("progressStatus");try{const bundle=JSON.parse(await file.text());const imported=bundle?.product==="Commerce League"?bundle.progress:null;if(bundle?.version!==1||!imported||imported.version!==1||!Array.isArray(imported.attempts)||imported.attempts.length>1000||!imported.attempts.every(a=>Number.isInteger(a.score)&&Number.isInteger(a.total)&&a.score>=0&&a.score<=a.total&&a.total<=100&&typeof a.passed==="boolean"&&!Number.isNaN(Date.parse(a.completedAt))))throw new Error("invalid");const currentData=readProgress(),combined=[...currentData.attempts,...imported.attempts],seen=new Set(),attempts=combined.filter(a=>{const key=[a.score,a.total,a.passed,a.completedAt].join("|");if(seen.has(key))return false;seen.add(key);return true;}).slice(-1000);if(!writeProgress({version:1,clId:currentData.clId||(typeof imported.clId==="string"&&/^CL-[A-F0-9]{8}$/.test(imported.clId)?imported.clId:""),attempts})){throw new Error("storage");}renderLeagueTools();status.textContent=`Imported progress. ${attempts.length} round(s) are now on this device.`;}catch{status.textContent="Could not import that file. Choose a valid Commerce League progress backup.";}event.currentTarget.value="";});
 </script>
 </body>
 </html>
+
