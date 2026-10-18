@@ -1,19 +1,19 @@
 # Commerce League
 
-Commerce League is a static GitHub Pages learning and practice prototype.
+Commerce League is a static GitHub Pages site with open commerce learning resources and a separate CL League student area.
 
-## Tiers
+## General and League
 
-- **Tier 1 — Open learning and practice:** commerce foundation topics and a five-question practice round open to everyone.
-- **Tier 2 — CL League:** a suggested practice checkpoint, local progress tools, and guidance to contact a League organizer for qualification, continuing participation, and group access.
+- **General** contains open foundations in accounting, economics, and business. Students can mark subjects complete.
+- **League** provides a local student profile, learning progress, and progress backup tools. League membership, qualification, and group access are coordinated by organizers.
 
-## Local progress and identity
+## Student profiles and progress
 
-Completed practice rounds and a local CL League profile are stored in the current browser's `localStorage`. After meeting the suggested practice checkpoint, a student enters the student code assigned by their organizer; the site formats it as their CL ID. Each student creates a password. The site stores only a salted PBKDF2 password hash, never the password itself. Students can export progress and import it on another device; password setup is not included in the backup, so they create the local profile again on that device.
+A student enters the code assigned by their organizer. The site formats it as a CL ID, and the student creates their own password. The profile and progress are stored only in the current browser on the current device. The password is stored as a salted PBKDF2 hash, not plaintext.
 
-This is a browser-only convenience check, not secure authentication. It cannot verify the code against an organizer's roster, protect against someone with technical access to the browser, confirm official qualification, provide group access, or synchronize accounts. Browser data can be cleared, imported progress files can be edited, and scores are not verified or tamper-proof. Names, grades, and email addresses are not included in saved progress. Organizers must manage membership and group access separately. Shared accounts and cross-device sign-in require a backend service.
+This is not centralized authentication. The static site cannot verify codes against an organizer roster, synchronize profiles, recover passwords, or grant group access. Students can export a JSON progress backup and import it on another device; passwords are never included. Browser data can be cleared, and local progress can be edited, so it is not verified by the League.
 
 ## Run locally
 
-Open `index.html` in a modern browser or publish the repository with GitHub Pages. Browser storage and cryptographic ID generation work on localhost or HTTPS.
+Open `index.html` in a modern browser or publish the repository with GitHub Pages. Browser storage and cryptographic functions work on localhost or HTTPS.
 
