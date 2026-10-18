@@ -9,9 +9,9 @@ Commerce League is a static GitHub Pages learning and practice prototype.
 
 ## Local progress and identity
 
-Completed practice rounds and an optional device-only CL ID are stored in the current browser's `localStorage`. Students can export a JSON backup and import it on another device. Browser storage can be cleared, imported files can be edited, and scores are not verified or tamper-proof. Names, grades, and email addresses are not included in saved progress.
+Completed practice rounds and a local CL League profile are stored in the current browser's `localStorage`. After meeting the suggested practice checkpoint, a student enters the student code assigned by their organizer; the site formats it as their CL ID. Each student creates a password. The site stores only a salted PBKDF2 password hash, never the password itself. Students can export progress and import it on another device; password setup is not included in the backup, so they create the local profile again on that device.
 
-The generated CL ID is only a local label. This site has no backend, so it cannot issue or verify passwords, authenticate students, enforce group access, confirm official qualification, or synchronize progress. League organizers must manage group credentials and membership separately. Real shared accounts require a backend service.
+This is a browser-only convenience check, not secure authentication. It cannot verify the code against an organizer's roster, protect against someone with technical access to the browser, confirm official qualification, provide group access, or synchronize accounts. Browser data can be cleared, imported progress files can be edited, and scores are not verified or tamper-proof. Names, grades, and email addresses are not included in saved progress. Organizers must manage membership and group access separately. Shared accounts and cross-device sign-in require a backend service.
 
 ## Run locally
 
