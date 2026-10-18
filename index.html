@@ -173,13 +173,15 @@ body.sidebar-open{overflow:hidden}
 .launch-kicker{margin:0 0 8px;color:var(--blue);font-size:10px;letter-spacing:3px;font-weight:900}
 .launch-copy h1,.launch-copy h2{margin:0 0 10px;font-size:clamp(26px,3.4vw,44px);letter-spacing:-1.3px;line-height:1.08}
 .launch-copy p:not(.launch-kicker){max-width:620px;margin:0;color:#b5c1d1;font-size:clamp(13px,1.25vw,16px)}
-.launch-copy .btn{margin-top:17px}.launch-controls{display:flex;align-items:center;justify-content:flex-end;gap:9px;max-width:1650px;margin:5px auto 0}
-.slide-control{min-width:38px;height:36px;border:1px solid rgba(118,228,255,.28);background:rgba(4,8,14,.7);color:#d9e4f1;font-size:15px;cursor:pointer}
-.slide-control:hover,.slide-dot[aria-current="true"]{border-color:var(--blue);color:var(--blue)}
-.slide-dot{width:9px;height:9px;padding:0;border:1px solid #8492a7;border-radius:50%;background:transparent;cursor:pointer}
-.slide-count{min-width:48px;color:#8997aa;font-size:10px;font-weight:800;letter-spacing:1px;text-align:center}
+.launch-copy .btn{margin-top:17px}.launch-track{cursor:pointer;touch-action:manipulation;user-select:none}.launch-track:focus-visible{outline:2px solid var(--blue);outline-offset:5px}
+.launch-side-note{display:flex;min-height:190px;flex-direction:column;justify-content:center;padding-left:clamp(18px,3vw,42px);border-left:1px solid rgba(118,228,255,.28)}
+.launch-side-note span{color:var(--blue);font-size:clamp(44px,7vw,82px);font-weight:300;line-height:1}
+.launch-side-note p{margin:12px 0;color:var(--blue);font-size:10px;font-weight:900;letter-spacing:2.6px}
+.launch-side-note strong{color:#f4f7fb;font-family:Georgia,"Times New Roman",serif;font-size:clamp(22px,3vw,38px);font-weight:500;line-height:1.14}
+.launch-hint{display:flex;align-items:center;justify-content:space-between;max-width:1650px;margin:4px auto 0;padding-top:7px;border-top:1px solid rgba(118,228,255,.16);color:#8fa1b5;font-size:9px;font-weight:900;letter-spacing:1.8px}
+#slideCount{color:#c1d4e6;font-variant-numeric:tabular-nums}
 @keyframes slideIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:700px){.launch-stage#welcome{padding:24px 20px}.launch-track,.launch-slide{min-height:400px}.launch-slide,.launch-slide.active{grid-template-columns:1fr;align-content:center;gap:25px}.launch-brand{gap:20px}.launch-emblem{width:92px;height:92px;min-width:92px}.launch-emblem .splash-cl{font-size:62px}.launch-name{font-size:clamp(19px,6vw,30px);letter-spacing:2px}.launch-copy{border-left:0;border-top:1px solid rgba(118,228,255,.28);padding:18px 0 0}.launch-controls{justify-content:center}}
+@media(max-width:700px){.launch-stage#welcome{padding:24px 20px}.launch-track,.launch-slide{min-height:400px}.launch-slide,.launch-slide.active{grid-template-columns:1fr;align-content:center;gap:25px}.launch-brand{gap:20px}.launch-emblem{width:92px;height:92px;min-width:92px}.launch-emblem .splash-cl{font-size:62px}.launch-name{font-size:clamp(19px,6vw,30px);letter-spacing:2px}.launch-copy{border-left:0;border-top:1px solid rgba(118,228,255,.28);padding:18px 0 0}.launch-side-note{min-height:130px;padding:0;border-left:0}.launch-side-note span{font-size:54px}.launch-side-note p{margin:6px 0}}
 @media(prefers-reduced-motion:reduce){.launch-slide{animation:none}}
 
 /* Commerce League learning journey: ink, electric blue, and restrained gold */
@@ -243,7 +245,7 @@ body.sidebar-open{overflow:hidden}
 <header class="top statusbar" aria-label="Main navigation"><div class="statusbar-inner"><button class="brand brand-trigger" type="button" id="menuToggle" aria-label="Open Commerce League menu" aria-controls="siteSidebar" aria-expanded="false"><div class="splash-emblem brand-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><span>COMMERCE LEAGUE<small>LEARN · COMPETE · RISE</small></span></button><nav class="statusbar-meta" aria-label="Choose a section"><button class="nav-link" type="button" id="navHome" aria-current="page">Home</button><button class="nav-link" type="button" id="navGeneral" aria-current="false">General</button><button class="nav-link" type="button" id="navLeague" aria-current="false">League</button></nav></div></header>
 <div class="sidebar-backdrop hidden" id="sidebarBackdrop"></div><aside class="sidebar hidden" id="siteSidebar" aria-label="Site menu" aria-hidden="true"><div class="sidebar-top"><div class="brand"><div class="splash-emblem brand-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div>COMMERCE LEAGUE<small>LEARN · COMPETE · RISE</small></div></div><button class="sidebar-close" type="button" id="sidebarClose" aria-label="Close menu">×</button></div><nav class="sidebar-nav" aria-label="Site pages"><button class="sidebar-link" type="button" data-view="home"><span>01</span>Home</button><button class="sidebar-link" type="button" data-view="general"><span>02</span>General</button><button class="sidebar-link" type="button" data-view="league"><span>03</span>League</button></nav><p class="sidebar-note">Choose a section to continue exploring Commerce League.</p></aside>
 <main>
-<div class="page-view" id="homeView"><section class="panel launch-stage" id="welcome" aria-label="Commerce League announcements"><div class="launch-track" id="announcementSlides" aria-roledescription="carousel"><article class="launch-slide active" role="group" aria-roledescription="slide" aria-label="1 of 3"><div class="launch-brand"><div class="splash-emblem launch-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div><p class="launch-name">COMMERCE<br>LEAGUE</p><p class="launch-tagline">Commerce is an Ego — Let’s Get Into Flow</p></div></div><div class="launch-copy"><p class="launch-kicker">WELCOME / 00</p><h1>Learn. Compete. Rise.</h1><p>A home for students to explore commerce, build confidence, and stay connected with the League.</p><a class="btn" href="#learning" data-open-general>Explore General <span aria-hidden="true">↗</span></a></div></article><article class="launch-slide" role="group" aria-roledescription="slide" aria-label="2 of 3"><div class="launch-brand"><div class="splash-emblem launch-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div><p class="launch-name">COMMERCE<br>LEAGUE</p><p class="launch-tagline">Commerce is an Ego — Let&#8217;s Get Into Flow</p><p class="launch-kicker">UPDATE / 01</p></div></div><div class="launch-copy"><p class="launch-kicker">GENERAL / OPEN LEARNING</p><h2>Build your foundations.</h2><p>Explore accounting, economics, and business learning resources in General. Mark subjects complete as you go.</p><a class="btn secondary" href="#learning" data-open-general>Explore learning <span aria-hidden="true">↗</span></a></div></article><article class="launch-slide" role="group" aria-roledescription="slide" aria-label="3 of 3"><div class="launch-brand"><div class="splash-emblem launch-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div><p class="launch-name">COMMERCE<br>LEAGUE</p><p class="launch-tagline">Commerce is an Ego — Let&#8217;s Get Into Flow</p><p class="launch-kicker">UPDATE / 02</p></div></div><div class="launch-copy"><p class="launch-kicker">LEAGUE / STUDENT ACCESS</p><h2>Your League space.</h2><p>League students can set up a CL ID with their organizer-assigned code and choose a password for this device.</p><button class="btn secondary" type="button" data-open-league>Go to League <span aria-hidden="true">↗</span></button></div></article></div><div class="launch-controls" aria-label="Announcement slides"><button class="slide-control" type="button" id="previousSlide" aria-label="Previous slide">←</button><button class="slide-dot" type="button" data-slide-to="0" aria-label="Show welcome slide" aria-current="true"></button><button class="slide-dot" type="button" data-slide-to="1" aria-label="Show update 1" aria-current="false"></button><button class="slide-dot" type="button" data-slide-to="2" aria-label="Show update 2" aria-current="false"></button><span class="slide-count" id="slideCount" aria-live="polite">01 / 03</span><button class="slide-control" type="button" id="pauseSlides" aria-label="Pause automatic slides">Ⅱ</button><button class="slide-control" type="button" id="nextSlide" aria-label="Next slide">→</button></div></section>
+<div class="page-view" id="homeView"><section class="panel launch-stage" id="welcome" aria-label="Commerce League announcements"><div class="launch-track" id="announcementSlides" role="region" aria-roledescription="carousel" aria-label="Commerce League stories. Click or tap to advance, or hold to pause." tabindex="0"><article class="launch-slide active" role="group" aria-roledescription="slide" aria-label="1 of 3"><div class="launch-brand"><div class="splash-emblem launch-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div><p class="launch-name">COMMERCE<br>LEAGUE</p><p class="launch-tagline">Commerce is an Ego — Let’s Get Into Flow</p></div></div><div class="launch-copy"><p class="launch-kicker">OUR BELIEF / 00</p><h1>Know the game beneath the numbers.</h1><p>Read the numbers. Question the trade-offs. Understand the people. Make your move with intent.</p></div></article><article class="launch-slide" role="group" aria-roledescription="slide" aria-label="2 of 3"><div class="launch-side-note"><span>01</span><p>HOW WE LEARN</p><strong>Look closer.<br>Think beyond.</strong></div><div class="launch-copy"><p class="launch-kicker">CL METHOD / 01</p><h2>Commerce begins with a question.</h2><p>We connect accounts, markets, and enterprise to real decisions: who benefits, what changes, and what could be done better.</p></div></article><article class="launch-slide" role="group" aria-roledescription="slide" aria-label="3 of 3"><div class="launch-side-note"><span>02</span><p>HOW WE PLAY</p><strong>Earn your edge.<br>Respect the game.</strong></div><div class="launch-copy"><p class="launch-kicker">CL SPIRIT / 02</p><h2>Learn the craft. Challenge the answer.</h2><p>Explore commerce together: bring evidence, explain your thinking, and respect a different view.</p></div></article></div><div class="launch-hint" aria-hidden="true"><span>CLICK OR TAP TO ADVANCE · HOLD TO PAUSE</span><span id="slideCount">01 / 03</span></div></section>
 <section class="manifesto" id="manifesto" aria-labelledby="manifesto-title">
   <div class="manifesto-head">
     <p class="eyebrow royal-label">ABOUT COMMERCE LEAGUE</p>
@@ -251,20 +253,20 @@ body.sidebar-open{overflow:hidden}
   </div>
   <div class="manifesto-grid">
     <div class="manifesto-opening">
-      <p class="manifesto-callout">A PLACE TO UNDERSTAND THE WORLD OF BUSINESS.</p>
-      <h2 id="manifesto-title">Commerce is more than a subject.</h2>
-      <p class="manifesto-copy">Commerce League brings students together to explore how money, markets, and organisations shape everyday life. Start with clear foundations, follow your curiosity, and connect what you learn to the choices businesses and people make.</p>
-      <div class="manifesto-pillars" aria-label="Our learning approach">
-        <span><b>01</b> LEARN</span>
-        <span><b>02</b> APPLY</span>
-        <span><b>03</b> GROW</span>
+      <p class="manifesto-callout">THE COMMERCE LEAGUE POINT OF VIEW.</p>
+      <h2 id="manifesto-title">Read the signal. Shape the next move.</h2>
+      <p class="manifesto-copy">Commerce is the story of choices: where money goes, what people value, and how an idea becomes a working organisation. We bring those forces into view so students can make sense of them for themselves.</p>
+      <div class="manifesto-pillars" aria-label="Commerce League principles">
+        <span><b>01</b> LEARN WITH INTENT</span>
+        <span><b>02</b> PRACTISE WITH COURAGE</span>
+        <span><b>03</b> COMPETE WITH RESPECT</span>
       </div>
     </div>
     <div class="manifesto-story">
       <p class="eyebrow royal-label">OUR OBJECTIVE</p>
-      <h3>Turn knowledge into sound judgement.</h3>
-      <p>Our objective is to help students build strong foundations in <strong>accounting, economics, and business</strong>—then use those ideas to reason through real decisions with clarity, curiosity, and integrity.</p>
-      <p>Commerce League offers open learning resources to every student. League participation is a guided community experience coordinated by your organizer.</p>
+      <h3>Make commerce live in every decision.</h3>
+      <p>We want students to move beyond memorising terms: understand the numbers, question the forces shaping choice, and explain a decision with confidence and care.</p>
+      <p>Our view is simple: learn with intent, practise with courage, compete with respect, and find your flow. General resources are open to all; League participation is coordinated by your organizer.</p>
       <a class="btn" href="#learning" data-open-general>Explore learning resources <span aria-hidden="true">↗</span></a>
     </div>
   </div>
@@ -274,10 +276,10 @@ body.sidebar-open{overflow:hidden}
       <h3 id="objectives-title">Knowledge with purpose.</h3>
     </div>
     <div class="objective-grid">
-      <article class="objective-card"><span>01 / UNDERSTAND</span><h4>Build the foundations</h4><p>Make sense of financial records, economic choices, and the way organisations work.</p></article>
-      <article class="objective-card"><span>02 / REASON</span><h4>Think with evidence</h4><p>Compare options, notice trade-offs, and explain why a decision makes sense.</p></article>
-      <article class="objective-card"><span>03 / APPLY</span><h4>Connect ideas to life</h4><p>Use classroom concepts to read markets, businesses, and everyday decisions.</p></article>
-      <article class="objective-card"><span>04 / GROW</span><h4>Learn with others</h4><p>Practise fairly, ask better questions, and keep improving with your community.</p></article>
+      <article class="objective-card"><span>01 / READ THE SIGNAL</span><h4>Notice what the numbers reveal</h4><p>Use accounting to see how money moves, what a business owns, and where pressure is building.</p></article>
+      <article class="objective-card"><span>02 / QUESTION THE CHOICE</span><h4>Ask what is driving the decision</h4><p>Look for the incentives, scarcity, and trade-offs shaping a choice in markets and daily life.</p></article>
+      <article class="objective-card"><span>03 / DESIGN THE MOVE</span><h4>Think like a builder</h4><p>Connect people, resources, and customer needs to the value an organisation can create.</p></article>
+      <article class="objective-card"><span>04 / HONOUR THE GAME</span><h4>Compete with character</h4><p>Bring preparation, honesty, and respect to every challenge. Grow from the effort.</p></article>
     </div>
   </div>
   <p class="manifesto-disclaimer">General learning is open to all. League participation is coordinated by your organizer.</p>
@@ -289,9 +291,9 @@ body.sidebar-open{overflow:hidden}
       <p>Learn at your own pace. Return when you are ready to go deeper.</p>
     </div>
     <div class="path-grid">
-      <article class="path-card"><span class="path-number">01</span><p class="eyebrow">GENERAL / OPEN TO ALL</p><h3>Explore</h3><p>Start with the core ideas in accounting, economics, and business. No League profile is needed to learn.</p><a href="#learning" data-open-general>Browse learning <span aria-hidden="true">↗</span></a></article>
-      <article class="path-card"><span class="path-number">02</span><p class="eyebrow">STUDY / PRACTISE</p><h3>Put ideas to work</h3><p>Use the guided topics and trusted outside resources. Mark a subject complete when you have worked through it.</p><a href="#learning" data-open-general>Open the study guide <span aria-hidden="true">↗</span></a></article>
-      <article class="path-card"><span class="path-number">03</span><p class="eyebrow">LEAGUE / GROUP ACCESS</p><h3>Join your community</h3><p>Use your organizer-assigned student code to set up a CL ID and take part in your League group.</p><button type="button" data-open-league>Go to League <span aria-hidden="true">↗</span></button></article>
+      <article class="path-card"><span class="path-number">01</span><p class="eyebrow">GENERAL / OPEN TO ALL</p><h3>Explore</h3><p>Start with the questions behind accounting, economics, and business. General learning is open; take the path at your pace.</p><a href="#learning" data-open-general>Browse learning <span aria-hidden="true">↗</span></a></article>
+      <article class="path-card"><span class="path-number">02</span><p class="eyebrow">STUDY / PRACTISE</p><h3>Put ideas to work</h3><p>Follow an idea from the lesson into a real business choice. Mark a subject complete when you have worked through it.</p><a href="#learning" data-open-general>Open the study guide <span aria-hidden="true">↗</span></a></article>
+      <article class="path-card"><span class="path-number">03</span><p class="eyebrow">LEAGUE / GROUP ACCESS</p><h3>Join your community</h3><p>Ask your organizer for your assigned student code, then bring your preparation and fair play to your League group.</p><button type="button" data-open-league>Go to League <span aria-hidden="true">↗</span></button></article>
     </div>
     <p class="path-note"><strong>About progress:</strong> learning marks and League profiles are saved in this browser on this device. They do not sync to an account server.</p>
   </div>
@@ -307,9 +309,9 @@ body.sidebar-open{overflow:hidden}
       <p class="muted">Start with a guided topic, then explore trusted course materials from established learning providers. You can track subject completion in General.</p>
     </div>
     <div class="resource-cards">
-      <article class="resource-card"><p class="eyebrow">01 / ACCOUNTING</p><h3>Make sense of the numbers.</h3><p>Explore financial records and the statements that help explain an organisation’s position.</p><a class="btn secondary" href="https://openstax.org/books/principles-financial-accounting/pages/preface" target="_blank" rel="noopener noreferrer">Open the textbook <span aria-hidden="true">↗</span></a></article>
-      <article class="resource-card"><p class="eyebrow">02 / ECONOMICS</p><h3>Understand choices and markets.</h3><p>Begin with economics lessons and practice covering scarcity, markets, and incentives.</p><a class="btn secondary" href="https://www.khanacademy.org/economics-finance-domain" target="_blank" rel="noopener noreferrer">Explore economics <span aria-hidden="true">↗</span></a></article>
-      <article class="resource-card"><p class="eyebrow">03 / BUSINESS</p><h3>See how organisations operate.</h3><p>Study the foundations of management, planning, leadership, and decision-making.</p><a class="btn secondary" href="https://openstax.org/books/principles-management/pages/preface" target="_blank" rel="noopener noreferrer">Open the textbook <span aria-hidden="true">↗</span></a></article>
+      <article class="resource-card"><p class="eyebrow">01 / ACCOUNTING</p><h3>Make sense of the numbers.</h3><p>Follow a transaction from its first entry to what it reveals about a business—and what it cannot tell you alone.</p><a class="btn secondary" href="https://openstax.org/books/principles-financial-accounting/pages/preface" target="_blank" rel="noopener noreferrer">Open the textbook <span aria-hidden="true">↗</span></a></article>
+      <article class="resource-card"><p class="eyebrow">02 / ECONOMICS</p><h3>Understand choices and markets.</h3><p>Trace how scarcity, incentives, and choices reshape the market around us.</p><a class="btn secondary" href="https://www.khanacademy.org/economics-finance-domain" target="_blank" rel="noopener noreferrer">Explore economics <span aria-hidden="true">↗</span></a></article>
+      <article class="resource-card"><p class="eyebrow">03 / BUSINESS</p><h3>See how organisations operate.</h3><p>Explore how people turn a customer need into value, then build an organisation that can deliver it.</p><a class="btn secondary" href="https://openstax.org/books/principles-management/pages/preface" target="_blank" rel="noopener noreferrer">Open the textbook <span aria-hidden="true">↗</span></a></article>
     </div>
     <p class="resource-note">Resources open on their providers’ websites. Availability and course requirements may vary.</p>
   </div>
@@ -430,12 +432,12 @@ function matchingBytes(first, second) {
 }
 
 const announcementSlides = [...document.querySelectorAll(".launch-slide")];
-const slideDots = [...document.querySelectorAll(".slide-dot")];
+const announcementTrack = document.getElementById("announcementSlides");
 const slideCount = document.getElementById("slideCount");
-const pauseSlidesButton = document.getElementById("pauseSlides");
 const reduceSlideMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let currentSlide = 0;
-let slidesPaused = reduceSlideMotion;
+let holdStartedAt = 0;
+let ignoreNextClick = false;
 let slideTimer;
 
 function showAnnouncement(index) {
@@ -445,28 +447,55 @@ function showAnnouncement(index) {
     slide.classList.toggle("active", isCurrent);
     slide.setAttribute("aria-hidden", String(!isCurrent));
   });
-  slideDots.forEach((dot, dotIndex) => {
-    dot.setAttribute("aria-current", String(dotIndex === currentSlide));
-  });
   slideCount.textContent = `${String(currentSlide + 1).padStart(2, "0")} / ${String(announcementSlides.length).padStart(2, "0")}`;
 }
 
-function updatePauseControl() {
-  pauseSlidesButton.textContent = slidesPaused ? "▶" : "Ⅱ";
-  pauseSlidesButton.setAttribute(
-    "aria-label",
-    slidesPaused ? "Resume automatic slides" : "Pause automatic slides",
-  );
-}
-
 function startAnnouncementTimer() {
-  window.clearInterval(slideTimer);
+  window.clearTimeout(slideTimer);
   const siteIsVisible = !document.getElementById("siteHome").classList.contains("hidden");
   const homeIsActive = !document.getElementById("homeView").classList.contains("hidden");
-  if (!slidesPaused && !document.hidden && siteIsVisible && homeIsActive) {
-    slideTimer = window.setInterval(() => showAnnouncement(currentSlide + 1), 7000);
+  if (!reduceSlideMotion && !document.hidden && siteIsVisible && homeIsActive && !holdStartedAt) {
+    slideTimer = window.setTimeout(() => {
+      showAnnouncement(currentSlide + 1);
+      startAnnouncementTimer();
+    }, 5000);
   }
 }
+
+announcementTrack.addEventListener("pointerdown", (event) => {
+  if (event.button !== 0) return;
+  holdStartedAt = performance.now();
+  window.clearTimeout(slideTimer);
+  if (announcementTrack.setPointerCapture) announcementTrack.setPointerCapture(event.pointerId);
+});
+
+announcementTrack.addEventListener("pointerup", () => {
+  if (!holdStartedAt) return;
+  ignoreNextClick = performance.now() - holdStartedAt >= 350;
+  holdStartedAt = 0;
+  startAnnouncementTimer();
+  if (ignoreNextClick) window.setTimeout(() => { ignoreNextClick = false; }, 0);
+});
+
+announcementTrack.addEventListener("pointercancel", () => {
+  holdStartedAt = 0;
+  ignoreNextClick = false;
+  startAnnouncementTimer();
+});
+
+announcementTrack.addEventListener("click", (event) => {
+  if (ignoreNextClick || event.detail === 0) return;
+  showAnnouncement(currentSlide + 1);
+  startAnnouncementTimer();
+});
+
+announcementTrack.addEventListener("keydown", (event) => {
+  const keys = { Enter: 1, " ": 1, ArrowRight: 1, ArrowLeft: -1 };
+  if (!Object.hasOwn(keys, event.key)) return;
+  event.preventDefault();
+  showAnnouncement(currentSlide + keys[event.key]);
+  startAnnouncementTimer();
+});
 
 function setView(name) {
   const viewNames = ["home", "general", "league"];
@@ -602,26 +631,6 @@ document.querySelectorAll("[data-open-general]").forEach((link) => {
 });
 document.querySelectorAll("[data-open-league]").forEach((button) => {
   button.addEventListener("click", () => setView("league"));
-});
-document.getElementById("previousSlide").addEventListener("click", () => {
-  showAnnouncement(currentSlide - 1);
-  startAnnouncementTimer();
-});
-document.getElementById("nextSlide").addEventListener("click", () => {
-  showAnnouncement(currentSlide + 1);
-  startAnnouncementTimer();
-});
-slideDots.forEach((dot) => {
-  dot.addEventListener("click", () => {
-    showAnnouncement(Number(dot.dataset.slideTo));
-    startAnnouncementTimer();
-  });
-});
-updatePauseControl();
-pauseSlidesButton.addEventListener("click", () => {
-  slidesPaused = !slidesPaused;
-  updatePauseControl();
-  startAnnouncementTimer();
 });
 document.addEventListener("visibilitychange", startAnnouncementTimer);
 showAnnouncement(0);
