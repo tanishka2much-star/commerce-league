@@ -181,6 +181,58 @@ body.sidebar-open{overflow:hidden}
 @keyframes slideIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:700px){.launch-stage#welcome{padding:24px 20px}.launch-track,.launch-slide{min-height:400px}.launch-slide,.launch-slide.active{grid-template-columns:1fr;align-content:center;gap:25px}.launch-brand{gap:20px}.launch-emblem{width:92px;height:92px;min-width:92px}.launch-emblem .splash-cl{font-size:62px}.launch-name{font-size:clamp(19px,6vw,30px);letter-spacing:2px}.launch-copy{border-left:0;border-top:1px solid rgba(118,228,255,.28);padding:18px 0 0}.launch-controls{justify-content:center}}
 @media(prefers-reduced-motion:reduce){.launch-slide{animation:none}}
+
+/* Commerce League learning journey: ink, electric blue, and restrained gold */
+:root{--royal-gold:#d8c27d;--royal-ink:#0a0d16}
+.royal-label{color:var(--royal-gold)!important}
+.manifesto{background:radial-gradient(ellipse at 84% 20%,rgba(216,194,125,.07),transparent 35%),linear-gradient(125deg,#0d1420,#11151f 58%,#0a1018)}
+.manifesto-head{border-color:rgba(216,194,125,.28)}
+.manifesto-index{color:#b9aa79}
+.manifesto-opening h2,.manifesto-story h3,.section-heading h2,.section-heading h3,.path-card h3,.resource-card h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.025em}
+.manifesto-story h3{font-size:clamp(27px,3.2vw,40px);line-height:1.13;margin:0 0 18px;color:#f4f1e8}
+.manifesto-story .btn{margin-top:5px}
+.manifesto-pillars b{color:var(--royal-gold)}
+.objectives{max-width:1650px;margin:clamp(52px,7vw,88px) auto 0;padding-top:28px;border-top:1px solid rgba(216,194,125,.2)}
+.section-heading h3{margin:0;font-size:clamp(28px,3vw,40px);color:#f4f1e8}
+.objective-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:25px}
+.objective-card{min-height:178px;padding:21px 20px;border:1px solid rgba(216,194,125,.18);background:linear-gradient(145deg,rgba(23,30,42,.92),rgba(9,14,22,.86));box-shadow:inset 0 1px rgba(255,255,255,.025)}
+.objective-card>span{color:var(--royal-gold);font-size:9px;font-weight:900;letter-spacing:1.8px}
+.objective-card h4{margin:18px 0 7px;color:#f5f3ec;font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:500}
+.objective-card p{margin:0;color:#aeb8c6;font-size:12px;line-height:1.7}
+.path-section{padding:clamp(54px,7vw,96px) clamp(22px,5vw,88px);background:linear-gradient(180deg,#080c13,#0d121b);border-bottom:1px solid rgba(118,228,255,.16)}
+.path-inner{max-width:1650px;margin:auto}
+.path-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:28px}
+.path-heading h2{margin:0;color:#f4f1e8;font-size:clamp(32px,4vw,52px)}
+.path-heading>p{max-width:400px;margin:0;color:var(--muted);font-size:14px}
+.path-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.path-card{position:relative;min-height:255px;padding:27px 25px;border:1px solid rgba(118,228,255,.16);border-top:2px solid var(--royal-gold);background:linear-gradient(145deg,rgba(17,27,39,.9),rgba(7,12,19,.94))}
+.path-number{position:absolute;top:18px;right:20px;color:rgba(216,194,125,.72);font-family:Georgia,"Times New Roman",serif;font-size:23px}
+.path-card .eyebrow{margin:3px 40px 14px 0;font-size:9px;letter-spacing:1.8px}
+.path-card h3{margin:0 0 10px;color:#f4f1e8;font-size:29px}
+.path-card>p:not(.eyebrow){min-height:66px;color:#aeb8c6;font-size:13px;line-height:1.7}
+.path-card>a,.path-card>button{display:inline-flex;align-items:center;gap:9px;margin-top:8px;padding:0;border:0;background:transparent;color:var(--royal-gold);font-size:11px;font-weight:900;letter-spacing:1px;text-decoration:none;text-transform:uppercase;cursor:pointer}
+.path-card>a:hover,.path-card>button:hover{color:#f5f3ec}
+.path-note{margin:24px 0 0;padding:14px 17px;border-left:2px solid var(--royal-gold);background:rgba(216,194,125,.05);color:#aeb8c6;font-size:11px}
+.path-note strong{color:#e4d5a4}
+.home-library{background:radial-gradient(ellipse at 15% 0%,rgba(118,228,255,.055),transparent 34%),#090e15}
+.home-library .resource-card{min-height:230px;border-color:rgba(216,194,125,.2)}
+.home-library .resource-card h3{color:#f5f3ec}
+.home-library .resource-card .eyebrow{color:var(--royal-gold)}
+.home-library .btn{margin-top:14px}
+.learning-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.8fr);align-items:end;gap:36px;margin:32px 0 10px}
+.learning-intro h2{margin:0;color:#f4f1e8;font-family:Georgia,"Times New Roman",serif;font-size:clamp(34px,4vw,54px);font-weight:500}
+.learning-intro>p{max-width:580px;margin:0 0 4px;line-height:1.8}
+.resource-card{display:flex;flex-direction:column;align-items:flex-start}
+.resource-card h3{color:#f5f3ec}
+.resource-card .resource-links{width:100%;display:grid;gap:9px;margin:13px 0 4px}
+.resource-links a{display:flex;flex-direction:column;gap:3px;padding:11px 12px;border-left:2px solid var(--royal-gold);background:rgba(216,194,125,.045);color:#e6eaf0;font-size:11px;font-weight:800;line-height:1.45;text-decoration:none}
+.resource-links a:hover{background:rgba(216,194,125,.11);color:#fff}
+.resource-links a span{color:#a9b5c4;font-size:10px;font-weight:500}
+.resource-card .lesson-toggle{margin-top:auto}
+.resource-note{max-width:900px;margin:24px 0 0;color:#8c98a8;font-size:11px;line-height:1.7}
+@media(max-width:1000px){.objective-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.path-card{padding:24px 20px}.path-card>p:not(.eyebrow){min-height:88px}}
+@media(max-width:800px){.path-heading{align-items:flex-start;flex-direction:column;gap:12px}.path-grid{grid-template-columns:1fr}.path-card{min-height:0}.path-card>p:not(.eyebrow){min-height:0}.learning-intro{grid-template-columns:1fr;gap:10px}.home-library .resource-card{min-height:0}}
+@media(max-width:520px){.objective-grid{grid-template-columns:1fr}.objective-card{min-height:0}.path-section{padding:48px 20px}.manifesto-story h3{font-size:30px}.learning-intro h2{font-size:36px}}
 </style>
 </head>
 <body>
@@ -191,39 +243,530 @@ body.sidebar-open{overflow:hidden}
 <header class="top statusbar" aria-label="Main navigation"><div class="statusbar-inner"><button class="brand brand-trigger" type="button" id="menuToggle" aria-label="Open Commerce League menu" aria-controls="siteSidebar" aria-expanded="false"><div class="splash-emblem brand-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><span>COMMERCE LEAGUE<small>LEARN · COMPETE · RISE</small></span></button><nav class="statusbar-meta" aria-label="Choose a section"><button class="nav-link" type="button" id="navHome" aria-current="page">Home</button><button class="nav-link" type="button" id="navGeneral" aria-current="false">General</button><button class="nav-link" type="button" id="navLeague" aria-current="false">League</button></nav></div></header>
 <div class="sidebar-backdrop hidden" id="sidebarBackdrop"></div><aside class="sidebar hidden" id="siteSidebar" aria-label="Site menu" aria-hidden="true"><div class="sidebar-top"><div class="brand"><div class="splash-emblem brand-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div>COMMERCE LEAGUE<small>LEARN · COMPETE · RISE</small></div></div><button class="sidebar-close" type="button" id="sidebarClose" aria-label="Close menu">×</button></div><nav class="sidebar-nav" aria-label="Site pages"><button class="sidebar-link" type="button" data-view="home"><span>01</span>Home</button><button class="sidebar-link" type="button" data-view="general"><span>02</span>General</button><button class="sidebar-link" type="button" data-view="league"><span>03</span>League</button></nav><p class="sidebar-note">Choose a section to continue exploring Commerce League.</p></aside>
 <main>
-<div class="page-view" id="homeView"><section class="panel launch-stage" id="welcome" aria-label="Commerce League announcements"><div class="launch-track" id="announcementSlides" aria-roledescription="carousel"><article class="launch-slide active" role="group" aria-roledescription="slide" aria-label="1 of 3"><div class="launch-brand"><div class="splash-emblem launch-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div><p class="launch-name">COMMERCE<br>LEAGUE</p><p class="launch-tagline">Commerce is an Ego — Let’s Get Into Flow</p></div></div><div class="launch-copy"><p class="launch-kicker">WELCOME / 00</p><h1>Learn. Compete. Rise.</h1><p>A home for students to explore commerce, build confidence, and stay connected with the League.</p><a class="btn" href="#learning" data-open-general>Explore General <span aria-hidden="true">↗</span></a></div></article><article class="launch-slide" role="group" aria-roledescription="slide" aria-label="2 of 3"><div class="launch-brand"><div class="splash-emblem launch-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div><p class="launch-name">COMMERCE<br>LEAGUE</p><p class="launch-tagline">LEARN · COMPETE · RISE</p><p class="launch-kicker">UPDATE / 01</p></div></div><div class="launch-copy"><p class="launch-kicker">GENERAL / OPEN LEARNING</p><h2>Build your foundations.</h2><p>Explore accounting, economics, and business learning resources in General. Mark subjects complete as you go.</p><a class="btn secondary" href="#learning" data-open-general>Explore learning <span aria-hidden="true">↗</span></a></div></article><article class="launch-slide" role="group" aria-roledescription="slide" aria-label="3 of 3"><div class="launch-brand"><div class="splash-emblem launch-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div><p class="launch-name">COMMERCE<br>LEAGUE</p><p class="launch-tagline">LEARN · COMPETE · RISE</p><p class="launch-kicker">UPDATE / 02</p></div></div><div class="launch-copy"><p class="launch-kicker">LEAGUE / STUDENT ACCESS</p><h2>Your League space.</h2><p>League students can set up a CL ID with their organizer-assigned code and choose a password for this device.</p><button class="btn secondary" type="button" data-open-league>Go to League <span aria-hidden="true">↗</span></button></div></article></div><div class="launch-controls" aria-label="Announcement slides"><button class="slide-control" type="button" id="previousSlide" aria-label="Previous slide">←</button><button class="slide-dot" type="button" data-slide-to="0" aria-label="Show welcome slide" aria-current="true"></button><button class="slide-dot" type="button" data-slide-to="1" aria-label="Show update 1" aria-current="false"></button><button class="slide-dot" type="button" data-slide-to="2" aria-label="Show update 2" aria-current="false"></button><span class="slide-count" id="slideCount" aria-live="polite">01 / 03</span><button class="slide-control" type="button" id="pauseSlides" aria-label="Pause automatic slides">Ⅱ</button><button class="slide-control" type="button" id="nextSlide" aria-label="Next slide">→</button></div></section>
-<section class="manifesto" id="manifesto" aria-labelledby="manifesto-title"><div class="manifesto-head"><p class="eyebrow">WHY COMMERCE LEAGUE / THE ARENA</p><span class="manifesto-index">CL / LEARNING</span></div><div class="manifesto-grid"><div class="manifesto-opening"><p class="manifesto-callout">COMMERCE STUDENTS—<br>YOUR ARENA AWAITS.</p><h2 id="manifesto-title">Commerce lives<br>in every choice.</h2><p class="manifesto-copy">How we use resources. How we read a market. How we solve a problem and shape what happens next. Understanding commerce takes curiosity and practice.</p><div class="manifesto-pillars"><span><b>01</b> LEARN</span><span><b>02</b> PRACTISE</span><span><b>03</b> CONNECT</span></div></div><div class="manifesto-story"><p><strong>Commerce League is a place to learn on your own terms</strong> and connect with fellow students who are ready to grow. Build knowledge, develop judgement, and keep improving.</p><p>We call that inner drive <strong>ego</strong>: the belief that your potential is worth discovering and refining. Give that drive focus. Put in the work. Return to the arena. Knowledge becomes judgement, practice becomes instinct, and effort can open the way to <strong>flow</strong>.</p><p class="manifesto-closer">LEARN WITH INTENT.<br>PRACTISE WITH COURAGE.<br>COMPETE WITH RESPECT.<br><span>FIND YOUR EDGE. GET INTO FLOW.</span></p><a class="btn" href="#learning" data-open-general>Explore the foundations <span aria-hidden="true">↗</span></a></div></div><p class="manifesto-disclaimer">Commerce League learning resources are open to all students. League participation is coordinated by your organizer.</p></section></div><div class="page-view hidden" id="generalView"><section class="resource-hub" id="learning" aria-labelledby="learning-title"><div class="resource-hub-inner"><div class="manifesto-head"><p class="eyebrow">OPEN LEARNING / COMMERCE FOUNDATIONS</p><span class="manifesto-index">LEARN AT YOUR PACE</span></div><h2 id="learning-title">Explore the foundations</h2><p class="muted">Choose a subject to begin. Your completion marks stay in this browser and can be backed up from your League profile.</p><div class="resource-cards"><article class="resource-card"><p class="eyebrow">SUBJECT 01</p><h3>Accounting</h3><p>Understand how businesses track money and communicate financial position.</p><ul><li>Assets, liabilities, and equity</li><li>Revenue, costs, and profit</li><li>How records support decisions</li></ul><button class="btn secondary lesson-toggle" data-lesson="accounting" type="button">Mark complete</button><p class="learn-progress" id="progress-accounting" aria-live="polite"></p></article><article class="resource-card"><p class="eyebrow">SUBJECT 02</p><h3>Economics</h3><p>Explore how people and businesses make choices when resources are limited.</p><ul><li>Demand and supply</li><li>Markets and incentives</li><li>Opportunity cost and resources</li></ul><button class="btn secondary lesson-toggle" data-lesson="economics" type="button">Mark complete</button><p class="learn-progress" id="progress-economics" aria-live="polite"></p></article><article class="resource-card"><p class="eyebrow">SUBJECT 03</p><h3>Business</h3><p>Connect planning, customers, and resources to everyday business choices.</p><ul><li>Customers and value</li><li>Comparing business plans</li><li>Strategy and decision-making</li></ul><button class="btn secondary lesson-toggle" data-lesson="business" type="button">Mark complete</button><p class="learn-progress" id="progress-business" aria-live="polite"></p></article></div></div></section></div>
+<div class="page-view" id="homeView"><section class="panel launch-stage" id="welcome" aria-label="Commerce League announcements"><div class="launch-track" id="announcementSlides" aria-roledescription="carousel"><article class="launch-slide active" role="group" aria-roledescription="slide" aria-label="1 of 3"><div class="launch-brand"><div class="splash-emblem launch-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div><p class="launch-name">COMMERCE<br>LEAGUE</p><p class="launch-tagline">Commerce is an Ego — Let’s Get Into Flow</p></div></div><div class="launch-copy"><p class="launch-kicker">WELCOME / 00</p><h1>Learn. Compete. Rise.</h1><p>A home for students to explore commerce, build confidence, and stay connected with the League.</p><a class="btn" href="#learning" data-open-general>Explore General <span aria-hidden="true">↗</span></a></div></article><article class="launch-slide" role="group" aria-roledescription="slide" aria-label="2 of 3"><div class="launch-brand"><div class="splash-emblem launch-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div><p class="launch-name">COMMERCE<br>LEAGUE</p><p class="launch-tagline">Commerce is an Ego — Let&#8217;s Get Into Flow</p><p class="launch-kicker">UPDATE / 01</p></div></div><div class="launch-copy"><p class="launch-kicker">GENERAL / OPEN LEARNING</p><h2>Build your foundations.</h2><p>Explore accounting, economics, and business learning resources in General. Mark subjects complete as you go.</p><a class="btn secondary" href="#learning" data-open-general>Explore learning <span aria-hidden="true">↗</span></a></div></article><article class="launch-slide" role="group" aria-roledescription="slide" aria-label="3 of 3"><div class="launch-brand"><div class="splash-emblem launch-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div><p class="launch-name">COMMERCE<br>LEAGUE</p><p class="launch-tagline">Commerce is an Ego — Let&#8217;s Get Into Flow</p><p class="launch-kicker">UPDATE / 02</p></div></div><div class="launch-copy"><p class="launch-kicker">LEAGUE / STUDENT ACCESS</p><h2>Your League space.</h2><p>League students can set up a CL ID with their organizer-assigned code and choose a password for this device.</p><button class="btn secondary" type="button" data-open-league>Go to League <span aria-hidden="true">↗</span></button></div></article></div><div class="launch-controls" aria-label="Announcement slides"><button class="slide-control" type="button" id="previousSlide" aria-label="Previous slide">←</button><button class="slide-dot" type="button" data-slide-to="0" aria-label="Show welcome slide" aria-current="true"></button><button class="slide-dot" type="button" data-slide-to="1" aria-label="Show update 1" aria-current="false"></button><button class="slide-dot" type="button" data-slide-to="2" aria-label="Show update 2" aria-current="false"></button><span class="slide-count" id="slideCount" aria-live="polite">01 / 03</span><button class="slide-control" type="button" id="pauseSlides" aria-label="Pause automatic slides">Ⅱ</button><button class="slide-control" type="button" id="nextSlide" aria-label="Next slide">→</button></div></section>
+<section class="manifesto" id="manifesto" aria-labelledby="manifesto-title">
+  <div class="manifesto-head">
+    <p class="eyebrow royal-label">ABOUT COMMERCE LEAGUE</p>
+    <span class="manifesto-index">LEARNING · PRACTICE · COMMUNITY</span>
+  </div>
+  <div class="manifesto-grid">
+    <div class="manifesto-opening">
+      <p class="manifesto-callout">A PLACE TO UNDERSTAND THE WORLD OF BUSINESS.</p>
+      <h2 id="manifesto-title">Commerce is more than a subject.</h2>
+      <p class="manifesto-copy">Commerce League brings students together to explore how money, markets, and organisations shape everyday life. Start with clear foundations, follow your curiosity, and connect what you learn to the choices businesses and people make.</p>
+      <div class="manifesto-pillars" aria-label="Our learning approach">
+        <span><b>01</b> LEARN</span>
+        <span><b>02</b> APPLY</span>
+        <span><b>03</b> GROW</span>
+      </div>
+    </div>
+    <div class="manifesto-story">
+      <p class="eyebrow royal-label">OUR OBJECTIVE</p>
+      <h3>Turn knowledge into sound judgement.</h3>
+      <p>Our objective is to help students build strong foundations in <strong>accounting, economics, and business</strong>—then use those ideas to reason through real decisions with clarity, curiosity, and integrity.</p>
+      <p>Commerce League offers open learning resources to every student. League participation is a guided community experience coordinated by your organizer.</p>
+      <a class="btn" href="#learning" data-open-general>Explore learning resources <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <div class="objectives" aria-labelledby="objectives-title">
+    <div class="section-heading">
+      <p class="eyebrow royal-label">WHAT STUDENTS CAN BUILD</p>
+      <h3 id="objectives-title">Knowledge with purpose.</h3>
+    </div>
+    <div class="objective-grid">
+      <article class="objective-card"><span>01 / UNDERSTAND</span><h4>Build the foundations</h4><p>Make sense of financial records, economic choices, and the way organisations work.</p></article>
+      <article class="objective-card"><span>02 / REASON</span><h4>Think with evidence</h4><p>Compare options, notice trade-offs, and explain why a decision makes sense.</p></article>
+      <article class="objective-card"><span>03 / APPLY</span><h4>Connect ideas to life</h4><p>Use classroom concepts to read markets, businesses, and everyday decisions.</p></article>
+      <article class="objective-card"><span>04 / GROW</span><h4>Learn with others</h4><p>Practise fairly, ask better questions, and keep improving with your community.</p></article>
+    </div>
+  </div>
+  <p class="manifesto-disclaimer">General learning is open to all. League participation is coordinated by your organizer.</p>
+</section>
+<section class="path-section" id="how-it-works" aria-labelledby="path-title">
+  <div class="path-inner">
+    <div class="section-heading path-heading">
+      <div><p class="eyebrow royal-label">YOUR NEXT STEP</p><h2 id="path-title">A clear path into commerce.</h2></div>
+      <p>Learn at your own pace. Return when you are ready to go deeper.</p>
+    </div>
+    <div class="path-grid">
+      <article class="path-card"><span class="path-number">01</span><p class="eyebrow">GENERAL / OPEN TO ALL</p><h3>Explore</h3><p>Start with the core ideas in accounting, economics, and business. No League profile is needed to learn.</p><a href="#learning" data-open-general>Browse learning <span aria-hidden="true">↗</span></a></article>
+      <article class="path-card"><span class="path-number">02</span><p class="eyebrow">STUDY / PRACTISE</p><h3>Put ideas to work</h3><p>Use the guided topics and trusted outside resources. Mark a subject complete when you have worked through it.</p><a href="#learning" data-open-general>Open the study guide <span aria-hidden="true">↗</span></a></article>
+      <article class="path-card"><span class="path-number">03</span><p class="eyebrow">LEAGUE / GROUP ACCESS</p><h3>Join your community</h3><p>Use your organizer-assigned student code to set up a CL ID and take part in your League group.</p><button type="button" data-open-league>Go to League <span aria-hidden="true">↗</span></button></article>
+    </div>
+    <p class="path-note"><strong>About progress:</strong> learning marks and League profiles are saved in this browser on this device. They do not sync to an account server.</p>
+  </div>
+</section>
+<section class="resource-hub home-library" id="featured-resources" aria-labelledby="featured-resources-title">
+  <div class="resource-hub-inner">
+    <div class="manifesto-head">
+      <p class="eyebrow royal-label">CURATED / START HERE</p>
+      <span class="manifesto-index">OPEN STUDY MATERIALS</span>
+    </div>
+    <div class="learning-intro">
+      <div><p class="eyebrow">LEARNING RESOURCES</p><h2 id="featured-resources-title">Begin with one idea.</h2></div>
+      <p class="muted">Start with a guided topic, then explore trusted course materials from established learning providers. You can track subject completion in General.</p>
+    </div>
+    <div class="resource-cards">
+      <article class="resource-card"><p class="eyebrow">01 / ACCOUNTING</p><h3>Make sense of the numbers.</h3><p>Explore financial records and the statements that help explain an organisation’s position.</p><a class="btn secondary" href="https://openstax.org/books/principles-financial-accounting/pages/preface" target="_blank" rel="noopener noreferrer">Open the textbook <span aria-hidden="true">↗</span></a></article>
+      <article class="resource-card"><p class="eyebrow">02 / ECONOMICS</p><h3>Understand choices and markets.</h3><p>Begin with economics lessons and practice covering scarcity, markets, and incentives.</p><a class="btn secondary" href="https://www.khanacademy.org/economics-finance-domain" target="_blank" rel="noopener noreferrer">Explore economics <span aria-hidden="true">↗</span></a></article>
+      <article class="resource-card"><p class="eyebrow">03 / BUSINESS</p><h3>See how organisations operate.</h3><p>Study the foundations of management, planning, leadership, and decision-making.</p><a class="btn secondary" href="https://openstax.org/books/principles-management/pages/preface" target="_blank" rel="noopener noreferrer">Open the textbook <span aria-hidden="true">↗</span></a></article>
+    </div>
+    <p class="resource-note">Resources open on their providers’ websites. Availability and course requirements may vary.</p>
+  </div>
+</section>
+</div>
+<div class="page-view hidden" id="generalView"><section class="resource-hub" id="learning" aria-labelledby="learning-title">
+  <div class="resource-hub-inner">
+    <div class="manifesto-head">
+      <p class="eyebrow royal-label">GENERAL / COMMERCE FOUNDATIONS</p>
+      <span class="manifesto-index">OPEN LEARNING · SELF-PACED</span>
+    </div>
+    <div class="learning-intro">
+      <div><p class="eyebrow">START WITH THE BASICS</p><h2 id="learning-title">Explore the foundations</h2></div>
+      <p class="muted">Choose a subject, review its key ideas, then continue with the selected learning materials. Mark a subject complete when you have finished your study.</p>
+    </div>
+    <div class="resource-cards">
+      <article class="resource-card" id="resource-accounting">
+        <p class="eyebrow">SUBJECT 01 / ACCOUNTING</p><h3>Read the story behind the numbers.</h3>
+        <p>Learn how organisations record transactions and use financial statements to understand performance.</p>
+        <ul><li>Assets, liabilities, and equity</li><li>Revenue, costs, and profit</li><li>How records inform decisions</li></ul>
+        <div class="resource-links"><a href="https://openstax.org/books/principles-financial-accounting/pages/preface" target="_blank" rel="noopener noreferrer">OpenStax · Financial Accounting <span>Textbook ↗</span></a><a href="https://www.khanacademy.org/math/core-finance" target="_blank" rel="noopener noreferrer">Khan Academy · Finance and capital markets <span>Lessons ↗</span></a></div>
+        <button class="btn secondary lesson-toggle" data-lesson="accounting" type="button">Mark complete</button><p class="learn-progress" id="progress-accounting" aria-live="polite"></p>
+      </article>
+      <article class="resource-card" id="resource-economics">
+        <p class="eyebrow">SUBJECT 02 / ECONOMICS</p><h3>See how choices shape markets.</h3>
+        <p>Explore how people and businesses make choices when resources are limited, and how those choices affect markets.</p>
+        <ul><li>Demand, supply, and prices</li><li>Incentives and opportunity cost</li><li>Competition and market outcomes</li></ul>
+        <div class="resource-links"><a href="https://www.khanacademy.org/economics-finance-domain" target="_blank" rel="noopener noreferrer">Khan Academy · Economics <span>Lessons and practice ↗</span></a><a href="https://ocw.mit.edu/courses/14-01-principles-of-microeconomics-fall-2023/" target="_blank" rel="noopener noreferrer">MIT OpenCourseWare · Microeconomics <span>Independent study ↗</span></a></div>
+        <button class="btn secondary lesson-toggle" data-lesson="economics" type="button">Mark complete</button><p class="learn-progress" id="progress-economics" aria-live="polite"></p>
+      </article>
+      <article class="resource-card" id="resource-business">
+        <p class="eyebrow">SUBJECT 03 / BUSINESS</p><h3>Understand how organisations work.</h3>
+        <p>Connect customers, people, operations, and resources to the decisions that help organisations create value.</p>
+        <ul><li>Customers and value</li><li>Planning and organisation</li><li>Strategy and decision-making</li></ul>
+        <div class="resource-links"><a href="https://openstax.org/books/principles-management/pages/preface" target="_blank" rel="noopener noreferrer">OpenStax · Principles of Management <span>Free textbook ↗</span></a><a href="https://harvardonline.harvard.edu/course" target="_blank" rel="noopener noreferrer">Harvard Online · Business and management <span>Course catalogue ↗</span></a></div>
+        <button class="btn secondary lesson-toggle" data-lesson="business" type="button">Mark complete</button><p class="learn-progress" id="progress-business" aria-live="polite"></p>
+      </article>
+    </div>
+    <p class="resource-note">These links lead to independent learning sites. Course format, access, and availability are set by each provider. Accounting standards and course examples can vary by country, so follow the guidance for your class.</p>
+  </div>
+</section>
+</div>
 <section class="page-view hidden" id="leagueView"><div class="account-shell" id="leagueAccess"><p class="eyebrow">COMMERCE LEAGUE / STUDENT ACCESS</p><h1>CL League</h1><p class="intro muted">Use the assigned student code from your organizer to create your CL ID. Choose your own password on this device.</p><div class="local-warning"><strong>Your profile and progress are stored in this browser on this device.</strong> This site has no account server. Your password cannot be used to sign in on another device, and the League cannot verify membership or recover a forgotten password through this page. Export your progress backup to move it between devices.</div><div class="profile-box hidden" id="signInBox"><h2>Sign in on this device</h2><p class="muted">Enter the CL ID made from your assigned student code and the password you created here.</p><form id="signInForm"><div class="field"><label for="loginClId">CL ID</label><input id="loginClId" autocomplete="username" required placeholder="CL-YourAssignedCode"></div><div class="field"><label for="loginPassword">Your password</label><input id="loginPassword" type="password" autocomplete="current-password" required></div><div class="actions"><button class="btn" type="submit">Open my League profile ↗</button></div></form></div><div class="profile-box" id="createProfileBox"><h2>Create your CL ID</h2><p class="muted">Enter the student code assigned to you by your organizer. Your CL ID will be based on that code. Create and remember your own password.</p><form id="createProfileForm"><div class="field"><label for="assignedStudentCode">Assigned student code</label><input id="assignedStudentCode" maxlength="30" autocomplete="off" required placeholder="Your assigned code"></div><div class="field"><label for="newPassword">Create your password (8 or more characters)</label><input id="newPassword" type="password" minlength="8" maxlength="128" autocomplete="new-password" required></div><div class="field"><label for="confirmPassword">Confirm your password</label><input id="confirmPassword" type="password" minlength="8" maxlength="128" autocomplete="new-password" required></div><div class="actions"><button class="btn" type="submit">Create my profile ↗</button></div></form></div><p class="tool-status" id="authStatus" aria-live="polite"></p></div>
 <div class="account-shell hidden" id="leagueDashboard"><p class="eyebrow">YOUR LEAGUE PROFILE</p><div class="cl-large">C<span>L</span></div><h1 id="welcomeLeague">Welcome to the League.</h1><div class="local-warning"><strong>Keep a backup of your local progress.</strong> Browser data may be cleared, and profile access works only on this device. Export a backup before changing devices.</div><div class="local-tools"><h3>Your CL ID</h3><p class="muted">This ID is based on the student code assigned by your organizer.</p><p class="local-id" id="localClId">Not set up</p><button class="btn secondary" type="button" id="logOutProfile">Sign out</button></div><div class="rule"></div><h2>Learning areas</h2><div class="league-grid"><article class="league-card"><span class="eyebrow">SUBJECT 01</span><b>Accounting</b><p>Build precision with concepts, records, and calculations.</p></article><article class="league-card"><span class="eyebrow">SUBJECT 02</span><b>Economics</b><p>Explore markets, incentives, and economic reasoning.</p></article><article class="league-card"><span class="eyebrow">SUBJECT 03</span><b>Business</b><p>Practise strategy and decision-making.</p></article></div><div class="local-tools"><h3>Your learning progress</h3><p class="muted">Completion marks are saved locally in this browser. Export a backup to transfer them to another device; import merges them with progress already here.</p><ul class="history-list" id="historyList"></ul><div class="actions"><button class="btn" type="button" id="exportProgress">Export Progress ↓</button><label class="btn secondary" for="importFile">Import Progress ↑</label><input class="file-input" id="importFile" type="file" accept="application/json,.json"><button class="btn secondary" type="button" id="signOutBottom">Sign out</button></div><p class="tool-status" id="progressStatus" aria-live="polite"></p></div></div></section>
 </main><footer class="footer"><div class="wrap"><span>© 2026 COMMERCE LEAGUE</span><span>FAIR PLAY. REAL LEARNING. EARN YOUR PLACE.</span></div></footer></div>
 <script>
-const STORAGE_KEY="commerceLeagueProgressV1",validLessons=["accounting","economics","business"];
-function readProgress(){try{const data=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");if(!data||data.version!==1)return{version:1,clId:"",profile:null,completedLessons:[]};return{...data,clId:data.clId||"",profile:data.profile||null,completedLessons:Array.isArray(data.completedLessons)?data.completedLessons.filter(x=>validLessons.includes(x)):[]};}catch{return{version:1,clId:"",profile:null,completedLessons:[]};}}
-function writeProgress(data){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(data));return true;}catch{return false;}}
-function canonicalStudentCode(value){return value.trim().toUpperCase().replace(/^CL-/i,"").replace(/[^A-Z0-9-]/g,"").replace(/-+/g,"-").replace(/^-|-$/g,"");}
-function bytesToBase64(bytes){return btoa(String.fromCharCode(...bytes));}function base64ToBytes(value){return Uint8Array.from(atob(value),ch=>ch.charCodeAt(0));}
-async function passwordDigest(password,salt){const key=await crypto.subtle.importKey("raw",new TextEncoder().encode(password),"PBKDF2",false,["deriveBits"]);return new Uint8Array(await crypto.subtle.deriveBits({name:"PBKDF2",salt,iterations:210000,hash:"SHA-256"},key,256));}
-function matchingBytes(a,b){if(a.length!==b.length)return false;let difference=0;for(let i=0;i<a.length;i++)difference|=a[i]^b[i];return difference===0;}
-const announcementSlides=[...document.querySelectorAll(".launch-slide")],slideDots=[...document.querySelectorAll(".slide-dot")],slideCount=document.getElementById("slideCount"),pauseSlidesButton=document.getElementById("pauseSlides"),reduceSlideMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;let currentSlide=0,slidesPaused=reduceSlideMotion,slideTimer;
-function showAnnouncement(index){currentSlide=(index+announcementSlides.length)%announcementSlides.length;announcementSlides.forEach((slide,i)=>{slide.classList.toggle("active",i===currentSlide);slide.setAttribute("aria-hidden",i===currentSlide?"false":"true");});slideDots.forEach((dot,i)=>dot.setAttribute("aria-current",i===currentSlide?"true":"false"));slideCount.textContent=String(currentSlide+1).padStart(2,"0")+" / "+String(announcementSlides.length).padStart(2,"0");}
-function startAnnouncementTimer(){window.clearInterval(slideTimer);if(!slidesPaused&&!document.hidden)slideTimer=window.setInterval(()=>showAnnouncement(currentSlide+1),7000);}
-document.getElementById("previousSlide").addEventListener("click",()=>{showAnnouncement(currentSlide-1);startAnnouncementTimer();});document.getElementById("nextSlide").addEventListener("click",()=>{showAnnouncement(currentSlide+1);startAnnouncementTimer();});slideDots.forEach(dot=>dot.addEventListener("click",()=>{showAnnouncement(Number(dot.dataset.slideTo));startAnnouncementTimer();}));pauseSlidesButton.textContent=slidesPaused?"▶":"Ⅱ";pauseSlidesButton.setAttribute("aria-label",slidesPaused?"Resume automatic slides":"Pause automatic slides");pauseSlidesButton.addEventListener("click",()=>{slidesPaused=!slidesPaused;pauseSlidesButton.textContent=slidesPaused?"▶":"Ⅱ";pauseSlidesButton.setAttribute("aria-label",slidesPaused?"Resume automatic slides":"Pause automatic slides");startAnnouncementTimer();});document.addEventListener("visibilitychange",startAnnouncementTimer);document.querySelectorAll("[data-open-league]").forEach(button=>button.addEventListener("click",()=>setView("league")));showAnnouncement(0);startAnnouncementTimer();
-function setView(name){if(!["home","general","league"].includes(name))name="home";document.querySelectorAll(".page-view").forEach(view=>view.classList.toggle("hidden",view.id!==name+"View"));["Home","General","League"].forEach(label=>{const active=label.toLowerCase()===name;document.getElementById("nav"+label).setAttribute("aria-current",active?"page":"false");});document.querySelectorAll(".sidebar-link").forEach(link=>link.setAttribute("aria-current",link.dataset.view===name?"page":"false"));window.scrollTo({top:0,behavior:"smooth"});if(name==="league"){const hasProfile=!!readProgress().profile;document.getElementById("leagueAccess").classList.remove("hidden");document.getElementById("leagueDashboard").classList.add("hidden");document.getElementById("signInBox").classList.toggle("hidden",!hasProfile);document.getElementById("createProfileBox").classList.toggle("hidden",hasProfile);}if(name==="general")renderLearningProgress();}
-function openSidebar(){document.getElementById("sidebarBackdrop").classList.remove("hidden");const sidebar=document.getElementById("siteSidebar");sidebar.classList.remove("hidden");sidebar.setAttribute("aria-hidden","false");document.body.classList.add("sidebar-open");document.getElementById("menuToggle").setAttribute("aria-expanded","true");document.getElementById("sidebarClose").focus();}
-function closeSidebar(){document.getElementById("sidebarBackdrop").classList.add("hidden");const sidebar=document.getElementById("siteSidebar");sidebar.classList.add("hidden");sidebar.setAttribute("aria-hidden","true");document.body.classList.remove("sidebar-open");document.getElementById("menuToggle").setAttribute("aria-expanded","false");}
-function showDashboard(){document.getElementById("leagueAccess").classList.add("hidden");document.getElementById("leagueDashboard").classList.remove("hidden");document.getElementById("welcomeLeague").textContent="Welcome to the League, "+(readProgress().clId||"")+".";renderLeagueTools();}
-function revealHomepage(){const splash=document.getElementById("splash");if(!splash||splash.classList.contains("hidden"))return;splash.classList.add("splash-leaving");window.setTimeout(()=>{splash.classList.add("hidden");document.getElementById("siteHome").classList.remove("hidden");window.scrollTo({top:0,behavior:"instant"});},450);}
-document.getElementById("enterSite").addEventListener("click",revealHomepage);window.setTimeout(revealHomepage,3200);
-document.getElementById("menuToggle").addEventListener("click",openSidebar);document.getElementById("sidebarClose").addEventListener("click",closeSidebar);document.getElementById("sidebarBackdrop").addEventListener("click",closeSidebar);document.addEventListener("keydown",event=>{if(event.key==="Escape")closeSidebar();});document.querySelectorAll(".sidebar-link").forEach(link=>link.addEventListener("click",()=>{setView(link.dataset.view);closeSidebar();}));["home","general","league"].forEach(name=>document.getElementById("nav"+name[0].toUpperCase()+name.slice(1)).addEventListener("click",()=>setView(name)));document.querySelectorAll("[data-open-general]").forEach(link=>link.addEventListener("click",event=>{event.preventDefault();setView("general");document.getElementById("learning").scrollIntoView({behavior:"smooth"});}));setView("home");
-function renderLearningProgress(){const data=readProgress();validLessons.forEach(id=>{const done=data.completedLessons.includes(id),button=document.querySelector('[data-lesson="'+id+'"]'),label=document.getElementById("progress-"+id);button.textContent=done?"Completed ✓":"Mark complete";button.classList.toggle("secondary",!done);label.textContent=done?"Saved on this device":"";});}
-document.querySelectorAll(".lesson-toggle").forEach(button=>button.addEventListener("click",()=>{const data=readProgress(),id=button.dataset.lesson;data.completedLessons=data.completedLessons.includes(id)?data.completedLessons.filter(x=>x!==id):[...data.completedLessons,id];if(!writeProgress(data)){document.getElementById("progress-"+id).textContent="Could not save in this browser.";return;}renderLearningProgress();}));
-function renderLeagueTools(){const data=readProgress();document.getElementById("localClId").textContent=data.clId||"Not set up";const list=document.getElementById("historyList");list.replaceChildren();if(!data.completedLessons.length){const li=document.createElement("li");li.textContent="No learning areas marked complete yet.";list.appendChild(li);}else data.completedLessons.forEach(id=>{const li=document.createElement("li");li.textContent=id[0].toUpperCase()+id.slice(1)+" completed";list.appendChild(li);});}
-document.getElementById("signInForm").addEventListener("submit",async event=>{event.preventDefault();const data=readProgress(),profile=data.profile,enteredId=canonicalStudentCode(document.getElementById("loginClId").value),password=document.getElementById("loginPassword").value,status=document.getElementById("authStatus");if(!profile||enteredId!==canonicalStudentCode(profile.clId)){status.textContent="No matching profile was found in this browser on this device.";return;}try{const match=matchingBytes(await passwordDigest(password,base64ToBytes(profile.salt)),base64ToBytes(profile.passwordHash));if(!match){status.textContent="That password does not match this profile on this device.";return;}status.textContent="";document.getElementById("loginPassword").value="";showDashboard();}catch{status.textContent="This browser could not check the local password.";}});
-document.getElementById("createProfileForm").addEventListener("submit",async event=>{event.preventDefault();const data=readProgress(),code=canonicalStudentCode(document.getElementById("assignedStudentCode").value),password=document.getElementById("newPassword").value,confirmation=document.getElementById("confirmPassword").value,status=document.getElementById("authStatus");if(data.profile){status.textContent="A profile is already set up in this browser on this device.";return;}if(code.length<3||code.length>24){status.textContent="Enter the assigned student code (3–24 letters, numbers, or hyphens).";return;}if(password.length<8){status.textContent="Choose a password with at least 8 characters.";return;}if(password!==confirmation){status.textContent="The passwords do not match.";return;}try{const salt=crypto.getRandomValues(new Uint8Array(16)),passwordHash=await passwordDigest(password,salt),clId="CL-"+code;data.clId=clId;data.profile={clId,salt:bytesToBase64(salt),passwordHash:bytesToBase64(passwordHash),createdAt:new Date().toISOString()};if(!writeProgress(data)){status.textContent="Could not save this profile in browser storage.";return;}status.textContent="";document.getElementById("newPassword").value="";document.getElementById("confirmPassword").value="";showDashboard();}catch{status.textContent="Profile setup failed in this browser. Please try again.";}});
-function signOut(){document.getElementById("loginPassword").value="";document.getElementById("leagueDashboard").classList.add("hidden");document.getElementById("leagueAccess").classList.remove("hidden");document.getElementById("signInBox").classList.remove("hidden");document.getElementById("createProfileBox").classList.add("hidden");document.getElementById("authStatus").textContent="Signed out on this device.";}
-document.getElementById("logOutProfile").addEventListener("click",signOut);document.getElementById("signOutBottom").addEventListener("click",signOut);
-document.getElementById("exportProgress").addEventListener("click",()=>{const data=readProgress(),progress={version:1,clId:data.clId,completedLessons:data.completedLessons};const blob=new Blob([JSON.stringify({product:"Commerce League",version:1,exportedAt:new Date().toISOString(),progress},null,2)],{type:"application/json"}),link=document.createElement("a");link.href=URL.createObjectURL(blob);link.download="commerce-league-progress.json";link.click();window.setTimeout(()=>URL.revokeObjectURL(link.href),1000);document.getElementById("progressStatus").textContent="Progress backup downloaded. Your password is not included.";});
-document.getElementById("importFile").addEventListener("change",async event=>{const file=event.currentTarget.files[0];if(!file)return;const status=document.getElementById("progressStatus");try{const bundle=JSON.parse(await file.text()),imported=bundle?.product==="Commerce League"?bundle.progress:null;if(bundle?.version!==1||!imported||imported.version!==1||!Array.isArray(imported.completedLessons)||imported.completedLessons.length>validLessons.length||!imported.completedLessons.every(id=>validLessons.includes(id)))throw new Error("invalid");const data=readProgress();data.completedLessons=[...new Set([...data.completedLessons,...imported.completedLessons])];if(!writeProgress(data))throw new Error("storage");renderLeagueTools();renderLearningProgress();status.textContent="Imported learning progress to this device.";}catch{status.textContent="Could not import that file. Choose a valid Commerce League progress backup.";}event.currentTarget.value="";});
+const STORAGE_KEY = "commerceLeagueProgressV1";
+const VALID_LESSONS = ["accounting", "economics", "business"];
+const DEFAULT_PROGRESS = { version: 1, clId: "", profile: null, completedLessons: [] };
+
+function readProgress() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+    if (!stored || stored.version !== 1) return { ...DEFAULT_PROGRESS };
+    return {
+      ...stored,
+      clId: stored.clId || "",
+      profile: stored.profile || null,
+      completedLessons: Array.isArray(stored.completedLessons)
+        ? stored.completedLessons.filter((lesson) => VALID_LESSONS.includes(lesson))
+        : [],
+    };
+  } catch {
+    return { ...DEFAULT_PROGRESS };
+  }
+}
+
+function writeProgress(progress) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function canonicalStudentCode(value) {
+  return value
+    .trim()
+    .toUpperCase()
+    .replace(/^CL-/i, "")
+    .replace(/[^A-Z0-9-]/g, "")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function bytesToBase64(bytes) {
+  return btoa(String.fromCharCode(...bytes));
+}
+
+function base64ToBytes(value) {
+  return Uint8Array.from(atob(value), (character) => character.charCodeAt(0));
+}
+
+async function passwordDigest(password, salt) {
+  const key = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(password),
+    "PBKDF2",
+    false,
+    ["deriveBits"],
+  );
+  const bits = await crypto.subtle.deriveBits(
+    { name: "PBKDF2", salt, iterations: 210000, hash: "SHA-256" },
+    key,
+    256,
+  );
+  return new Uint8Array(bits);
+}
+
+function matchingBytes(first, second) {
+  if (first.length !== second.length) return false;
+  let difference = 0;
+  for (let index = 0; index < first.length; index += 1) {
+    difference |= first[index] ^ second[index];
+  }
+  return difference === 0;
+}
+
+const announcementSlides = [...document.querySelectorAll(".launch-slide")];
+const slideDots = [...document.querySelectorAll(".slide-dot")];
+const slideCount = document.getElementById("slideCount");
+const pauseSlidesButton = document.getElementById("pauseSlides");
+const reduceSlideMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let currentSlide = 0;
+let slidesPaused = reduceSlideMotion;
+let slideTimer;
+
+function showAnnouncement(index) {
+  currentSlide = (index + announcementSlides.length) % announcementSlides.length;
+  announcementSlides.forEach((slide, slideIndex) => {
+    const isCurrent = slideIndex === currentSlide;
+    slide.classList.toggle("active", isCurrent);
+    slide.setAttribute("aria-hidden", String(!isCurrent));
+  });
+  slideDots.forEach((dot, dotIndex) => {
+    dot.setAttribute("aria-current", String(dotIndex === currentSlide));
+  });
+  slideCount.textContent = `${String(currentSlide + 1).padStart(2, "0")} / ${String(announcementSlides.length).padStart(2, "0")}`;
+}
+
+function updatePauseControl() {
+  pauseSlidesButton.textContent = slidesPaused ? "▶" : "Ⅱ";
+  pauseSlidesButton.setAttribute(
+    "aria-label",
+    slidesPaused ? "Resume automatic slides" : "Pause automatic slides",
+  );
+}
+
+function startAnnouncementTimer() {
+  window.clearInterval(slideTimer);
+  const siteIsVisible = !document.getElementById("siteHome").classList.contains("hidden");
+  const homeIsActive = !document.getElementById("homeView").classList.contains("hidden");
+  if (!slidesPaused && !document.hidden && siteIsVisible && homeIsActive) {
+    slideTimer = window.setInterval(() => showAnnouncement(currentSlide + 1), 7000);
+  }
+}
+
+function setView(name) {
+  const viewNames = ["home", "general", "league"];
+  if (!viewNames.includes(name)) name = "home";
+
+  document.querySelectorAll(".page-view").forEach((view) => {
+    view.classList.toggle("hidden", view.id !== `${name}View`);
+  });
+  ["Home", "General", "League"].forEach((label) => {
+    const active = label.toLowerCase() === name;
+    document.getElementById(`nav${label}`).setAttribute("aria-current", active ? "page" : "false");
+  });
+  document.querySelectorAll(".sidebar-link").forEach((link) => {
+    link.setAttribute("aria-current", link.dataset.view === name ? "page" : "false");
+  });
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  if (name === "league") {
+    const hasProfile = Boolean(readProgress().profile);
+    document.getElementById("leagueAccess").classList.remove("hidden");
+    document.getElementById("leagueDashboard").classList.add("hidden");
+    document.getElementById("signInBox").classList.toggle("hidden", !hasProfile);
+    document.getElementById("createProfileBox").classList.toggle("hidden", hasProfile);
+  }
+  if (name === "general") renderLearningProgress();
+  startAnnouncementTimer();
+}
+
+function openSidebar() {
+  document.getElementById("sidebarBackdrop").classList.remove("hidden");
+  const sidebar = document.getElementById("siteSidebar");
+  sidebar.classList.remove("hidden");
+  sidebar.setAttribute("aria-hidden", "false");
+  document.body.classList.add("sidebar-open");
+  document.getElementById("menuToggle").setAttribute("aria-expanded", "true");
+  document.getElementById("sidebarClose").focus();
+}
+
+function closeSidebar() {
+  const sidebar = document.getElementById("siteSidebar");
+  const wasOpen = !sidebar.classList.contains("hidden");
+  document.getElementById("sidebarBackdrop").classList.add("hidden");
+  sidebar.classList.add("hidden");
+  sidebar.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("sidebar-open");
+  document.getElementById("menuToggle").setAttribute("aria-expanded", "false");
+  if (wasOpen) document.getElementById("menuToggle").focus();
+}
+
+function showDashboard() {
+  document.getElementById("leagueAccess").classList.add("hidden");
+  document.getElementById("leagueDashboard").classList.remove("hidden");
+  document.getElementById("welcomeLeague").textContent = `Welcome to the League, ${readProgress().clId}.`;
+  renderLeagueTools();
+}
+
+function revealHomepage() {
+  const splash = document.getElementById("splash");
+  if (!splash || splash.classList.contains("hidden")) return;
+  splash.classList.add("splash-leaving");
+  window.setTimeout(() => {
+    splash.classList.add("hidden");
+    document.getElementById("siteHome").classList.remove("hidden");
+    window.scrollTo({ top: 0, behavior: "instant" });
+    startAnnouncementTimer();
+  }, 450);
+}
+
+function renderLearningProgress() {
+  const progress = readProgress();
+  VALID_LESSONS.forEach((lesson) => {
+    const completed = progress.completedLessons.includes(lesson);
+    const button = document.querySelector(`[data-lesson="${lesson}"]`);
+    const label = document.getElementById(`progress-${lesson}`);
+    button.textContent = completed ? "Completed ✓" : "Mark complete";
+    button.classList.toggle("secondary", !completed);
+    label.textContent = completed ? "Saved on this device" : "";
+  });
+}
+
+function renderLeagueTools() {
+  const progress = readProgress();
+  document.getElementById("localClId").textContent = progress.clId || "Not set up";
+  const history = document.getElementById("historyList");
+  history.replaceChildren();
+
+  if (!progress.completedLessons.length) {
+    const item = document.createElement("li");
+    item.textContent = "No learning areas marked complete yet.";
+    history.appendChild(item);
+    return;
+  }
+  progress.completedLessons.forEach((lesson) => {
+    const item = document.createElement("li");
+    item.textContent = `${lesson[0].toUpperCase()}${lesson.slice(1)} completed`;
+    history.appendChild(item);
+  });
+}
+
+function signOut() {
+  document.getElementById("loginPassword").value = "";
+  document.getElementById("leagueDashboard").classList.add("hidden");
+  document.getElementById("leagueAccess").classList.remove("hidden");
+  document.getElementById("signInBox").classList.remove("hidden");
+  document.getElementById("createProfileBox").classList.add("hidden");
+  document.getElementById("authStatus").textContent = "Signed out on this device.";
+}
+
+document.getElementById("enterSite").addEventListener("click", revealHomepage);
+window.setTimeout(revealHomepage, 3200);
+document.getElementById("menuToggle").addEventListener("click", openSidebar);
+document.getElementById("sidebarClose").addEventListener("click", closeSidebar);
+document.getElementById("sidebarBackdrop").addEventListener("click", closeSidebar);
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeSidebar();
+});
+document.querySelectorAll(".sidebar-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    setView(link.dataset.view);
+    closeSidebar();
+  });
+});
+["home", "general", "league"].forEach((name) => {
+  const label = name[0].toUpperCase() + name.slice(1);
+  document.getElementById(`nav${label}`).addEventListener("click", () => setView(name));
+});
+document.querySelectorAll("[data-open-general]").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    setView("general");
+    document.getElementById("learning").scrollIntoView({ behavior: "smooth" });
+  });
+});
+document.querySelectorAll("[data-open-league]").forEach((button) => {
+  button.addEventListener("click", () => setView("league"));
+});
+document.getElementById("previousSlide").addEventListener("click", () => {
+  showAnnouncement(currentSlide - 1);
+  startAnnouncementTimer();
+});
+document.getElementById("nextSlide").addEventListener("click", () => {
+  showAnnouncement(currentSlide + 1);
+  startAnnouncementTimer();
+});
+slideDots.forEach((dot) => {
+  dot.addEventListener("click", () => {
+    showAnnouncement(Number(dot.dataset.slideTo));
+    startAnnouncementTimer();
+  });
+});
+updatePauseControl();
+pauseSlidesButton.addEventListener("click", () => {
+  slidesPaused = !slidesPaused;
+  updatePauseControl();
+  startAnnouncementTimer();
+});
+document.addEventListener("visibilitychange", startAnnouncementTimer);
+showAnnouncement(0);
+setView("home");
+
+VALID_LESSONS.forEach((lesson) => {
+  const button = document.querySelector(`[data-lesson="${lesson}"]`);
+  button.addEventListener("click", () => {
+    const progress = readProgress();
+    progress.completedLessons = progress.completedLessons.includes(lesson)
+      ? progress.completedLessons.filter((completed) => completed !== lesson)
+      : [...progress.completedLessons, lesson];
+    if (!writeProgress(progress)) {
+      document.getElementById(`progress-${lesson}`).textContent = "Could not save in this browser.";
+      return;
+    }
+    renderLearningProgress();
+  });
+});
+
+document.getElementById("signInForm").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const progress = readProgress();
+  const profile = progress.profile;
+  const enteredId = canonicalStudentCode(document.getElementById("loginClId").value);
+  const password = document.getElementById("loginPassword").value;
+  const status = document.getElementById("authStatus");
+  if (!profile || enteredId !== canonicalStudentCode(profile.clId)) {
+    status.textContent = "No matching profile was found in this browser on this device.";
+    return;
+  }
+  try {
+    const matches = matchingBytes(
+      await passwordDigest(password, base64ToBytes(profile.salt)),
+      base64ToBytes(profile.passwordHash),
+    );
+    if (!matches) {
+      status.textContent = "That password does not match this profile on this device.";
+      return;
+    }
+    status.textContent = "";
+    document.getElementById("loginPassword").value = "";
+    showDashboard();
+  } catch {
+    status.textContent = "This browser could not check the local password.";
+  }
+});
+
+document.getElementById("createProfileForm").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const progress = readProgress();
+  const code = canonicalStudentCode(document.getElementById("assignedStudentCode").value);
+  const password = document.getElementById("newPassword").value;
+  const confirmation = document.getElementById("confirmPassword").value;
+  const status = document.getElementById("authStatus");
+  if (progress.profile) {
+    status.textContent = "A profile is already set up in this browser on this device.";
+    return;
+  }
+  if (code.length < 3 || code.length > 24) {
+    status.textContent = "Enter the assigned student code (3–24 letters, numbers, or hyphens).";
+    return;
+  }
+  if (password.length < 8) {
+    status.textContent = "Choose a password with at least 8 characters.";
+    return;
+  }
+  if (password !== confirmation) {
+    status.textContent = "The passwords do not match.";
+    return;
+  }
+  try {
+    const salt = crypto.getRandomValues(new Uint8Array(16));
+    const passwordHash = await passwordDigest(password, salt);
+    const clId = `CL-${code}`;
+    progress.clId = clId;
+    progress.profile = {
+      clId,
+      salt: bytesToBase64(salt),
+      passwordHash: bytesToBase64(passwordHash),
+      createdAt: new Date().toISOString(),
+    };
+    if (!writeProgress(progress)) {
+      status.textContent = "Could not save this profile in browser storage.";
+      return;
+    }
+    status.textContent = "";
+    document.getElementById("newPassword").value = "";
+    document.getElementById("confirmPassword").value = "";
+    showDashboard();
+  } catch {
+    status.textContent = "Profile setup failed in this browser. Please try again.";
+  }
+});
+
+document.getElementById("logOutProfile").addEventListener("click", signOut);
+document.getElementById("signOutBottom").addEventListener("click", signOut);
+document.getElementById("exportProgress").addEventListener("click", () => {
+  const progress = readProgress();
+  const backup = {
+    product: "Commerce League",
+    version: 1,
+    exportedAt: new Date().toISOString(),
+    progress: {
+      version: 1,
+      clId: progress.clId,
+      completedLessons: progress.completedLessons,
+    },
+  };
+  const blob = new Blob([JSON.stringify(backup, null, 2)], { type: "application/json" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "commerce-league-progress.json";
+  link.click();
+  window.setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+  document.getElementById("progressStatus").textContent = "Progress backup downloaded. Your password is not included.";
+});
+document.getElementById("importFile").addEventListener("change", async (event) => {
+  const file = event.currentTarget.files[0];
+  if (!file) return;
+  const status = document.getElementById("progressStatus");
+  try {
+    const backup = JSON.parse(await file.text());
+    const imported = backup?.product === "Commerce League" ? backup.progress : null;
+    if (
+      backup?.version !== 1 ||
+      imported?.version !== 1 ||
+      !Array.isArray(imported.completedLessons) ||
+      imported.completedLessons.length > VALID_LESSONS.length ||
+      !imported.completedLessons.every((lesson) => VALID_LESSONS.includes(lesson))
+    ) {
+      throw new Error("Invalid Commerce League progress backup.");
+    }
+    const progress = readProgress();
+    progress.completedLessons = [...new Set([...progress.completedLessons, ...imported.completedLessons])];
+    if (!writeProgress(progress)) throw new Error("Browser storage is unavailable.");
+    renderLeagueTools();
+    renderLearningProgress();
+    status.textContent = "Imported learning progress to this device.";
+  } catch {
+    status.textContent = "Could not import that file. Choose a valid Commerce League progress backup.";
+  }
+  event.currentTarget.value = "";
+});
+
 renderLearningProgress();
 </script>
 </body>
