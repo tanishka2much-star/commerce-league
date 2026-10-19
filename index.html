@@ -235,6 +235,59 @@ body.sidebar-open{overflow:hidden}
 @media(max-width:1000px){.objective-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.path-card{padding:24px 20px}.path-card>p:not(.eyebrow){min-height:88px}}
 @media(max-width:800px){.path-heading{align-items:flex-start;flex-direction:column;gap:12px}.path-grid{grid-template-columns:1fr}.path-card{min-height:0}.path-card>p:not(.eyebrow){min-height:0}.learning-intro{grid-template-columns:1fr;gap:10px}.home-library .resource-card{min-height:0}}
 @media(max-width:520px){.objective-grid{grid-template-columns:1fr}.objective-card{min-height:0}.path-section{padding:48px 20px}.manifesto-story h3{font-size:30px}.learning-intro h2{font-size:36px}}
+
+/* Refined premium-tech homepage */
+.launch-hint{min-height:42px;gap:20px}
+.launch-hint-label{font-size:9px;letter-spacing:2px;color:#91a3b8}
+.slide-dots{display:flex;align-items:center;justify-content:center;gap:10px}
+.slide-dot{width:8px;height:8px;min-width:8px;padding:0;border:1px solid #6d8298;border-radius:50%;background:#526274;cursor:pointer;transition:background .2s ease,box-shadow .2s ease,transform .2s ease}
+.slide-dot.active{background:#fff;border-color:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.08),0 0 15px rgba(255,255,255,.72);transform:scale(1.12)}
+.slide-dot:focus-visible{outline:2px solid var(--blue);outline-offset:5px}
+.mission-section,.league-intro-section{padding:clamp(64px,9vw,126px) clamp(22px,5vw,88px);background:#080d14;border-bottom:1px solid rgba(118,228,255,.14)}
+.section-kicker{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:16px;border-bottom:1px solid rgba(118,228,255,.18);color:#8293a8;font-size:9px;font-weight:900;letter-spacing:2px}
+.mission-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:clamp(34px,8vw,130px);align-items:start;padding:clamp(48px,7vw,92px) 0}
+.mission-heading h2,.league-intro-grid h2{max-width:760px;margin:0;font-size:clamp(40px,6.5vw,88px);line-height:.99;letter-spacing:-.065em}
+.mission-heading h2 span,.league-intro-grid h2 span{color:var(--blue)}
+.mission-copy{max-width:650px;color:#b2bece;font-size:clamp(15px,1.25vw,18px);line-height:1.9}
+.mission-copy p{margin:0 0 18px}
+.mission-values{border-top:1px solid rgba(118,228,255,.18)}
+.value-line{display:grid;grid-template-columns:54px minmax(0,1fr) 30px;gap:20px;align-items:start;padding:25px 0;border-bottom:1px solid rgba(118,228,255,.16)}
+.value-number{color:var(--blue);font-size:11px;letter-spacing:1px;font-weight:900;padding-top:5px}
+.value-line h3{margin:0 0 6px;font-size:clamp(21px,2.5vw,30px);letter-spacing:-.6px}
+.value-line p{max-width:760px;margin:0;color:#9eacbf;font-size:14px;line-height:1.75}
+.value-mark{font-size:22px;color:var(--blue);text-align:right}
+.free-section{position:relative;display:grid;grid-template-columns:80px minmax(0,1fr) auto;align-items:center;gap:clamp(24px,5vw,68px);padding:clamp(52px,7vw,94px) clamp(22px,5vw,88px);background:radial-gradient(ellipse at 10% 50%,rgba(0,133,210,.12),transparent 40%),linear-gradient(110deg,#0d1724,#0a111b);border-bottom:1px solid rgba(118,228,255,.18)}
+.free-symbol{width:70px;height:70px;display:grid;place-items:center;border:1px solid rgba(118,228,255,.5);color:var(--blue);font-size:21px;font-weight:900;letter-spacing:-2px;box-shadow:inset 0 0 30px rgba(118,228,255,.07)}
+.free-content{max-width:850px}
+.free-content h2{margin:0 0 18px;font-size:clamp(32px,4.4vw,58px);line-height:1.04;letter-spacing:-.05em}
+.free-content>p:not(.eyebrow){color:#b1bdcd;font-size:15px;line-height:1.85;margin:0 0 14px}
+.free-footnote{font-size:11px!important;color:#8293a8!important}
+.free-stamp{width:108px;height:108px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid rgba(216,255,104,.55);border-radius:50%;color:var(--lime);transform:rotate(8deg)}
+.free-stamp strong{font-size:25px;letter-spacing:2px;line-height:1.1}.free-stamp span{font-size:7px;letter-spacing:1.5px;text-align:center;line-height:1.5;margin-top:5px}
+.league-intro-section{background:linear-gradient(120deg,#0a1019,#0c1723 58%,#080d14)}
+.league-intro-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(34px,7vw,110px);padding:clamp(48px,7vw,88px) 0}
+.league-intro-copy{color:#b2bece;font-size:15px;line-height:1.85}
+.league-intro-copy p{margin:0 0 18px}
+.implementation-note{padding:15px 17px;border-left:2px solid #d8b56a;background:rgba(216,181,106,.06);color:#c7b994;font-size:12px;line-height:1.75}
+.league-intro-copy .btn{margin-top:8px}
+.league-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(118,228,255,.2);border-bottom:1px solid rgba(118,228,255,.2)}
+.league-steps article{padding:23px 22px 24px 0;margin-right:22px;border-right:1px solid rgba(118,228,255,.15)}
+.league-steps article:last-child{border-right:0;margin-right:0}
+.league-steps article>span{color:var(--blue);font-size:10px;font-weight:900;letter-spacing:1.5px}
+.league-steps h3{margin:15px 0 7px;font-size:19px}
+.league-steps p{margin:0;color:#95a5b9;font-size:12px;line-height:1.75}
+.data-section{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,8vw,120px);padding:clamp(58px,8vw,104px) clamp(22px,5vw,88px);background:#060a10;border-bottom:1px solid rgba(118,228,255,.18)}
+.data-copy h2{max-width:650px;margin:0 0 18px;font-size:clamp(34px,4.5vw,60px);line-height:1.02;letter-spacing:-.055em}
+.data-copy>p:last-child{max-width:650px;color:#a7b4c5;font-size:14px;line-height:1.85}
+.data-points{border-top:1px solid rgba(118,228,255,.18)}
+.data-points p{display:grid;grid-template-columns:36px 1fr;gap:14px;margin:0;padding:18px 0;border-bottom:1px solid rgba(118,228,255,.14);color:#a7b4c5;font-size:13px;line-height:1.75}
+.data-points span{color:var(--blue);font-size:10px;font-weight:900;padding-top:3px}
+.home-next-section{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:clamp(44px,6vw,78px) clamp(22px,5vw,88px);background:#0a111a}
+.home-next-section h2{max-width:700px;margin:0;font-size:clamp(28px,4vw,48px);letter-spacing:-.045em;line-height:1.08}
+.home-next-actions{display:flex;flex-wrap:wrap;gap:12px}
+@media(max-width:800px){.mission-layout,.league-intro-grid,.data-section{grid-template-columns:1fr;gap:22px}.league-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.league-steps article:nth-child(2){border-right:0;margin-right:0}.league-steps article:nth-child(-n+2){border-bottom:1px solid rgba(118,228,255,.15)}.free-section{grid-template-columns:58px minmax(0,1fr);gap:20px}.free-symbol{width:54px;height:54px;font-size:17px}.free-stamp{grid-column:2;width:80px;height:80px;justify-self:start}.home-next-section{align-items:flex-start;flex-direction:column}.launch-hint-label{font-size:8px;letter-spacing:1px}}
+@media(max-width:520px){.mission-section,.league-intro-section{padding:48px 20px}.section-kicker{align-items:flex-start;flex-direction:column;gap:7px;font-size:8px}.mission-layout{padding:42px 0}.mission-heading h2,.league-intro-grid h2{font-size:clamp(39px,11vw,54px)}.value-line{grid-template-columns:32px minmax(0,1fr) 18px;gap:12px;padding:21px 0}.value-line p{font-size:13px}.free-section{padding:44px 20px;grid-template-columns:1fr auto;gap:18px}.free-symbol{display:none}.free-content h2{font-size:34px}.free-content>p:not(.eyebrow){font-size:13px}.free-stamp{grid-column:2;grid-row:1;width:66px;height:66px}.free-stamp strong{font-size:18px}.free-stamp span{font-size:6px}.league-steps article{padding:18px 12px 20px 0;margin-right:12px}.league-steps h3{font-size:17px}.league-steps p{font-size:11px}.data-section{padding:48px 20px}.home-next-section{padding:42px 20px}.home-next-actions{width:100%;flex-direction:column}.home-next-actions .btn{width:100%}.launch-hint{padding-top:10px;align-items:center}.launch-hint-label{max-width:180px;line-height:1.5}.slide-dots{gap:9px}}
+
 </style>
 </head>
 <body>
@@ -245,76 +298,71 @@ body.sidebar-open{overflow:hidden}
 <header class="top statusbar" aria-label="Main navigation"><div class="statusbar-inner"><button class="brand brand-trigger" type="button" id="menuToggle" aria-label="Open Commerce League menu" aria-controls="siteSidebar" aria-expanded="false"><div class="splash-emblem brand-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><span>COMMERCE LEAGUE<small>LEARN · COMPETE · RISE</small></span></button><nav class="statusbar-meta" aria-label="Choose a section"><button class="nav-link" type="button" id="navHome" aria-current="page">Home</button><button class="nav-link" type="button" id="navGeneral" aria-current="false">General</button><button class="nav-link" type="button" id="navLeague" aria-current="false">League</button></nav></div></header>
 <div class="sidebar-backdrop hidden" id="sidebarBackdrop"></div><aside class="sidebar hidden" id="siteSidebar" aria-label="Site menu" aria-hidden="true"><div class="sidebar-top"><div class="brand"><div class="splash-emblem brand-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div>COMMERCE LEAGUE<small>LEARN · COMPETE · RISE</small></div></div><button class="sidebar-close" type="button" id="sidebarClose" aria-label="Close menu">×</button></div><nav class="sidebar-nav" aria-label="Site pages"><button class="sidebar-link" type="button" data-view="home"><span>01</span>Home</button><button class="sidebar-link" type="button" data-view="general"><span>02</span>General</button><button class="sidebar-link" type="button" data-view="league"><span>03</span>League</button></nav><p class="sidebar-note">Choose a section to continue exploring Commerce League.</p></aside>
 <main>
-<div class="page-view" id="homeView"><section class="panel launch-stage" id="welcome" aria-label="Commerce League announcements"><div class="launch-track" id="announcementSlides" role="region" aria-roledescription="carousel" aria-label="Commerce League stories. Click or tap to advance, or hold to pause." tabindex="0"><article class="launch-slide active" role="group" aria-roledescription="slide" aria-label="1 of 3"><div class="launch-brand"><div class="splash-emblem launch-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div><p class="launch-name">COMMERCE<br>LEAGUE</p><p class="launch-tagline">Commerce is an Ego — Let’s Get Into Flow</p></div></div><div class="launch-copy"><p class="launch-kicker">OUR BELIEF / 00</p><h1>Know the game beneath the numbers.</h1><p>Read the numbers. Question the trade-offs. Understand the people. Make your move with intent.</p></div></article><article class="launch-slide" role="group" aria-roledescription="slide" aria-label="2 of 3"><div class="launch-side-note"><span>01</span><p>HOW WE LEARN</p><strong>Look closer.<br>Think beyond.</strong></div><div class="launch-copy"><p class="launch-kicker">CL METHOD / 01</p><h2>Commerce begins with a question.</h2><p>We connect accounts, markets, and enterprise to real decisions: who benefits, what changes, and what could be done better.</p></div></article><article class="launch-slide" role="group" aria-roledescription="slide" aria-label="3 of 3"><div class="launch-side-note"><span>02</span><p>HOW WE PLAY</p><strong>Earn your edge.<br>Respect the game.</strong></div><div class="launch-copy"><p class="launch-kicker">CL SPIRIT / 02</p><h2>Learn the craft. Challenge the answer.</h2><p>Explore commerce together: bring evidence, explain your thinking, and respect a different view.</p></div></article></div><div class="launch-hint" aria-hidden="true"><span>CLICK OR TAP TO ADVANCE · HOLD TO PAUSE</span><span id="slideCount">01 / 03</span></div></section>
-<section class="manifesto" id="manifesto" aria-labelledby="manifesto-title">
-  <div class="manifesto-head">
-    <p class="eyebrow royal-label">ABOUT COMMERCE LEAGUE</p>
-    <span class="manifesto-index">LEARNING · PRACTICE · COMMUNITY</span>
-  </div>
-  <div class="manifesto-grid">
-    <div class="manifesto-opening">
-      <p class="manifesto-callout">THE COMMERCE LEAGUE POINT OF VIEW.</p>
-      <h2 id="manifesto-title">Read the signal. Shape the next move.</h2>
-      <p class="manifesto-copy">Commerce is the story of choices: where money goes, what people value, and how an idea becomes a working organisation. We bring those forces into view so students can make sense of them for themselves.</p>
-      <div class="manifesto-pillars" aria-label="Commerce League principles">
-        <span><b>01</b> LEARN WITH INTENT</span>
-        <span><b>02</b> PRACTISE WITH COURAGE</span>
-        <span><b>03</b> COMPETE WITH RESPECT</span>
-      </div>
+<div class="page-view" id="homeView"><section class="panel launch-stage" id="welcome" aria-label="Commerce League announcements"><div class="launch-track" id="announcementSlides" role="region" aria-roledescription="carousel" aria-label="Commerce League stories. Click or tap to advance, or hold to pause." tabindex="0"><article class="launch-slide active" role="group" aria-roledescription="slide" aria-label="1 of 3"><div class="launch-brand"><div class="splash-emblem launch-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div><p class="launch-name">COMMERCE<br>LEAGUE</p><p class="launch-tagline">Commerce is an Ego — Let’s Get Into Flow</p></div></div><div class="launch-copy"><p class="launch-kicker">OUR BELIEF / 00</p><h1>Know the game beneath the numbers.</h1><p>Read the numbers. Question the trade-offs. Understand the people. Make your move with intent.</p></div></article><article class="launch-slide" role="group" aria-roledescription="slide" aria-label="2 of 3"><div class="launch-side-note"><span>01</span><p>HOW WE LEARN</p><strong>Look closer.<br>Think beyond.</strong></div><div class="launch-copy"><p class="launch-kicker">CL METHOD / 01</p><h2>Commerce begins with a question.</h2><p>We connect accounts, markets, and enterprise to real decisions: who benefits, what changes, and what could be done better.</p></div></article><article class="launch-slide" role="group" aria-roledescription="slide" aria-label="3 of 3"><div class="launch-side-note"><span>02</span><p>HOW WE PLAY</p><strong>Earn your edge.<br>Respect the game.</strong></div><div class="launch-copy"><p class="launch-kicker">CL SPIRIT / 02</p><h2>Learn the craft. Challenge the answer.</h2><p>Explore commerce together: bring evidence, explain your thinking, and respect a different view.</p></div></article></div><div class="launch-hint"><span class="launch-hint-label">A PLATFORM FOR COMMERCE STUDENTS</span><div class="slide-dots" id="slideDots" role="group" aria-label="Choose an introduction slide"><button class="slide-dot active" type="button" aria-label="Go to slide 1" aria-current="true"></button><button class="slide-dot" type="button" aria-label="Go to slide 2" aria-current="false"></button><button class="slide-dot" type="button" aria-label="Go to slide 3" aria-current="false"></button></div></div></section>
+<section class="mission-section" id="our-purpose" aria-labelledby="mission-title">
+  <div class="section-kicker"><span>01 / WHY WE EXIST</span><span>BUILT FOR COMMERCE STUDENTS</span></div>
+  <div class="mission-layout">
+    <div class="mission-heading">
+      <p class="eyebrow">LEARN WITH PURPOSE</p>
+      <h2 id="mission-title">Commerce students deserve a place to <span>grow.</span></h2>
     </div>
-    <div class="manifesto-story">
-      <p class="eyebrow royal-label">OUR OBJECTIVE</p>
-      <h3>Make commerce live in every decision.</h3>
-      <p>We want students to move beyond memorising terms: understand the numbers, question the forces shaping choice, and explain a decision with confidence and care.</p>
-      <p>Our view is simple: learn with intent, practise with courage, compete with respect, and find your flow. General resources are open to all; League participation is coordinated by your organizer.</p>
-      <a class="btn" href="#learning" data-open-general>Explore learning resources <span aria-hidden="true">↗</span></a>
+    <div class="mission-copy">
+      <p>Commerce League is a student-focused learning platform built to bring commerce learning, practical work, and healthy competition into one place.</p>
+      <p>From understanding accounting concepts to finding useful learning material, our goal is to make it easier to practise, explore, and keep improving—without constantly searching across different websites.</p>
     </div>
   </div>
-  <div class="objectives" aria-labelledby="objectives-title">
-    <div class="section-heading">
-      <p class="eyebrow royal-label">WHAT STUDENTS CAN BUILD</p>
-      <h3 id="objectives-title">Knowledge with purpose.</h3>
-    </div>
-    <div class="objective-grid">
-      <article class="objective-card"><span>01 / READ THE SIGNAL</span><h4>Notice what the numbers reveal</h4><p>Use accounting to see how money moves, what a business owns, and where pressure is building.</p></article>
-      <article class="objective-card"><span>02 / QUESTION THE CHOICE</span><h4>Ask what is driving the decision</h4><p>Look for the incentives, scarcity, and trade-offs shaping a choice in markets and daily life.</p></article>
-      <article class="objective-card"><span>03 / DESIGN THE MOVE</span><h4>Think like a builder</h4><p>Connect people, resources, and customer needs to the value an organisation can create.</p></article>
-      <article class="objective-card"><span>04 / HONOUR THE GAME</span><h4>Compete with character</h4><p>Bring preparation, honesty, and respect to every challenge. Grow from the effort.</p></article>
-    </div>
-  </div>
-  <p class="manifesto-disclaimer">General learning is open to all. League participation is coordinated by your organizer.</p>
-</section>
-<section class="path-section" id="how-it-works" aria-labelledby="path-title">
-  <div class="path-inner">
-    <div class="section-heading path-heading">
-      <div><p class="eyebrow royal-label">YOUR NEXT STEP</p><h2 id="path-title">A clear path into commerce.</h2></div>
-      <p>Learn at your own pace. Return when you are ready to go deeper.</p>
-    </div>
-    <div class="path-grid">
-      <article class="path-card"><span class="path-number">01</span><p class="eyebrow">GENERAL / OPEN TO ALL</p><h3>Explore</h3><p>Start with the questions behind accounting, economics, and business. General learning is open; take the path at your pace.</p><a href="#learning" data-open-general>Browse learning <span aria-hidden="true">↗</span></a></article>
-      <article class="path-card"><span class="path-number">02</span><p class="eyebrow">STUDY / PRACTISE</p><h3>Put ideas to work</h3><p>Follow an idea from the lesson into a real business choice. Mark a subject complete when you have worked through it.</p><a href="#learning" data-open-general>Open the study guide <span aria-hidden="true">↗</span></a></article>
-      <article class="path-card"><span class="path-number">03</span><p class="eyebrow">LEAGUE / GROUP ACCESS</p><h3>Join your community</h3><p>Ask your organizer for your assigned student code, then bring your preparation and fair play to your League group.</p><button type="button" data-open-league>Go to League <span aria-hidden="true">↗</span></button></article>
-    </div>
-    <p class="path-note"><strong>About progress:</strong> learning marks and League profiles are saved in this browser on this device. They do not sync to an account server.</p>
+  <div class="mission-values">
+    <article class="value-line"><span class="value-number">01</span><div><h3>Learn</h3><p>Build a clearer understanding of accounting, economics, business, and the decisions behind them.</p></div><span class="value-mark" aria-hidden="true">↗</span></article>
+    <article class="value-line"><span class="value-number">02</span><div><h3>Practise</h3><p>Give concepts a place to become skills, with particular attention to the accounting practice students need in Classes 11 and 12.</p></div><span class="value-mark" aria-hidden="true">↗</span></article>
+    <article class="value-line"><span class="value-number">03</span><div><h3>Discover</h3><p>Find curated resources and wider commerce insights in one organised starting point, instead of hunting for them repeatedly.</p></div><span class="value-mark" aria-hidden="true">↗</span></article>
   </div>
 </section>
-<section class="resource-hub home-library" id="featured-resources" aria-labelledby="featured-resources-title">
-  <div class="resource-hub-inner">
-    <div class="manifesto-head">
-      <p class="eyebrow royal-label">CURATED / START HERE</p>
-      <span class="manifesto-index">OPEN STUDY MATERIALS</span>
-    </div>
-    <div class="learning-intro">
-      <div><p class="eyebrow">LEARNING RESOURCES</p><h2 id="featured-resources-title">Begin with one idea.</h2></div>
-      <p class="muted">Start with a guided topic, then explore trusted course materials from established learning providers. You can track subject completion in General.</p>
-    </div>
-    <div class="resource-cards">
-      <article class="resource-card"><p class="eyebrow">01 / ACCOUNTING</p><h3>Make sense of the numbers.</h3><p>Follow a transaction from its first entry to what it reveals about a business—and what it cannot tell you alone.</p><a class="btn secondary" href="https://openstax.org/books/principles-financial-accounting/pages/preface" target="_blank" rel="noopener noreferrer">Open the textbook <span aria-hidden="true">↗</span></a></article>
-      <article class="resource-card"><p class="eyebrow">02 / ECONOMICS</p><h3>Understand choices and markets.</h3><p>Trace how scarcity, incentives, and choices reshape the market around us.</p><a class="btn secondary" href="https://www.khanacademy.org/economics-finance-domain" target="_blank" rel="noopener noreferrer">Explore economics <span aria-hidden="true">↗</span></a></article>
-      <article class="resource-card"><p class="eyebrow">03 / BUSINESS</p><h3>See how organisations operate.</h3><p>Explore how people turn a customer need into value, then build an organisation that can deliver it.</p><a class="btn secondary" href="https://openstax.org/books/principles-management/pages/preface" target="_blank" rel="noopener noreferrer">Open the textbook <span aria-hidden="true">↗</span></a></article>
-    </div>
-    <p class="resource-note">Resources open on their providers’ websites. Availability and course requirements may vary.</p>
+<section class="free-section" aria-labelledby="free-title">
+  <div class="free-symbol" aria-hidden="true"><span>CL</span></div>
+  <div class="free-content">
+    <p class="eyebrow">MADE FOR STUDENTS</p>
+    <h2 id="free-title">Learning should not come with a price tag.</h2>
+    <p>Commerce League is currently free to use. It was created as a student service, with the intention of keeping learning accessible rather than charging students to participate.</p>
+    <p class="free-footnote">No subscription is required to explore the open learning resources.</p>
   </div>
+  <div class="free-stamp"><strong>FREE</strong><span>STUDENT<br>LEARNING</span></div>
+</section>
+<section class="league-intro-section" aria-labelledby="league-intro-title">
+  <div class="section-kicker"><span>02 / THE LEAGUE</span><span>HEALTHY COMPETITION · SHARED GROWTH</span></div>
+  <div class="league-intro-grid">
+    <div>
+      <p class="eyebrow">FIND YOUR PEOPLE</p>
+      <h2 id="league-intro-title">A little competition can help you <span>go further.</span></h2>
+    </div>
+    <div class="league-intro-copy">
+      <p>In school, a healthy challenge from someone at a similar level can give you a reason to prepare, ask better questions, and keep going. The League is designed around that spirit.</p>
+      <p>Students qualify through an entrance test and are intended to be grouped by performance, so they can learn alongside peers working at a comparable level. Shared interests and ambitions—whether accounting, business, or a future CA path—can give students more to learn from one another.</p>
+      <p class="implementation-note">League participation and group arrangements are coordinated by the organiser. The website currently stores each student's profile locally; it does not provide built-in chat or automatic student matching.</p>
+      <button class="btn" type="button" data-open-league>Explore League access <span aria-hidden="true">↗</span></button>
+    </div>
+  </div>
+  <div class="league-steps">
+    <article><span>01</span><h3>Qualify</h3><p>Complete the entrance process set by your organiser.</p></article>
+    <article><span>02</span><h3>Find your level</h3><p>Performance-based grouping is intended to make challenges fair and motivating.</p></article>
+    <article><span>03</span><h3>Learn together</h3><p>Exchange ideas, ask questions, and learn from peers with shared goals.</p></article>
+    <article><span>04</span><h3>Keep improving</h3><p>Use preparation and healthy competition to notice what to work on next.</p></article>
+  </div>
+</section>
+<section class="data-section" aria-labelledby="data-title">
+  <div class="data-copy">
+    <p class="eyebrow">YOUR DATA. YOUR DEVICE.</p>
+    <h2 id="data-title">Your League profile stays in your browser.</h2>
+    <p>Without a backend, League profile information and saved progress are stored on the device and browser you use. They are not synced to a central account or permanently collected by Commerce League.</p>
+  </div>
+  <div class="data-points">
+    <p><span>01</span> Use your assigned CL access details on the device where your profile is saved.</p>
+    <p><span>02</span> Export a progress backup and import it manually on another device when needed.</p>
+    <p><span>03</span> Keep your own backup. Clearing browser data or changing browsers may remove locally saved information.</p>
+  </div>
+</section>
+<section class="home-next-section" aria-label="Explore Commerce League">
+  <div><p class="eyebrow">START WHERE YOU ARE</p><h2>Build understanding. Put it into practice.</h2></div>
+  <div class="home-next-actions"><button class="btn" type="button" data-open-general>Explore learning <span aria-hidden="true">↗</span></button><button class="btn secondary" type="button" data-open-league>Go to League <span aria-hidden="true">↗</span></button></div>
 </section>
 </div>
 <div class="page-view hidden" id="generalView"><section class="resource-hub" id="learning" aria-labelledby="learning-title">
@@ -446,8 +494,13 @@ function showAnnouncement(index) {
     const isCurrent = slideIndex === currentSlide;
     slide.classList.toggle("active", isCurrent);
     slide.setAttribute("aria-hidden", String(!isCurrent));
+    slide.setAttribute("aria-label", `Slide ${slideIndex + 1} of ${announcementSlides.length}`);
   });
-  slideCount.textContent = `${String(currentSlide + 1).padStart(2, "0")} / ${String(announcementSlides.length).padStart(2, "0")}`;
+  document.querySelectorAll(".slide-dot").forEach((dot, dotIndex) => {
+    const isCurrent = dotIndex === currentSlide;
+    dot.classList.toggle("active", isCurrent);
+    dot.setAttribute("aria-current", String(isCurrent));
+  });
 }
 
 function startAnnouncementTimer() {
@@ -461,6 +514,14 @@ function startAnnouncementTimer() {
     }, 5000);
   }
 }
+
+document.querySelectorAll(".slide-dot").forEach((dot, index) => {
+  dot.addEventListener("click", (event) => {
+    event.stopPropagation();
+    showAnnouncement(index);
+    startAnnouncementTimer();
+  });
+});
 
 announcementTrack.addEventListener("pointerdown", (event) => {
   if (event.button !== 0) return;
