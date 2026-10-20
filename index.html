@@ -306,6 +306,9 @@ body,#siteHome,#siteHome main,.page-view,#siteHome section,.page-view section{ba
 .sidebar-link>span,.launch-side-note>span,.path-number,.value-number,.league-steps article>span,.data-points span,.manifesto-pillars b,.slide-count{display:none!important}
 
 .top.statusbar,.sidebar{border:0!important}.nav-link,.nav-link:hover,.nav-link[aria-current="page"]{border-color:transparent!important}.sidebar-top{border-bottom:0!important}
+
+/* General learning hub layout */
+.how-it-works{margin:42px 0 46px}.how-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}.how-card{padding:20px 22px;border-radius:14px;background:rgba(255,255,255,.035)}.how-card>span{color:var(--blue);font-size:10px;font-weight:900;letter-spacing:1.7px;text-transform:uppercase}.how-card h3{margin:9px 0 7px;font-size:18px}.how-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.7}.subject-nav{display:flex;flex-wrap:wrap;gap:9px;margin:28px 0 46px}.subject-nav a{display:inline-flex;align-items:center;min-height:38px;padding:0 14px;border-radius:999px;background:rgba(118,228,255,.07);color:#c9d5e3;font-size:11px;font-weight:800;text-decoration:none}.subject-nav a:hover,.subject-nav a:focus-visible{background:rgba(118,228,255,.15);color:#fff}.subjects-heading{margin:0 0 20px}.resource-card{scroll-margin-top:78px}.resource-card .eyebrow{color:var(--blue)}@media(max-width:800px){.how-grid{grid-template-columns:1fr}.how-it-works{margin:32px 0}.subject-nav{margin-bottom:34px}}
 </style>
 </head>
 <body>
@@ -386,37 +389,107 @@ body,#siteHome,#siteHome main,.page-view,#siteHome section,.page-view section{ba
 <div class="page-view hidden" id="generalView"><section class="resource-hub" id="learning" aria-labelledby="learning-title">
   <div class="resource-hub-inner">
     <div class="manifesto-head">
-      <p class="eyebrow royal-label">GENERAL / COMMERCE FOUNDATIONS</p>
-      <span class="manifesto-index">OPEN LEARNING · SELF-PACED</span>
+      <p class="eyebrow royal-label">GENERAL / OPEN LEARNING</p>
+      <span class="manifesto-index">COMMERCE SUBJECTS</span>
     </div>
     <div class="learning-intro">
-      <div><p class="eyebrow">START WITH THE BASICS</p><h2 id="learning-title">Explore the foundations</h2></div>
-      <p class="muted">Choose a subject, review its key ideas, then continue with the selected learning materials. Mark a subject complete when you have finished your study.</p>
+      <div><p class="eyebrow">YOUR LEARNING HUB</p><h2 id="learning-title">Build your commerce toolkit.</h2></div>
+      <p class="muted">Choose a subject, follow the key ideas, and use a public resource to go deeper. Start with one topic and return whenever you are ready for the next.</p>
+    </div>
+
+    <section class="how-it-works" aria-labelledby="how-it-works-title">
+      <div class="section-heading">
+        <p class="eyebrow">HOW GENERAL WORKS</p>
+        <h2 id="how-it-works-title">A simple way to keep learning.</h2>
+      </div>
+      <div class="how-grid">
+        <article class="how-card"><span>Choose</span><h3>Pick a subject</h3><p>Start with accounting, economics, business, or another area that interests you.</p></article>
+        <article class="how-card"><span>Explore</span><h3>Study the ideas</h3><p>Use the topic guide, then open a free lesson or textbook from a public education provider.</p></article>
+        <article class="how-card"><span>Apply</span><h3>Practise and track</h3><p>Try the provider’s examples or activities, then mark the subject complete here. Your checkmarks save in this browser on this device.</p></article>
+      </div>
+    </section>
+
+    <nav class="subject-nav" aria-label="Browse commerce subjects">
+      <a href="#resource-accounting">Accounting</a>
+      <a href="#resource-economics">Economics</a>
+      <a href="#resource-business">Business &amp; management</a>
+      <a href="#resource-finance">Finance</a>
+      <a href="#resource-marketing">Marketing</a>
+      <a href="#resource-entrepreneurship">Entrepreneurship</a>
+    </nav>
+
+    <div class="section-heading subjects-heading">
+      <p class="eyebrow">SUBJECT GUIDES &amp; PUBLIC RESOURCES</p>
+      <h2>Choose where you want to begin.</h2>
     </div>
     <div class="resource-cards">
       <article class="resource-card" id="resource-accounting">
-        <p class="eyebrow">SUBJECT ACCOUNTING</p><h3>Read the story behind the numbers.</h3>
-        <p>Learn how organisations record transactions and use financial statements to understand performance.</p>
-        <ul><li>Assets, liabilities, and equity</li><li>Revenue, costs, and profit</li><li>How records inform decisions</li></ul>
-        <div class="resource-links"><a href="https://openstax.org/books/principles-financial-accounting/pages/preface" target="_blank" rel="noopener noreferrer">OpenStax · Financial Accounting <span>Textbook ↗</span></a><a href="https://www.khanacademy.org/math/core-finance" target="_blank" rel="noopener noreferrer">Khan Academy · Finance and capital markets <span>Lessons ↗</span></a></div>
+        <p class="eyebrow">ACCOUNTING</p><h3>Read the story behind the numbers.</h3>
+        <p>Build from bookkeeping basics to the statements that help explain a business.</p>
+        <ul><li>The accounting equation and double entry</li><li>Ledgers, trial balances, and adjustments</li><li>Financial statements and business decisions</li></ul>
+        <div class="resource-links">
+          <a href="https://www.open.edu/openlearn/money-business/fundamentals-accounting" target="_blank" rel="noopener noreferrer">OpenLearn · Fundamentals of accounting <span>Free course ↗</span></a>
+          <a href="https://openstax.org/books/principles-financial-accounting/pages/preface" target="_blank" rel="noopener noreferrer">OpenStax · Financial Accounting <span>Free textbook ↗</span></a>
+        </div>
         <button class="btn secondary lesson-toggle" data-lesson="accounting" type="button">Mark complete</button><p class="learn-progress" id="progress-accounting" aria-live="polite"></p>
       </article>
+
       <article class="resource-card" id="resource-economics">
-        <p class="eyebrow">SUBJECT ECONOMICS</p><h3>See how choices shape markets.</h3>
-        <p>Explore how people and businesses make choices when resources are limited, and how those choices affect markets.</p>
-        <ul><li>Demand, supply, and prices</li><li>Incentives and opportunity cost</li><li>Competition and market outcomes</li></ul>
-        <div class="resource-links"><a href="https://www.khanacademy.org/economics-finance-domain" target="_blank" rel="noopener noreferrer">Khan Academy · Economics <span>Lessons and practice ↗</span></a><a href="https://ocw.mit.edu/courses/14-01-principles-of-microeconomics-fall-2023/" target="_blank" rel="noopener noreferrer">MIT OpenCourseWare · Microeconomics <span>Independent study ↗</span></a></div>
+        <p class="eyebrow">ECONOMICS</p><h3>See how choices shape markets.</h3>
+        <p>Explore how people, firms, and governments make choices with limited resources.</p>
+        <ul><li>Scarcity, incentives, and opportunity cost</li><li>Supply, demand, and market prices</li><li>Competition and wider economic change</li></ul>
+        <div class="resource-links">
+          <a href="https://www.khanacademy.org/economics-finance-domain" target="_blank" rel="noopener noreferrer">Khan Academy · Economics <span>Lessons and practice ↗</span></a>
+          <a href="https://ocw.mit.edu/courses/14-01-principles-of-microeconomics-fall-2023/" target="_blank" rel="noopener noreferrer">MIT OpenCourseWare · Microeconomics <span>Open course materials ↗</span></a>
+        </div>
         <button class="btn secondary lesson-toggle" data-lesson="economics" type="button">Mark complete</button><p class="learn-progress" id="progress-economics" aria-live="polite"></p>
       </article>
+
       <article class="resource-card" id="resource-business">
-        <p class="eyebrow">SUBJECT BUSINESS</p><h3>Understand how organisations work.</h3>
-        <p>Connect customers, people, operations, and resources to the decisions that help organisations create value.</p>
-        <ul><li>Customers and value</li><li>Planning and organisation</li><li>Strategy and decision-making</li></ul>
-        <div class="resource-links"><a href="https://openstax.org/books/principles-management/pages/preface" target="_blank" rel="noopener noreferrer">OpenStax · Principles of Management <span>Free textbook ↗</span></a><a href="https://harvardonline.harvard.edu/course" target="_blank" rel="noopener noreferrer">Harvard Online · Business and management <span>Course catalogue ↗</span></a></div>
+        <p class="eyebrow">BUSINESS &amp; MANAGEMENT</p><h3>Understand how organisations work.</h3>
+        <p>Connect customers, people, operations, and resources to the value a business creates.</p>
+        <ul><li>How organisations plan and organise</li><li>People, leadership, and operations</li><li>Strategy, responsibility, and decisions</li></ul>
+        <div class="resource-links">
+          <a href="https://openstax.org/books/principles-management/pages/preface" target="_blank" rel="noopener noreferrer">OpenStax · Principles of Management <span>Free textbook ↗</span></a>
+          <a href="https://www.open.edu/openlearn/money-business/leadership-management/understanding-operations-management/content-section-0" target="_blank" rel="noopener noreferrer">OpenLearn · Understanding operations management <span>Free course ↗</span></a>
+        </div>
         <button class="btn secondary lesson-toggle" data-lesson="business" type="button">Mark complete</button><p class="learn-progress" id="progress-business" aria-live="polite"></p>
       </article>
+
+      <article class="resource-card" id="resource-finance">
+        <p class="eyebrow">FINANCE &amp; PERSONAL MONEY</p><h3>Make informed choices about money.</h3>
+        <p>Learn how saving, borrowing, investment, and risk affect people and organisations.</p>
+        <ul><li>Interest, debt, and financial goals</li><li>Stocks, bonds, and investment choices</li><li>Cash flow, risk, and business finance</li></ul>
+        <div class="resource-links">
+          <a href="https://www.khanacademy.org/economics-finance-domain" target="_blank" rel="noopener noreferrer">Khan Academy · Finance and capital markets <span>Lessons and practice ↗</span></a>
+          <a href="https://openstax.org/books/principles-finance/pages/preface" target="_blank" rel="noopener noreferrer">OpenStax · Principles of Finance <span>Free textbook ↗</span></a>
+        </div>
+        <button class="btn secondary lesson-toggle" data-lesson="finance" type="button">Mark complete</button><p class="learn-progress" id="progress-finance" aria-live="polite"></p>
+      </article>
+
+      <article class="resource-card" id="resource-marketing">
+        <p class="eyebrow">MARKETING &amp; CUSTOMERS</p><h3>Understand who a business serves.</h3>
+        <p>Explore customer behaviour and how organisations communicate value with care.</p>
+        <ul><li>Customer needs and buying behaviour</li><li>Markets, audiences, and value</li><li>Digital communication and marketing ethics</li></ul>
+        <div class="resource-links">
+          <a href="https://www.open.edu/openlearn/money-business/understanding-your-customers" target="_blank" rel="noopener noreferrer">OpenLearn · Understanding your customers <span>Free course ↗</span></a>
+          <a href="https://www.open.edu/openlearn/money-business/marketing/marketing-communications-the-digital-age/content-section-0" target="_blank" rel="noopener noreferrer">OpenLearn · Marketing communications in the digital age <span>Free course ↗</span></a>
+        </div>
+        <button class="btn secondary lesson-toggle" data-lesson="marketing" type="button">Mark complete</button><p class="learn-progress" id="progress-marketing" aria-live="polite"></p>
+      </article>
+
+      <article class="resource-card" id="resource-entrepreneurship">
+        <p class="eyebrow">ENTREPRENEURSHIP</p><h3>Turn an idea into a useful venture.</h3>
+        <p>Learn how people test ideas, choose a business model, and plan for growth.</p>
+        <ul><li>Finding a customer problem to solve</li><li>Business models, funding, and location</li><li>Skills, risk, and sustainable growth</li></ul>
+        <div class="resource-links">
+          <a href="https://www.open.edu/openlearn/money-business/entrepreneurship-ideas-reality" target="_blank" rel="noopener noreferrer">OpenLearn · Entrepreneurship: from ideas to reality <span>Free course ↗</span></a>
+          <a href="https://www.open.edu/openlearn/money-business/business-communication-writing-swot-analysis/content-section-0" target="_blank" rel="noopener noreferrer">OpenLearn · Write a business SWOT analysis <span>Free course ↗</span></a>
+        </div>
+        <button class="btn secondary lesson-toggle" data-lesson="entrepreneurship" type="button">Mark complete</button><p class="learn-progress" id="progress-entrepreneurship" aria-live="polite"></p>
+      </article>
     </div>
-    <p class="resource-note">These links lead to independent learning sites. Course format, access, and availability are set by each provider. Accounting standards and course examples can vary by country, so follow the guidance for your class.</p>
+    <p class="resource-note">Resources link to their original providers. Course format, sign-in requirements, and access terms can vary; check each provider’s page. The subject checkmarks on Commerce League save locally in this browser and do not sync to an account.</p>
   </div>
 </section>
 </div>
@@ -443,7 +516,7 @@ body,#siteHome,#siteHome main,.page-view,#siteHome section,.page-view section{ba
 </main><footer class="footer"><div class="wrap"><span>© 2026 COMMERCE LEAGUE</span><span>FAIR PLAY. REAL LEARNING. EARN YOUR PLACE.</span></div></footer></div>
 <script>
 const STORAGE_KEY = "commerceLeagueProgressV1";
-const VALID_LESSONS = ["accounting", "economics", "business"];
+const VALID_LESSONS = ["accounting", "economics", "business", "finance", "marketing", "entrepreneurship"];
 const DEFAULT_PROGRESS = { version: 1, clId: "", profile: null, completedLessons: [] };
 
 function readProgress() {
