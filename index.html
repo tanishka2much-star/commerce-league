@@ -343,6 +343,19 @@ body,#siteHome,#siteHome main,.page-view,#siteHome section,.page-view section{ba
   .free-section{grid-template-columns:minmax(0,1fr) auto!important}
   .league-intro-grid,.data-section{gap:16px}
 }
+
+/* Keep objective copy at normal reading width on narrow screens */
+.mission-values,.value-line,.value-line>div{box-sizing:border-box;width:100%!important;min-width:0!important}
+.value-line p{white-space:normal;word-break:normal;overflow-wrap:break-word}
+#our-purpose{padding-bottom:clamp(24px,3vw,38px)!important}
+.free-section,.league-intro-section,.data-section,.home-next-section{padding-top:clamp(24px,3vw,38px)!important;padding-bottom:clamp(24px,3vw,38px)!important}
+@media(max-width:700px){
+  #our-purpose{padding-top:18px!important;padding-bottom:14px!important}
+  .free-section,.league-intro-section,.data-section,.home-next-section{padding-top:18px!important;padding-bottom:18px!important}
+  .mission-values{grid-template-columns:minmax(0,1fr)!important;gap:6px!important}
+  .value-line{padding:10px 14px!important}
+  .value-line p{max-width:none!important;width:100%!important}
+}
 </style>
 </head>
 <body>
