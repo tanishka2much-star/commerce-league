@@ -356,6 +356,9 @@ body,#siteHome,#siteHome main,.page-view,#siteHome section,.page-view section{ba
   .value-line{padding:10px 14px!important}
   .value-line p{max-width:none!important;width:100%!important}
 }
+
+/* The hidden number must not leave an empty grid column before the sentence */
+.data-points p{display:block!important;grid-template-columns:minmax(0,1fr)!important;width:100%;min-width:0;white-space:normal;word-break:normal;overflow-wrap:break-word}
 </style>
 </head>
 <body>
@@ -420,7 +423,7 @@ body,#siteHome,#siteHome main,.page-view,#siteHome section,.page-view section{ba
     <p>Without a backend, League profile information and saved progress are stored on the device and browser you use. They are not synced to a central account or permanently collected by Commerce League.</p>
   </div>
   <div class="data-points">
-    <p><span>01</span> Use your assigned CL access details on the device where your profile is saved.</p>
+    <p><span>01</span> Use your CL ID and password on the device where your profile is saved.</p>
     <p><span>02</span> Export a progress backup and import it manually on another device when needed.</p>
     <p><span>03</span> Keep your own backup. Clearing browser data or changing browsers may remove locally saved information.</p>
   </div>
