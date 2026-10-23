@@ -890,7 +890,10 @@ document.querySelectorAll(".sidebar-link").forEach((link) => {
   const label = name[0].toUpperCase() + name.slice(1);
   document.getElementById(`nav${label}`).addEventListener("click", () => setView(name));
 });
-document.querySelectorAll("[data-open-home]").forEach((link) => {\n  link.addEventListener("click", () => setView("home"));\n});\ndocument.querySelectorAll("[data-open-general]").forEach((link) => {
+document.querySelectorAll("[data-open-home]").forEach((link) => {
+  link.addEventListener("click", () => setView("home"));
+});
+document.querySelectorAll("[data-open-general]").forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
     setView("general");
