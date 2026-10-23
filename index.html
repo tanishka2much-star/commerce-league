@@ -607,7 +607,7 @@ body,#siteHome,#siteHome main,.page-view,#siteHome section,.page-view section{ba
 </main><footer class="footer site-footer">
   <div class="footer-main">
     <div class="footer-brand"><span class="footer-mark">CL</span><div><b>COMMERCE LEAGUE</b><small>AN INDEPENDENT STUDENT-RUN INITIATIVE</small></div></div>
-    <nav class="footer-nav" aria-label="Footer navigation"><button type="button" data-open-home>Home</button><button type="button" data-open-general>General</button><button type="button" data-open-league>League</button><a href="#help-us-improve">Help Us Improve</a></nav>
+    <nav class="footer-nav" aria-label="Footer navigation"><button type="button" data-open-home>Home</button><button type="button" data-open-general>General</button><button type="button" data-open-league>League</button><a href="#help-us-improve" data-open-help>Help Us Improve</a></nav>
     <div class="footer-contact"><b>CONTACT</b><span>Phone / WhatsApp: coming soon</span><span>Social ID: coming soon</span></div>
   </div>
   <div class="footer-bottom"><span>© 2026 Commerce League. All rights reserved.</span><span>Founded by CLYRO · Student-run and independent.</span></div>
@@ -889,6 +889,13 @@ document.querySelectorAll(".sidebar-link").forEach((link) => {
 ["home", "general", "league"].forEach((name) => {
   const label = name[0].toUpperCase() + name.slice(1);
   document.getElementById(`nav${label}`).addEventListener("click", () => setView(name));
+});
+document.querySelectorAll("[data-open-help]").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    setView("home");
+    window.setTimeout(() => document.getElementById("help-us-improve").scrollIntoView({ behavior: "smooth" }), 100);
+  });
 });
 document.querySelectorAll("[data-open-home]").forEach((link) => {
   link.addEventListener("click", () => setView("home"));
