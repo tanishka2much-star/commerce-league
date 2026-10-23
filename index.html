@@ -531,28 +531,23 @@ body,#siteHome,#siteHome main,.page-view,#siteHome section,.page-view section{ba
       </div>
       <section class="profile-box" id="faculty-category" aria-labelledby="faculty-title"><p class="eyebrow royal-label">CLOFFICE CATEGORY</p><h2 id="faculty-title">Faculty</h2></section>
       <section class="profile-box owner-ai" id="owner-category" aria-labelledby="owner-title">
-  <p class="eyebrow royal-label">CLOFFICE / OWNER</p><h2 id="owner-title">Economics AI Test Bench</h2>
-  <p class="muted">Test Artha, a Class 11 Economics tutor. This panel sends questions through a private server connection; the OpenAI key stays on that server.</p>
-  <div class="local-warning"><strong>Owner panel on a public site</strong>This page is visible to visitors. Only someone with the private Owner access token can send questions to the AI service. Do not share that token.</div>
-  <div class="owner-ai-setup">
-    <div class="field"><label for="ownerWorkerUrl">Private Worker endpoint</label><input id="ownerWorkerUrl" type="url" placeholder="https://your-worker.your-subdomain.workers.dev/api/chat" autocomplete="url"></div>
-    <div class="field"><label for="ownerAccessToken">Owner access token</label><input id="ownerAccessToken" type="password" placeholder="Enter the token configured on your Worker" autocomplete="off"></div>
-    <div class="actions"><button class="btn" type="button" id="connectOwnerAI">Use for this tab</button><button class="btn secondary" type="button" id="disconnectOwnerAI">Disconnect</button></div>
-    <p class="tool-status" id="ownerAIStatus" aria-live="polite">Set up the private Worker once, then connect it here for this browser tab.</p>
-  </div>
+  <p class="eyebrow royal-label">CLOFFICE / OWNER</p><h2 id="owner-title">Artha · Economics Mini AI</h2>
+  <p class="muted">A small in-site tutor demo for Class 11 Economics. Try a topic, ask for an example, or practise with a quick question.</p>
+  <div class="owner-ai-setup"><span class="tier-badge">LOCAL MINI AI · DEMO MODE</span><p class="muted">Works right here on the site without an API key or extra server. Its replies come from a built-in economics demo, so it is not a live generative model yet.</p><p class="tool-status" id="ownerAIStatus" aria-live="polite">Ready when you are.</p></div>
   <div class="owner-chat" id="ownerChat">
-    <div class="owner-suggestions" aria-label="Example economics questions">
-      <button type="button" data-owner-prompt="Explain opportunity cost with a simple example.">Opportunity cost</button>
-      <button type="button" data-owner-prompt="Teach me the law of demand, then quiz me.">Demand</button>
-      <button type="button" data-owner-prompt="Give me a Class 11 economics practice question.">Practice question</button>
+    <div class="owner-suggestions" aria-label="Economics questions">
+      <button type="button" data-owner-prompt="Explain scarcity with an example.">Scarcity</button>
+      <button type="button" data-owner-prompt="Explain opportunity cost simply.">Opportunity cost</button>
+      <button type="button" data-owner-prompt="Teach me demand and quiz me.">Demand + quiz</button>
+      <button type="button" data-owner-prompt="Show an elasticity calculation.">Elasticity</button>
     </div>
     <div class="owner-messages" id="ownerMessages" aria-live="polite"></div>
     <form id="ownerChatForm">
-      <div class="field"><label for="ownerQuestion">Ask Artha</label><textarea id="ownerQuestion" rows="3" maxlength="4000" placeholder="Ask an economics question…" required disabled></textarea></div>
-      <button class="btn" id="ownerSend" type="submit" disabled>Send question ↗</button>
+      <div class="field"><label for="ownerQuestion">Ask Artha</label><textarea id="ownerQuestion" rows="3" maxlength="1000" placeholder="Ask about an economics topic…" required></textarea></div>
+      <div class="actions"><button class="btn" id="ownerSend" type="submit">Ask Artha ↗</button><button class="btn secondary" type="button" id="ownerClear">New chat</button></div>
     </form>
   </div>
-  <p class="resource-note">The access token is held in memory only and sent over HTTPS to the Worker URL you enter. Disconnect or close the page to clear it. See OWNER_AI_SETUP.md in the repository for setup steps.</p>
+  <p class="resource-note">This mini demo works without sending your message to an AI service. Its built-in replies cover a small set of economics topics; a live AI connection can be added later.</p>
 </section>
     </div>
   </div>
@@ -1012,16 +1007,16 @@ document.getElementById("importFile").addEventListener("change", async (event) =
 
 renderLearningProgress();
 
-const OWNER_CHAT_ENDPOINT = "https://your-worker.your-subdomain.workers.dev/api/chat";
-let ownerWorkerEndpoint = "";
-let ownerAccessToken = "";
-let ownerConversation = [];
-function setOwnerAIStatus(message, error = false) {
-  const status = document.getElementById("ownerAIStatus");
-  if (!status) return;
-  status.textContent = message;
-  status.style.color = error ? "var(--red)" : "var(--lime)";
-}
+const ownerMiniLessons = {
+  scarcity: { name: "Scarcity and choice", simple: "Scarcity means there are limited resources but many wants. Because we cannot have everything at once, we must choose how to use our resources.", example: "If you have ₹100 and want a ₹70 notebook and a ₹60 snack, you cannot buy both. Your limited money means you have to choose.", quiz: "Quick check: Why does scarcity make people choose?", keywords: ["limited", "choice", "resources"] },
+  opportunity: { name: "Opportunity cost", simple: "Opportunity cost is the value of the next best alternative you give up when you make a choice.", example: "If you spend your free evening studying instead of taking a shift that pays ₹500, the forgone pay is one way to describe the cost of that choice.", quiz: "Quick check: You choose a film instead of playing cricket. What might be your opportunity cost?", keywords: ["cricket", "playing", "next best", "game"] },
+  demand: { name: "Demand", simple: "Demand is how much buyers are willing and able to buy at different prices during a period. Other things equal, a lower price usually means a greater quantity demanded.", example: "At ₹40 a juice, a student buys one. If its price drops to ₹25, they may buy two. The lower price changes quantity demanded.", quiz: "Quick check: If the price falls, what usually happens to quantity demanded, all else equal?", keywords: ["rise", "increase", "more", "higher"] },
+  supply: { name: "Supply", simple: "Supply is how much sellers are willing and able to offer at different prices during a period. Other things equal, a higher price can encourage sellers to offer more.", example: "A bakery may bake more pastries when each sells for ₹30 than when it sells for ₹15, because the higher price can make extra production worthwhile.", quiz: "Quick check: If the selling price rises, what usually happens to quantity supplied, all else equal?", keywords: ["rise", "increase", "more", "higher"] },
+  elasticity: { name: "Price elasticity of demand", simple: "Price elasticity measures how strongly quantity demanded responds to a price change. A common formula is percentage change in quantity demanded divided by percentage change in price.", example: "Price rises by 10% and quantity demanded falls by 20%. Elasticity = −20% ÷ 10% = −2. The minus sign shows the opposite movement; the absolute value is 2.", quiz: "Quick check: Price rises by 5% and quantity demanded falls by 5%. What is the absolute value of elasticity?", keywords: ["1", "one"] },
+  profit: { name: "Revenue, cost, and profit", simple: "Revenue is money earned from sales. Profit = revenue − total costs. If costs are greater than revenue, the business has a loss.", example: "A seller earns ₹1,500 in sales and has ₹1,100 in costs. Profit = ₹1,500 − ₹1,100 = ₹400.", quiz: "Quick check: Revenue is ₹900 and total costs are ₹950. Is it profit or loss, and how much?", keywords: ["loss", "50"] }
+};
+let ownerLastTopic = "scarcity";
+let ownerQuizPending = false;
 function addOwnerMessage(role, content) {
   const list = document.getElementById("ownerMessages");
   const item = document.createElement("div");
@@ -1033,90 +1028,71 @@ function addOwnerMessage(role, content) {
   item.append(label, body);
   list.appendChild(item);
   list.scrollTop = list.scrollHeight;
-  return item;
 }
-function connectOwnerAI() {
-  const rawEndpoint = document.getElementById("ownerWorkerUrl").value.trim();
-  const token = document.getElementById("ownerAccessToken").value;
-  let parsed;
-  try { parsed = new URL(rawEndpoint); } catch {
-    setOwnerAIStatus("Enter your deployed Worker URL ending in /api/chat.", true);
-    return;
-  }
-  if (parsed.protocol !== "https:" || !parsed.hostname.endsWith(".workers.dev") ||
-      parsed.pathname !== "/api/chat" || parsed.search || parsed.hash || parsed.port) {
-    setOwnerAIStatus("Use the HTTPS /api/chat URL from your deployed *.workers.dev Worker.", true);
-    return;
-  }
-  if (!token) {
-    setOwnerAIStatus("Enter the Owner access token set in your Worker secrets.", true);
-    return;
-  }
-  ownerWorkerEndpoint = parsed.href;
-  ownerAccessToken = token;
-  document.getElementById("ownerAccessToken").value = "";
-  ownerConversation = [];
-  document.getElementById("ownerMessages").replaceChildren();
-  document.getElementById("ownerQuestion").disabled = false;
-  document.getElementById("ownerSend").disabled = false;
-  setOwnerAIStatus("Ready for this tab. Send a test question to verify the connection.");
+function ownerTopicFor(text) {
+  if (/opportunity cost|next best|give up|forgo/.test(text)) return "opportunity";
+  if (/elastic|percentage.*price|price.*percentage/.test(text)) return "elasticity";
+  if (/demand|buyer|buyers/.test(text)) return "demand";
+  if (/supply|seller|sellers/.test(text)) return "supply";
+  if (/profit|revenue|cost|loss/.test(text)) return "profit";
+  if (/scarcity|choice|limited resource/.test(text)) return "scarcity";
+  return ownerLastTopic;
 }
-function disconnectOwnerAI() {
-  ownerWorkerEndpoint = "";
-  ownerAccessToken = "";
-  ownerConversation = [];
-  document.getElementById("ownerAccessToken").value = "";
-  document.getElementById("ownerQuestion").disabled = true;
-  document.getElementById("ownerSend").disabled = true;
-  document.getElementById("ownerMessages").replaceChildren();
-  setOwnerAIStatus("Disconnected. The token was cleared from this page.");
+function ownerMiniReply(question) {
+  const text = question.toLowerCase().replace(/[’']/g, "");
+  if (/hello|^hi\b|^hey\b/.test(text)) return "Hey! I can help with scarcity, opportunity cost, demand, supply, elasticity, and profit. Pick a topic or ask me a question.";
+  if (ownerQuizPending) {
+    ownerQuizPending = false;
+    const expected = ownerMiniLessons[ownerLastTopic].keywords;
+    const correct = expected.some(word => text.includes(word));
+    return correct ? "That’s the key idea! Try explaining why in your own words." : "Good try. Think about the direction of the change or the next best option being given up. Want another question?";
+  }
+  ownerLastTopic = ownerTopicFor(text);
+  const lesson = ownerMiniLessons[ownerLastTopic];
+  if (/quiz|practice|test me|quick check/.test(text)) {
+    ownerQuizPending = true;
+    return lesson.quiz;
+  }
+  if (/simpler|simple words|easier|easy/.test(text)) return lesson.simple;
+  if (/example|show me|calculate|numerical|how do/.test(text)) return lesson.example + "\n\nWant to try a similar one?";
+  if (/demand.*supply|supply.*demand|difference/.test(text)) {
+    ownerLastTopic = "demand";
+    return "Demand describes buyers: how much they are willing and able to buy at different prices. Supply describes sellers: how much they are willing and able to offer. Other things equal, lower prices usually increase quantity demanded; higher prices can increase quantity supplied.";
+  }
+  if (/board|syllabus|chapter|exam/.test(text)) return "I can explain the concept, but this mini demo is not matched to a specific board textbook. Tell me the topic or paste a question, and I’ll help with the idea.";
+  if (ownerLastTopic === "scarcity" && !/scarcity|choice|limited|resource/.test(text)) return "I’m a small demo tutor, so I know a few core Economics topics. Try asking about scarcity, opportunity cost, demand, supply, elasticity, or profit.";
+  return lesson.simple + "\n\n" + lesson.example + "\n\nAsk me for an easier explanation, another example, or a quick quiz.";
 }
-async function sendOwnerQuestion(question) {
+function askOwnerMiniAI(question) {
   const prompt = question.trim();
   if (!prompt) return;
-  if (!ownerWorkerEndpoint || !ownerAccessToken) {
-    setOwnerAIStatus("Connect the Worker endpoint and Owner token first.", true);
-    return;
-  }
-  const sendButton = document.getElementById("ownerSend");
-  sendButton.disabled = true;
-  ownerConversation.push({ role: "user", content: prompt });
   addOwnerMessage("user", prompt);
-  const waiting = addOwnerMessage("assistant", "Thinking through your question…");
-  try {
-    const response = await fetch(ownerWorkerEndpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "Authorization": "Bearer " + ownerAccessToken },
-      body: JSON.stringify({ messages: ownerConversation.slice(-16) })
-    });
-    const result = await response.json().catch(() => ({}));
-    if (!response.ok) throw new Error(result.error || "The AI service could not answer.");
-    waiting.querySelector("p").textContent = result.answer;
-    ownerConversation.push({ role: "assistant", content: result.answer });
-    setOwnerAIStatus("Connected · latest answer received.");
-  } catch (error) {
-    waiting.remove();
-    ownerConversation.pop();
-    setOwnerAIStatus(error.message === "Failed to fetch"
-      ? "Could not reach the Worker. Check its URL, deployment, and SITE_ORIGIN setting."
-      : error.message, true);
-  } finally {
-    sendButton.disabled = false;
-  }
+  const button = document.getElementById("ownerSend");
+  button.disabled = true;
+  button.textContent = "Thinking…";
+  window.setTimeout(() => {
+    addOwnerMessage("assistant", ownerMiniReply(prompt));
+    button.disabled = false;
+    button.textContent = "Ask Artha ↗";
+    document.getElementById("ownerQuestion").focus();
+  }, 350);
 }
-document.getElementById("connectOwnerAI")?.addEventListener("click", connectOwnerAI);
-document.getElementById("disconnectOwnerAI")?.addEventListener("click", disconnectOwnerAI);
 document.getElementById("ownerChatForm")?.addEventListener("submit", event => {
   event.preventDefault();
   const input = document.getElementById("ownerQuestion");
   const question = input.value;
   input.value = "";
-  sendOwnerQuestion(question);
+  askOwnerMiniAI(question);
 });
-document.querySelectorAll("[data-owner-prompt]").forEach(button => {
-  button.addEventListener("click", () => sendOwnerQuestion(button.dataset.ownerPrompt));
+document.querySelectorAll("[data-owner-prompt]").forEach(button => button.addEventListener("click", () => askOwnerMiniAI(button.dataset.ownerPrompt)));
+document.getElementById("ownerClear")?.addEventListener("click", () => {
+  document.getElementById("ownerMessages").replaceChildren();
+  ownerQuizPending = false;
+  ownerLastTopic = "scarcity";
+  document.getElementById("ownerAIStatus").textContent = "New chat started.";
 });
-disconnectOwnerAI();
+addOwnerMessage("assistant", "Hey! I’m Artha, your mini Economics tutor. Ask about a topic or choose one of the quick prompts.");
+
 </script>
 </body>
 </html>
