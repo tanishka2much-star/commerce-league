@@ -384,6 +384,17 @@ body,#siteHome,#siteHome main,.page-view,#siteHome section,.page-view section{ba
 .footer-bottom{padding-top:15px;border-top:1px solid rgba(118,228,255,.12);color:#748297;font-size:9px;letter-spacing:.5px}
 @media(max-width:800px){.home-highlights-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.highlight-card,.highlight-card:nth-child(4),.highlight-card:nth-child(5){grid-column:auto}.highlights-heading,.help-inner{grid-template-columns:1fr;display:grid;gap:20px}.footer-main{flex-wrap:wrap}.footer-brand,.footer-nav,.footer-contact{flex:1 1 40%}}
 @media(max-width:520px){.home-highlights{padding:48px 20px}.home-highlights-grid{grid-template-columns:1fr}.highlight-card{min-height:0}.highlights-heading{margin:34px 0 22px}.help-section{padding:48px 20px}.contact-placeholders{grid-template-columns:1fr}.site-footer{padding:28px 20px 18px}.footer-main{display:grid;grid-template-columns:1fr;gap:24px}.footer-bottom{flex-direction:column;gap:6px}.tier-grid{grid-template-columns:1fr}}
+
+.resource-reader{padding:clamp(28px,5vw,72px) clamp(20px,4vw,64px);min-height:calc(100svh - 150px);background:linear-gradient(125deg,#080d14,#0d1722)}
+.resource-reader-top{display:flex;align-items:center;justify-content:space-between;gap:18px;max-width:1600px;margin:0 auto 34px}
+.resource-reader-top .eyebrow{margin:0}
+.resource-reader-heading{display:flex;align-items:end;justify-content:space-between;gap:28px;max-width:1600px;margin:0 auto}
+.resource-reader-heading h1{margin:0;font-size:clamp(30px,5vw,58px);letter-spacing:-.05em}
+.resource-reader-heading .eyebrow{margin-bottom:8px}
+.reader-note{max-width:1600px;margin:20px auto 14px;color:#96a4b7;font-size:12px}
+.resource-frame-wrap{max-width:1600px;margin:0 auto;border:1px solid rgba(118,228,255,.2);background:#fff;min-height:70svh}
+.resource-frame-wrap iframe{display:block;width:100%;height:72svh;min-height:520px;border:0;background:#fff}
+@media(max-width:640px){.resource-reader{padding:24px 16px 36px}.resource-reader-top{align-items:flex-start;flex-direction:column;margin-bottom:26px}.resource-reader-heading{align-items:flex-start;flex-direction:column}.resource-reader-heading .btn{width:100%}.resource-frame-wrap iframe{height:70svh;min-height:420px}}
 </style>
 </head>
 <body>
@@ -604,6 +615,20 @@ body,#siteHome,#siteHome main,.page-view,#siteHome section,.page-view section{ba
     </div>
   </div>
 </section>
+<section class="page-view hidden" id="resourceReaderView" aria-labelledby="resourceReaderTitle">
+  <div class="resource-reader">
+    <div class="resource-reader-top">
+      <button class="btn secondary" id="readerBack" type="button">← Back to General</button>
+      <p class="eyebrow">COMMERCE LEAGUE / RESOURCE READER</p>
+    </div>
+    <div class="resource-reader-heading">
+      <div><p class="eyebrow" id="resourceReaderSource">SELECTED RESOURCE</p><h1 id="resourceReaderTitle">Learning resource</h1></div>
+      <a class="btn" id="resourceReaderExternal" href="#" target="_blank" rel="noopener noreferrer">Open source page ↗</a>
+    </div>
+    <p class="reader-note">This resource is displayed from its original provider. If the provider blocks in-site display, use “Open source page” to continue there.</p>
+    <div class="resource-frame-wrap"><iframe id="resourceFrame" title="Selected learning resource" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  </div>
+</section>
 </main><footer class="footer site-footer">
   <div class="footer-main">
     <div class="footer-brand"><span class="footer-mark">CL</span><div><b>COMMERCE LEAGUE</b><small>AN INDEPENDENT STUDENT-RUN INITIATIVE</small></div></div>
@@ -766,7 +791,7 @@ announcementTrack.addEventListener("keydown", (event) => {
 });
 
 function setView(name) {
-  const viewNames = ["home", "general", "league", "cloffice"];
+  const viewNames = ["home", "general", "league", "cloffice", "resourceReader"];
   if (!viewNames.includes(name)) name = "home";
 
   document.querySelectorAll(".page-view").forEach((view) => {
@@ -900,6 +925,30 @@ document.querySelectorAll("[data-open-help]").forEach((link) => {
 document.querySelectorAll("[data-open-home]").forEach((link) => {
   link.addEventListener("click", () => setView("home"));
 });
+let lastResourceCardId = "learning";
+
+document.querySelectorAll("#learning .resource-links a").forEach((resourceLink) => {
+  resourceLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    const resourceTitle = resourceLink.firstChild.textContent.trim();
+    const resourceUrl = resourceLink.href;
+    lastResourceCardId = resourceLink.closest(".resource-card")?.id || "learning";
+    document.getElementById("resourceReaderTitle").textContent = resourceTitle;
+    document.getElementById("resourceReaderSource").textContent = new URL(resourceUrl).hostname;
+    document.getElementById("resourceReaderExternal").href = resourceUrl;
+    const frame = document.getElementById("resourceFrame");
+    frame.title = resourceTitle;
+    frame.src = resourceUrl;
+    setView("resourceReader");
+  });
+});
+
+document.getElementById("readerBack").addEventListener("click", () => {
+  const returnTarget = document.getElementById(lastResourceCardId);
+  setView("general");
+  window.setTimeout(() => returnTarget?.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+});
+
 document.querySelectorAll("[data-open-general]").forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
