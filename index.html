@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#07090d">
-<meta name="description" content="Commerce League: explore commerce learning resources and access your local League profile.">
-<title>COMMERCE LEAGUE — Learn. Compete. Rise.</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#09070e">
+<meta name="description" content="Commerce League is a free, student-led platform for commerce students to learn, practise, and compete.">
+<title>Commerce League — Learn. Practice. Compete.</title>
 <style>
 :root{--bg:#07090d;--panel:#101621;--line:#283343;--text:#f4f7fb;--muted:#a5afbf;--blue:#76e4ff;--lime:#d8ff68;--red:#ff7272}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0%,#14263a 0,transparent 50%),var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;min-height:100vh;line-height:1.6}button,input,select{font:inherit}.wrap{width:100%;margin:0 auto}.top{display:none;padding:22px 0;border-bottom:1px solid #202a38}.brand{display:flex;align-items:center;gap:13px;font-weight:900;letter-spacing:3px;font-size:13px}.mark{height:42px;width:42px;display:grid;place-items:center;border:1px solid var(--blue);background:linear-gradient(135deg,rgba(118,228,255,.15),transparent);font-weight:900;font-size:18px;letter-spacing:-2px;color:var(--blue);clip-path:polygon(0 0,100% 0,100% 75%,75% 100%,0 100%)}.brand small{display:block;color:#8492a7;font-size:9px;letter-spacing:3px;font-weight:700;margin-top:2px}.stage{padding:0;min-height:100vh;display:block}.panel{width:100%;max-width:none;margin:0;padding:clamp(28px,6vw,76px) 0;border:0;border-bottom:1px solid rgba(118,228,255,.18);background:transparent;box-shadow:none}#welcome{padding-top:7vh;padding-bottom:10vh}#details{padding-top:9vh;border-bottom:0}#welcome .intro{max-width:760px;font-size:clamp(17px,2vw,21px)}#welcome>p:not(.eyebrow):not(.intro):not(.note),#welcome>h2{max-width:850px}#details>p:not(.eyebrow){max-width:760px}#details form{max-width:760px}.eyebrow{font-size:10px;letter-spacing:4px;font-weight:800;color:var(--blue);margin:0 0 14px}.cl-large{font-size:clamp(62px,12vw,110px);font-weight:1000;letter-spacing:-10px;line-height:1;color:var(--blue);text-shadow:0 0 40px rgba(118,228,255,.16);margin-bottom:18px}.cl-large span{color:#f5f7fb}.wordmark{font-size:12px;letter-spacing:6px;font-weight:900;margin-bottom:28px}.wordmark span{color:var(--blue)}h1{font-size:clamp(32px,6vw,54px);line-height:1.05;letter-spacing:-1.5px;margin:0 0 18px}h2{font-size:27px;line-height:1.2;margin:0 0 12px}.muted{color:var(--muted)}.intro{font-size:16px;max-width:580px;margin:0 0 26px}.rule{height:1px;background:var(--line);margin:25px 0}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 20px;border:1px solid var(--blue);background:var(--blue);color:#061019;font-weight:900;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer}.btn.secondary{border-color:#3a4658;background:transparent;color:var(--text)}.btn:disabled{opacity:.4;cursor:not-allowed}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.field{display:grid;gap:7px;margin:18px 0}.field label{font-size:12px;font-weight:700;color:#dbe3ee}.field input,.field select{width:100%;min-height:46px;padding:10px 12px;color:var(--text);background:#080c12;border:1px solid #344052;outline:none}.field input:focus,.field select:focus{border-color:var(--blue)}.consent{display:flex;align-items:flex-start;gap:11px;font-size:12px;color:var(--muted);margin-top:20px}.consent input{margin-top:5px;accent-color:var(--blue)}.note{font-size:11px;color:#7e8a9c;margin-top:12px}.progress{height:4px;background:#273141;margin:22px 0 26px}.progress span{display:block;height:100%;background:var(--blue);width:0;transition:width .2s}.qmeta{display:flex;justify-content:space-between;gap:10px;font-size:11px;color:var(--muted);letter-spacing:1px}.question{font-size:22px;font-weight:800;line-height:1.35;margin:25px 0}.options{display:grid;gap:10px}.option{display:flex;align-items:center;gap:12px;padding:13px 15px;border:1px solid #303b4d;background:#0b1018;color:var(--text);text-align:left;cursor:pointer}.option:hover{border-color:var(--blue)}.option.selected{border-color:var(--blue);background:#10202b}.letter{display:grid;place-items:center;flex:0 0 28px;height:28px;border:1px solid #3c4a5d;color:var(--blue);font-size:11px;font-weight:900}.feedback{margin-top:15px;color:var(--muted);font-size:13px}.result-score{font-size:68px;font-weight:900;letter-spacing:-4px;color:var(--blue);line-height:1.1;margin:20px 0}.status{display:inline-block;border:1px solid #475467;padding:5px 10px;font-size:10px;letter-spacing:2px;font-weight:900}.status.pass{color:var(--lime);border-color:#62743b}.status.fail{color:var(--red);border-color:#754242}.league-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,5vw,64px);margin-top:32px}.league-card{border:0;border-top:1px solid var(--blue);padding:18px 0 10px;background:transparent}.league-card b{display:block;margin:10px 0 5px}.league-card p{font-size:12px;color:var(--muted);margin:0}.footer{border-top:1px solid #202a38;padding:20px 0;color:#758195;font-size:10px;letter-spacing:1px}.footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.hidden{display:none!important}@media(max-width:620px){.stage{padding:18px 0 55px}.panel{padding:42px 0}.league-grid{grid-template-columns:1fr;gap:20px}.cl-large{letter-spacing:-6px}.wordmark{letter-spacing:4px}.question{font-size:19px}.splash-title{letter-spacing:4px}.splash-tagline{letter-spacing:.5px}}
 
@@ -428,17 +428,133 @@ body,#siteHome,#siteHome main,.page-view,#siteHome section,.page-view section{ba
 @media(max-width:700px){.learning-intro{grid-template-columns:1fr;gap:14px;margin:34px 0 24px}.journal-subject-nav{top:56px;flex-wrap:nowrap;overflow-x:auto;padding:12px 0}.journal-subject-nav a{flex:0 0 auto}.journal-path{gap:12px;font-size:8px}.journal-card-head{flex-direction:column}.journal-tag{order:-1}.journal-resources{flex-direction:column;align-items:stretch}.journal-resources a{justify-content:center}.journal-card{scroll-margin-top:110px}}
 @media(prefers-reduced-motion:reduce){.journal-hub *{scroll-behavior:auto!important}}
 
+
+/* COMMERCE LEAGUE — premium gold visual system */
+:root{--bg:#07060b;--panel:#12101a;--line:#342b3c;--text:#f8f5ef;--muted:#b6adbd;--blue:#e7b64e;--lime:#c9a4ff;--red:#ff8585;color-scheme:dark}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(ellipse at 50% -12%,#30203a 0,transparent 43%),#07060b;color:#f8f5ef;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+::selection{background:#dba83f;color:#17100a}
+.splash{min-height:100svh;background:radial-gradient(ellipse at 50% 43%,rgba(170,111,34,.18),transparent 34%),radial-gradient(ellipse at 50% 100%,rgba(107,62,138,.15),transparent 45%),#030208}
+.splash:before{background:linear-gradient(transparent 96%,rgba(226,174,70,.055))}
+.splash:after{content:"";position:absolute;left:50%;bottom:13%;width:min(76vw,900px);height:90px;transform:translateX(-50%);border:1px solid rgba(224,174,76,.42);border-radius:50%;box-shadow:0 0 45px rgba(213,155,52,.12),inset 0 0 35px rgba(213,155,52,.08);pointer-events:none}
+.splash-emblem{border:1px solid #d8a844;background:radial-gradient(circle,#21172a 0%,#08060d 68%);box-shadow:0 0 20px rgba(230,178,70,.34),0 0 68px rgba(195,130,47,.13),inset 0 0 35px rgba(230,178,70,.12)}
+.splash-emblem:before,.splash-emblem:after{border-color:rgba(232,190,102,.7)}
+.splash-energy{border-top-color:#f5cf77;border-right-color:rgba(214,158,60,.55);filter:drop-shadow(0 0 6px #dcae52)}
+.splash-cl{color:#f0c76d;text-shadow:0 0 12px rgba(239,190,88,.55),0 0 32px rgba(198,135,47,.34)}
+.splash-emblem:before{content:"♛";inset:auto auto calc(100% + 6px);border:0;border-radius:0;transform:none;color:#f0c76d;font-size:22px;text-shadow:0 0 14px rgba(239,190,88,.5)}
+.splash-title span,.launch-name{color:#e9b84e}
+.splash-tagline{letter-spacing:1px;color:#e4d8c4;text-transform:lowercase}
+.splash-divider{color:#e9b84e}
+.splash-divider span{background:linear-gradient(90deg,transparent,#d9a744)}
+.splash-enter{border-color:#d7a442;color:#f0c76d}
+.splash-enter:hover{background:#e2b24b;color:#120d08;box-shadow:0 0 28px rgba(226,178,75,.25)}
+.top.statusbar{background:rgba(7,5,12,.91);border-bottom:1px solid rgba(225,178,79,.24);backdrop-filter:blur(18px)}
+.statusbar-inner{min-height:72px;padding-left:clamp(20px,4vw,64px);padding-right:clamp(20px,4vw,64px)}
+.statusbar .mark{border-color:#d9aa4a;color:#f0c76d;background:linear-gradient(135deg,rgba(231,182,78,.15),transparent)}
+.statusbar .brand small{color:#d0a44e}
+.statusbar-meta{gap:4px}
+.nav-link{min-height:42px;padding:0 15px;border-radius:999px;color:#d4ccda;font-size:10px;letter-spacing:.8px}
+.nav-link:hover,.nav-link[aria-current="page"]{border-color:rgba(228,180,78,.42);background:rgba(228,180,78,.09);color:#f2c765}
+#menuToggle .brand-emblem{width:38px;height:38px}
+#menuToggle .brand-emblem .splash-cl{font-size:25px;letter-spacing:-5px}
+#menuToggle .brand-emblem:before{font-size:11px}
+#siteHome{background:#08070d}
+#welcome{min-height:min(820px,calc(100svh - 72px));padding:clamp(28px,4vw,62px) clamp(22px,5vw,84px) 20px;background:radial-gradient(ellipse at 78% 42%,rgba(103,59,129,.24),transparent 38%),radial-gradient(ellipse at 72% 80%,rgba(183,121,38,.13),transparent 34%),linear-gradient(112deg,#08070e 0%,#100d19 56%,#0a0811 100%)}
+#welcome:before{opacity:.14;background-image:linear-gradient(rgba(226,180,91,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(226,180,91,.16) 1px,transparent 1px);background-size:58px 58px;mask-image:linear-gradient(90deg,transparent,#000 75%)}
+#welcome:after{border-color:rgba(225,178,79,.12);box-shadow:0 0 0 50px rgba(225,178,79,.018),0 0 0 100px rgba(161,103,190,.018)}
+.launch-track{min-height:clamp(440px,68vh,700px);border:1px solid rgba(225,178,79,.2);border-radius:22px;background:linear-gradient(120deg,rgba(12,9,18,.92),rgba(22,14,29,.76));box-shadow:0 30px 100px rgba(0,0,0,.35);overflow:hidden}
+.launch-slide{padding:clamp(34px,6vw,86px);gap:30px}
+.launch-brand{align-items:center}
+.launch-emblem{border-color:#d9aa4a}
+.launch-name{font-size:clamp(22px,3vw,38px);letter-spacing:2px;line-height:1.03}
+.launch-tagline{color:#d5c8b3;font-size:12px;letter-spacing:.6px}
+.launch-copy{max-width:760px}
+.launch-kicker{color:#e5b34d;letter-spacing:2.2px}
+.launch-copy h1,.launch-copy h2{font-size:clamp(46px,7vw,94px);line-height:.99;letter-spacing:-.065em}
+.launch-copy h2{font-size:clamp(42px,6vw,78px)}
+.launch-copy p:not(.launch-kicker){max-width:670px;color:#c5bdca;font-size:clamp(15px,1.4vw,19px);line-height:1.75}
+.title-accent{color:#e9b84e}
+.launch-side-note{color:#e7c477;border-color:rgba(226,180,91,.28)}
+.launch-hint{padding-top:18px}
+.launch-hint-label{color:#b5a9bc;letter-spacing:1.8px}
+.slide-dot{width:9px;height:9px;border-radius:50%;border:1px solid #8f7a9d;background:#55465e}
+.slide-dot.active{width:28px;border-radius:20px;background:#e4b44e;border-color:#e4b44e;box-shadow:0 0 14px rgba(228,180,78,.35)}
+.mission-section,.home-highlights,.league-intro-section,.data-section,.help-section,.home-next-section{background:#0b0911;color:#f8f5ef}
+.mission-section,.home-highlights,.league-intro-section,.data-section,.help-section{padding:clamp(58px,8vw,112px) clamp(22px,5vw,88px);border-top:1px solid rgba(225,178,79,.14)}
+.section-kicker{color:#d8b36c;border-color:rgba(225,178,79,.2)}
+.eyebrow,.launch-kicker{color:#e5b34d}
+.mission-heading h2,.learning-intro h1,.highlights-heading h2,.league-intro-grid h2,.help-inner h2,.home-next-section h2{letter-spacing:-.045em}
+.mission-heading h2 span,.league-intro-grid h2 span{color:#e7b64e}
+.mission-copy,.league-intro-copy,.help-copy{color:#c7bfcb;line-height:1.85}
+.tiers{background:linear-gradient(135deg,#0e0b14,#100c18);border-color:rgba(225,178,79,.18)}
+.tier-card,.resource-card,.profile-box,.hero-board{border:1px solid rgba(225,178,79,.22);border-radius:16px;background:linear-gradient(145deg,rgba(27,19,34,.92),rgba(12,9,17,.96));box-shadow:0 18px 50px rgba(0,0,0,.22)}
+.tier-card{padding:clamp(24px,3vw,42px)}
+.tier-badge{border-color:rgba(231,182,78,.42);color:#edc36e;background:rgba(231,182,78,.06);border-radius:999px;padding:6px 11px}
+.resource-item{border-left-color:#dcae52;border-radius:0 9px 9px 0;background:rgba(226,177,76,.055)}
+.resource-item b{color:#f6eddd}
+.btn{border:1px solid #e0ae48;border-radius:999px;background:linear-gradient(135deg,#f0c66b,#d89d35);color:#17100a;box-shadow:0 7px 24px rgba(205,147,47,.16);letter-spacing:1px;transition:transform .2s,box-shadow .2s,filter .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(205,147,47,.24);filter:brightness(1.06)}
+.btn.secondary{border-color:rgba(224,174,72,.55);background:rgba(18,13,23,.7);color:#f1d28f;box-shadow:none}
+.home-highlights{background:linear-gradient(140deg,#0a0810,#100b18)}
+.home-highlights-grid{gap:16px}
+.highlight-card{border:1px solid rgba(225,178,79,.19);border-radius:15px;background:linear-gradient(150deg,rgba(30,20,38,.8),rgba(12,9,17,.95));padding:26px;transition:transform .2s,border-color .2s,background .2s}
+.highlight-card:hover{transform:translateY(-4px);border-color:rgba(231,182,78,.6);background:linear-gradient(150deg,rgba(48,32,48,.9),rgba(14,10,18,.98))}
+.highlight-card>span,.highlight-card b{color:#e8b954}
+.free-section{background:radial-gradient(ellipse at 80% 50%,rgba(165,102,194,.16),transparent 40%),linear-gradient(110deg,#171020,#0b0911);border-top:1px solid rgba(225,178,79,.22);border-bottom:1px solid rgba(225,178,79,.22)}
+.free-stamp{border-color:#d9a744;color:#edc36e}
+.free-stamp strong{color:#f2c568}
+.league-intro-section{background:radial-gradient(ellipse at 90% 12%,rgba(119,71,142,.14),transparent 40%),#0a0810}
+.league-steps article{border-top-color:rgba(225,178,79,.5)}
+.league-steps article>span{color:#e6b750}
+.data-section{background:#0e0b14}
+.data-points p{border-bottom-color:rgba(225,178,79,.15);color:#c9c0cf}
+.data-points span{color:#e6b750}
+.help-section{background:linear-gradient(120deg,#100c17,#0b0911)}
+.contact-placeholders p{border-color:rgba(225,178,79,.18);background:rgba(225,178,79,.04)}
+.home-next-section{border-top:1px solid rgba(225,178,79,.2);background:linear-gradient(110deg,#171020,#0a0810)}
+.resource-hub{background:radial-gradient(ellipse at 85% 0%,rgba(116,68,140,.15),transparent 35%),#09070e;border-color:rgba(225,178,79,.16)}
+.manifesto-head{border-color:rgba(225,178,79,.2)}
+.manifesto-index,.journal-tag{color:#e5bb68}
+.learning-intro h1{font-size:clamp(42px,6vw,76px)}
+.journal-path{color:#c2a66d}
+.subject-nav a,.chapter-nav a,.journal-resources a{border-color:rgba(225,178,79,.2);color:#e6c37c;border-radius:999px}
+.subject-nav a:hover,.chapter-nav a:hover,.journal-resources a:hover{border-color:#e6b750;background:rgba(225,178,79,.08)}
+.journal-card{padding:clamp(22px,3vw,36px);margin-bottom:20px}
+.journal-card h2{font-size:clamp(24px,3vw,36px)}
+.chapter-block{border-left-color:#dcae52;background:rgba(225,178,79,.045);border-radius:0 10px 10px 0}
+.chapter-block h3,.chapter-block h4{color:#f1d28f}
+.account-shell{max-width:1120px}
+.account-shell h1{font-size:clamp(42px,6vw,72px)}
+.account-shell .profile-box{max-width:none}
+.local-warning{border-color:rgba(231,182,78,.38);border-radius:12px;background:rgba(231,182,78,.07);color:#e6d5b5}
+.local-warning strong{color:#f1c96d}
+.local-id,.learn-progress,.tool-status{color:#e7bc61}
+.league-card{padding:20px;border:1px solid rgba(225,178,79,.2);border-radius:13px;background:rgba(25,17,31,.65)}
+.sidebar{background:linear-gradient(160deg,#21162a,#09070e 76%);border-color:rgba(225,178,79,.36)}
+.sidebar-link:hover,.sidebar-link[aria-current="page"]{border-color:rgba(225,178,79,.4);background:rgba(225,178,79,.08);color:#edc36e}
+.sidebar-link span,.sidebar-heading{color:#e7b64e}
+.sidebar-close{border-color:rgba(225,178,79,.3);border-radius:10px}
+.owner-chat,.owner-ai-setup{border-color:rgba(225,178,79,.2);border-radius:14px}
+.owner-suggestions button{border-color:rgba(225,178,79,.24);border-radius:999px;color:#e9c779}
+.footer{background:#07060b;border-color:rgba(225,178,79,.2);color:#8f8496}
+.footer-mark{color:#edc36e;border-color:#d5a64b}
+.footer-nav button,.footer-nav a{color:#cdbd9b}
+:focus-visible{outline:2px solid #f0c66b!important;outline-offset:3px}
+@media(max-width:800px){.launch-track{min-height:580px}.launch-slide{padding:30px 24px;gap:24px}.launch-copy h1,.launch-copy h2{font-size:clamp(42px,11vw,66px)}.statusbar-inner{flex-wrap:wrap}.statusbar-meta{width:100%;justify-content:flex-start;overflow-x:auto}.nav-link{white-space:nowrap}}
+@media(max-width:520px){.launch-track{min-height:570px;border-radius:14px}.launch-slide{padding:24px 18px}.launch-brand{gap:12px}.launch-emblem{width:72px}.launch-name{font-size:20px}.launch-tagline{font-size:10px}.launch-copy h1,.launch-copy h2{font-size:43px}.launch-copy p:not(.launch-kicker){font-size:14px}.splash:after{bottom:10%;height:60px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.highlight-card{transition:none}}
+
 </style>
 </head>
 <body>
 <section class="splash" id="splash" aria-label="Commerce League introduction">
-  <div class="splash-inner"><div class="splash-emblem" role="img" aria-label="Electric blue CL emblem"><span class="splash-energy" aria-hidden="true"></span><div class="splash-cl">CL</div></div><p class="splash-title">COMMERCE <span>LEAGUE</span></p><p class="splash-tagline">Commerce is an Ego — Let’s Get Into Flow</p><div class="splash-divider" aria-hidden="true"><span></span>◇<span></span></div><button class="splash-enter" id="enterSite">ENTER <span aria-hidden="true">↗</span></button><span class="splash-arrow" aria-hidden="true">⌄</span></div>
+  <div class="splash-inner"><div class="splash-emblem" role="img" aria-label="Commerce League gold CL emblem"><span class="splash-energy" aria-hidden="true"></span><div class="splash-cl">CL</div></div><p class="splash-title">COMMERCE <span>LEAGUE</span></p><p class="splash-tagline">commerce is an ego — let’s get into flow</p><div class="splash-divider" aria-hidden="true"><span></span>✦<span></span></div><button class="splash-enter" id="enterSite">ENTER COMMERCE LEAGUE <span aria-hidden="true">↗</span></button><span class="splash-arrow" aria-hidden="true">⌄</span></div>
 </section>
 <div id="siteHome" class="hidden">
 <header class="top statusbar" aria-label="Main navigation"><div class="statusbar-inner"><button class="brand brand-trigger" type="button" id="menuToggle" aria-label="Open Commerce League menu" aria-controls="siteSidebar" aria-expanded="false"><div class="splash-emblem brand-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><span>COMMERCE LEAGUE<small>LEARN · COMPETE · RISE</small></span></button><nav class="statusbar-meta" aria-label="Choose a section"><button class="nav-link" type="button" id="navHome" aria-current="page">Home</button><button class="nav-link" type="button" id="navGeneral" aria-current="false">Journal</button><button class="nav-link" type="button" id="navLeague" aria-current="false">League</button></nav></div></header>
 <div class="sidebar-backdrop hidden" id="sidebarBackdrop"></div><aside class="sidebar hidden" id="siteSidebar" aria-label="Site menu" aria-hidden="true"><div class="sidebar-top"><div class="brand"><div class="splash-emblem brand-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div>COMMERCE LEAGUE<small>LEARN · COMPETE · RISE</small></div></div><button class="sidebar-close" type="button" id="sidebarClose" aria-label="Close menu">×</button></div><nav class="sidebar-nav" aria-label="Site pages"><button class="sidebar-link" type="button" data-view="general">Journal · Class 11</button><button class="sidebar-link" type="button" data-view="cloffice">Cloffice</button></nav><p class="sidebar-note">Browse the Class 11 Journal or open the Faculty and Owner office categories.</p></aside>
 <main>
-<div class="page-view" id="homeView"><section class="panel launch-stage" id="welcome" aria-label="Commerce League announcements"><div class="launch-track" id="announcementSlides" role="region" aria-roledescription="carousel" aria-label="Commerce League stories. Click or tap to advance, or hold to pause." tabindex="0"><article class="launch-slide active" role="group" aria-roledescription="slide" aria-label="1 of 3"><div class="launch-brand"><div class="splash-emblem launch-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div><p class="launch-name">COMMERCE<br>LEAGUE</p><p class="launch-tagline">Commerce is an Ego — Let’s Get Into Flow</p></div></div><div class="launch-copy"><p class="launch-kicker">OUR BELIEF</p><h1>Know the game beneath the numbers.</h1><p>Read the numbers. Question the trade-offs. Understand the people. Make your move with intent.</p></div></article><article class="launch-slide story-slide" role="group" aria-roledescription="slide" aria-label="2 of 3"><div class="launch-side-note"><strong>Think clearly.<br>Choose wisely.</strong></div><div class="launch-copy"><p class="launch-kicker">CL METHOD</p><h2>Ask better questions.</h2><p>Connect accounts, markets, and business choices to real life.</p></div></article><article class="launch-slide story-slide" role="group" aria-roledescription="slide" aria-label="3 of 3"><div class="launch-side-note"><strong>Learn together.<br>Play fair.</strong></div><div class="launch-copy"><p class="launch-kicker">CL SPIRIT</p><h2>Learn. Question. Grow.</h2><p>Share ideas, use evidence, and respect different views.</p></div></article></div><div class="launch-hint"><span class="launch-hint-label">A PLATFORM FOR COMMERCE STUDENTS</span><div class="slide-dots" id="slideDots" role="group" aria-label="Choose an introduction slide"><button class="slide-dot active" type="button" aria-label="Go to slide 1" aria-current="true"></button><button class="slide-dot" type="button" aria-label="Go to slide 2" aria-current="false"></button><button class="slide-dot" type="button" aria-label="Go to slide 3" aria-current="false"></button></div></div></section>
+<div class="page-view" id="homeView"><section class="panel launch-stage" id="welcome" aria-label="Commerce League announcements"><div class="launch-track" id="announcementSlides" role="region" aria-roledescription="carousel" aria-label="Commerce League stories. Click or tap to advance, or hold to pause." tabindex="0"><article class="launch-slide active" role="group" aria-roledescription="slide" aria-label="1 of 3"><div class="launch-brand"><div class="splash-emblem launch-emblem" role="img" aria-label="Commerce League gold CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div><p class="launch-name">COMMERCE<br>LEAGUE</p><p class="launch-tagline">commerce is an ego — let’s get into flow</p></div></div><div class="launch-copy"><p class="launch-kicker">FREE FOR COMMERCE STUDENTS · INDIA-WIDE</p><h1>Learn. Practice. <span class="title-accent">Compete.</span></h1><p>Commerce League brings learning resources, meaningful practice, and a community built around healthy academic competition into one place.</p></div></article><article class="launch-slide story-slide" role="group" aria-roledescription="slide" aria-label="2 of 3"><div class="launch-side-note"><strong>Six subjects.<br>One learning space.</strong></div><div class="launch-copy"><p class="launch-kicker">CLASS 11 JOURNAL</p><h2>Build your foundation.</h2><p>Explore Accountancy, Mathematics, Business Studies, Economics, English, and Banking through structured guides and trusted learning resources.</p></div></article><article class="launch-slide story-slide" role="group" aria-roledescription="slide" aria-label="3 of 3"><div class="launch-side-note"><strong>Learn together.<br>Play fair.</strong></div><div class="launch-copy"><p class="launch-kicker">THE LEAGUE</p><h2>Earn your place. Keep growing.</h2><p>Qualify through the organiser-set entry process, meet the ongoing standard, and grow through fair challenges with capable peers.</p></div></article></div><div class="launch-hint"><span class="launch-hint-label">A PLATFORM FOR COMMERCE STUDENTS</span><div class="slide-dots" id="slideDots" role="group" aria-label="Choose an introduction slide"><button class="slide-dot active" type="button" aria-label="Go to slide 1" aria-current="true"></button><button class="slide-dot" type="button" aria-label="Go to slide 2" aria-current="false"></button><button class="slide-dot" type="button" aria-label="Go to slide 3" aria-current="false"></button></div></div></section>
 <section class="mission-section" id="our-purpose" aria-labelledby="mission-title">
   <div class="section-kicker"><span>OUR PURPOSE</span><span>STUDENT-LED · BUILT FOR COMMERCE</span></div>
   <div class="mission-layout">
