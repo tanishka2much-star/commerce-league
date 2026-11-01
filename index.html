@@ -544,98 +544,195 @@ body{background:radial-gradient(ellipse at 50% -12%,#30203a 0,transparent 43%),#
 @media(max-width:520px){.launch-track{min-height:570px;border-radius:14px}.launch-slide{padding:24px 18px}.launch-brand{gap:12px}.launch-emblem{width:72px}.launch-name{font-size:20px}.launch-tagline{font-size:10px}.launch-copy h1,.launch-copy h2{font-size:43px}.launch-copy p:not(.launch-kicker){font-size:14px}.splash:after{bottom:10%;height:60px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.highlight-card{transition:none}}
 
+
+/* STRUCTURAL REDESIGN — CL editorial / collegiate identity */
+:root{--bg:#09070e;--panel:#110d18;--line:rgba(223,180,99,.22);--text:#f4efe6;--muted:#bdb3c2;--blue:#d9a84e;--lime:#c3a0df;--gold:#e5b95e;--purple:#24152d}
+body{background:#09070e;color:var(--text);font-family:Inter,"Avenir Next",Avenir,system-ui,sans-serif}
+.splash{background:radial-gradient(ellipse at 50% 38%,#24162b 0%,#100b17 35%,#05040a 76%);overflow:hidden}
+.splash:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.9%,rgba(228,184,94,.1) 50%,transparent 50.1%),linear-gradient(transparent 49.9%,rgba(228,184,94,.08) 50%,transparent 50.1%);background-size:72px 72px;mask-image:radial-gradient(ellipse,#000,transparent 70%)}
+.splash-inner{position:relative;z-index:1}
+.cl-mark{display:inline-grid;place-items:center;position:relative;width:100px;height:100px;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;overflow:visible}
+.cl-mark svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 12px rgba(225,176,80,.22))}
+.mark-frame{fill:rgba(214,166,76,.06);stroke:#d9ad58;stroke-width:1.8}
+.mark-inner{fill:none;stroke:rgba(225,187,112,.45);stroke-width:1}
+.mark-c,.mark-l{fill:none;stroke:#f1d28c;stroke-width:5;stroke-linecap:square;stroke-linejoin:miter}
+.mark-star{fill:#e9bd69;stroke:#f4d995;stroke-width:.7}
+.splash-cl,.splash-energy,.cl-mark:before,.cl-mark:after{display:none!important}
+.splash-title{font-family:Georgia,"Times New Roman",serif;letter-spacing:.18em;font-weight:500}
+.splash-title span{color:#e3b75c}
+.splash-tagline{font-family:Georgia,serif;font-style:italic;letter-spacing:.06em;text-transform:lowercase;color:#d6c6ac}
+.splash-enter{border:1px solid #d9ad58;background:#d9ad58;color:#120d14;border-radius:2px;letter-spacing:.16em;font-size:10px;font-weight:800;padding:16px 30px}
+.splash-divider{color:#e4bd70}
+.top.statusbar{position:sticky;top:0;z-index:30;background:rgba(8,6,12,.94);border-bottom:1px solid rgba(220,175,87,.2);backdrop-filter:blur(20px)}
+.statusbar-inner{min-height:82px;padding:0 clamp(22px,5vw,80px)}
+.brand{gap:14px;color:#f1e9dc;font-family:Georgia,serif;letter-spacing:.12em;font-size:12px}
+.brand small{display:block;margin-top:6px;color:#caa65e;font:9px Inter,system-ui,sans-serif;letter-spacing:.2em}
+.brand-emblem{width:45px;height:45px}
+.nav-link{border-radius:0!important;padding:0 18px;letter-spacing:.14em;text-transform:uppercase;font-size:9px;color:#c8bdca;border-bottom:1px solid transparent}
+.nav-link:hover,.nav-link[aria-current="page"]{background:transparent!important;color:#f0c86f;border-color:#d9ad58}
+.sidebar{background:#100b16;border-left:1px solid rgba(220,175,87,.35)}
+.sidebar-link{border-radius:0;border-left:2px solid transparent}
+.sidebar-link:hover,.sidebar-link[aria-current="page"]{border-left-color:#e0b65f;background:rgba(218,171,81,.08)}
+.launch-stage{position:relative;isolation:isolate;min-height:760px;padding:28px clamp(22px,6vw,92px) 34px;background:radial-gradient(ellipse at 78% 42%,rgba(109,65,126,.28),transparent 34%),linear-gradient(118deg,#0b0810 0%,#171020 57%,#0a0810 100%);overflow:hidden}
+.launch-stage:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(rgba(220,175,87,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(220,175,87,.08) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(90deg,transparent,#000 78%)}
+.launch-stage:after{content:"";position:absolute;z-index:-1;width:min(55vw,700px);aspect-ratio:1;right:-13%;top:13%;border:1px solid rgba(222,180,99,.17);border-radius:50%;box-shadow:0 0 0 50px rgba(222,180,99,.025),0 0 0 110px rgba(222,180,99,.02),0 0 100px rgba(151,95,168,.13)}
+.hero-topline{display:flex;justify-content:space-between;gap:20px;color:#b99b69;font-size:9px;letter-spacing:.2em;padding:5px 0 18px;border-bottom:1px solid rgba(222,180,99,.2)}
+.launch-track{position:relative;min-height:590px;margin-top:24px;border:1px solid rgba(222,180,99,.18);border-radius:2px;background:linear-gradient(110deg,rgba(12,9,17,.9),rgba(30,20,39,.72));box-shadow:0 30px 100px rgba(0,0,0,.25);overflow:hidden}
+.launch-slide{position:relative;min-height:590px;padding:clamp(30px,6vw,82px);display:flex;flex-direction:column;justify-content:space-between;gap:35px}
+.hero-identity{display:flex;align-items:center;gap:22px}
+.launch-emblem{width:82px;height:82px}
+.hero-brand-overline{margin:0 0 8px;color:#c5a76f;font-size:8px;letter-spacing:.22em}
+.launch-name{margin:0;color:#f0e8dc;font-family:Georgia,serif;font-size:clamp(25px,3vw,38px);line-height:.96;letter-spacing:.14em}
+.launch-tagline{margin:9px 0 0;color:#d7c4a5;font-family:Georgia,serif;font-size:12px;font-style:italic}
+.hero-main-copy{max-width:840px;margin:10px 0 10px 8%}
+.launch-kicker{color:#e0b45b;font-size:9px;letter-spacing:.24em;font-weight:700}
+.launch-copy h1,.launch-copy h2,.hero-main-copy h1,.hero-main-copy h2{max-width:850px;margin:18px 0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(48px,7.5vw,100px);font-weight:400;line-height:.98;letter-spacing:-.045em;color:#f5eee4}
+.hero-main-copy h1 em,.hero-main-copy h2 em{color:#e4b85f;font-weight:400}
+.hero-main-copy>p:not(.launch-kicker){max-width:630px;color:#c9bdc9;font-size:clamp(14px,1.3vw,17px);line-height:1.85}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{border-radius:2px!important;padding:15px 21px!important;font-size:9px!important;letter-spacing:.13em!important;font-weight:800!important;background:#d9ad58!important;color:#100b13!important;border:1px solid #d9ad58!important;box-shadow:none!important}
+.btn.secondary{background:transparent!important;color:#e7c77f!important;border-color:rgba(225,183,98,.55)!important}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.hero-index{display:flex;align-items:center;gap:14px;color:#9f8b73;font-size:9px;letter-spacing:.2em}
+.hero-index span:first-child{color:#e3b85f;font-family:Georgia,serif;font-size:24px}
+.hero-editorial-number{position:absolute;right:8%;top:12%;font:clamp(150px,27vw,360px)/.8 Georgia,serif;color:rgba(225,180,91,.07);letter-spacing:-.1em}
+.story-slide .hero-main-copy{position:relative;z-index:1;margin-top:auto;margin-bottom:auto}
+.launch-hint{display:flex;align-items:center;justify-content:space-between;padding:20px 2px 0}
+.launch-hint-label{color:#a99bad;font-size:8px;letter-spacing:.22em}
+.slide-dots{display:flex;align-items:center;gap:10px}
+.slide-dot{width:7px;height:7px;padding:0;border:1px solid #a78e64;border-radius:50%;background:transparent}
+.slide-dot.active{width:28px;border-radius:0;background:#e2b65d;border-color:#e2b65d}
+.mission-section,.home-highlights,.league-intro-section,.data-section,.help-section{padding:clamp(70px,9vw,130px) clamp(24px,8vw,120px);border-top:1px solid rgba(222,180,99,.16)}
+.section-kicker{display:flex;justify-content:space-between;gap:18px;border-bottom:1px solid rgba(222,180,99,.22);padding-bottom:17px;color:#c2a56f;font-size:9px;letter-spacing:.2em}
+.mission-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(35px,8vw,120px);padding-top:68px}
+.eyebrow{color:#d7ac5d;font-size:9px;letter-spacing:.2em;font-weight:700}
+.mission-heading h2,.learning-intro h2,.highlights-heading h2,.league-intro-grid h2,.help-inner h2,.home-next-section h2{font:400 clamp(40px,5.5vw,72px)/1.02 Georgia,serif;letter-spacing:-.04em}
+.mission-heading h2 span,.league-intro-grid h2 span{color:#e2b65e}
+.mission-copy{max-width:560px;color:#c6bdc8;font-size:16px;line-height:1.9}
+.tiers{padding:clamp(65px,8vw,110px) clamp(24px,8vw,120px);background:linear-gradient(130deg,#100b16,#171020 65%,#0b0810);border-top:1px solid rgba(222,180,99,.17);border-bottom:1px solid rgba(222,180,99,.17)}
+.tiers-inner{max-width:1400px;margin:auto}
+.learning-intro{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:end;margin:58px 0 40px}
+.learning-intro h2{margin:14px 0}
+.learning-intro>.muted{max-width:490px;color:#c5bac9;line-height:1.8}
+.tier-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.tier-card{position:relative;min-height:430px;padding:clamp(26px,4vw,50px);border:1px solid rgba(222,180,99,.26);border-radius:2px;background:linear-gradient(145deg,rgba(38,25,45,.8),rgba(12,9,17,.96))}
+.tier-league{background:linear-gradient(145deg,rgba(61,39,65,.68),rgba(12,9,17,.98));border-color:rgba(225,181,95,.52)}
+.tier-number{position:absolute;right:25px;top:14px;color:rgba(224,180,93,.12);font:100px Georgia,serif}
+.tier-badge{display:inline-block;border:1px solid rgba(224,180,93,.4);border-radius:0;padding:8px 11px;color:#e8c77e;font-size:8px;letter-spacing:.15em}
+.tier-card h2{margin:30px 0 10px;font:48px Georgia,serif;color:#f5eee4}
+.tier-card>.muted{color:#c2b7c7}
+.resource-item{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:16px 0;border-top:1px solid rgba(222,180,99,.16);background:none;border-radius:0}
+.resource-item b{color:#e7c982;font-size:12px}.resource-item span{color:#bfb5c4;font-size:12px;line-height:1.65}
+.tier-card .btn{margin-top:22px}
+.home-highlights{background:#0a080f}
+.highlights-heading{display:grid;grid-template-columns:1fr .7fr;gap:50px;align-items:end;padding:55px 0 36px}
+.highlights-heading h2{max-width:700px;margin:12px 0}
+.highlights-heading>p{color:#bfb5c4;line-height:1.8}
+.home-highlights-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.highlight-card{grid-column:span 2;min-height:245px;padding:26px;border:1px solid rgba(222,180,99,.2);border-radius:2px;background:linear-gradient(145deg,#1b1221,#0d0a12);text-decoration:none;transition:.2s}
+.highlight-card:nth-child(4),.highlight-card:nth-child(5){grid-column:span 3}
+.highlight-card:hover{border-color:#dcb35f;transform:translateY(-4px)}
+.highlight-card>span{color:#d9b56e;font-size:8px;letter-spacing:.2em}
+.highlight-card h3{margin:28px 0 10px;color:#f3eadf;font:30px Georgia,serif}
+.highlight-card p{color:#bdb2c2;font-size:13px;line-height:1.7}
+.highlight-card b{display:block;margin-top:22px;color:#e5bb69;font-size:9px;letter-spacing:.14em}
+.free-section{display:grid;grid-template-columns:110px 1fr auto;align-items:center;gap:35px;padding:clamp(55px,7vw,95px) clamp(24px,8vw,120px);background:linear-gradient(110deg,#25172d,#120d19 70%,#0c0911);border-block:1px solid rgba(222,180,99,.25)}
+.free-symbol{display:grid;place-items:center;width:86px;height:86px;border:1px solid #dcb45f;color:#edc77a;font:28px Georgia,serif;transform:rotate(45deg)}
+.free-symbol span{transform:rotate(-45deg)}
+.free-content h2{max-width:760px;font:clamp(36px,4.8vw,64px)/1.03 Georgia,serif}
+.free-content>p:not(.eyebrow){max-width:700px;color:#d0c3d2;line-height:1.8}
+.free-stamp{width:125px;height:125px;border:1px solid #dfb45e;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#e7c57d}
+.free-stamp strong{font:42px Georgia,serif}.free-stamp span{font-size:8px;letter-spacing:.16em;text-align:center}
+.league-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;padding:65px 0}
+.league-intro-copy{color:#c6bdc8;line-height:1.9}
+.league-steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(222,180,99,.3)}
+.league-steps article{padding:25px 18px 10px 0;border-top:0}
+.league-steps article>span{color:#e2b65e;font:28px Georgia,serif}
+.league-steps h3{font:25px Georgia,serif}
+.league-steps p{color:#bdb2c2;font-size:12px;line-height:1.7}
+.data-section{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;background:#100b16}
+.data-copy h2{font:clamp(40px,5vw,65px)/1.04 Georgia,serif}
+.data-copy>p:last-child,.data-points p{color:#c6bdc8;line-height:1.8}
+.data-points p{padding:18px 0;border-bottom:1px solid rgba(222,180,99,.18)}
+.data-points span{color:#e2b65e;font:22px Georgia,serif;margin-right:20px}
+.help-inner{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.help-inner h2{font-size:clamp(46px,6vw,76px)}
+.help-copy{color:#c5bac9;line-height:1.8}
+.contact-placeholders{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.contact-placeholders p{padding:18px;border:1px solid rgba(222,180,99,.22);border-radius:0;background:#120d19}
+.contact-placeholders b{display:block;color:#e2bc70;font-size:9px;letter-spacing:.14em}
+.contact-placeholders span{display:block;margin-top:9px;font-size:12px;color:#c2b7c7}
+.home-next-section{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:60px clamp(24px,8vw,120px);background:#21152a;border-top:1px solid rgba(222,180,99,.2)}
+.home-next-section h2{margin:10px 0}
+.home-next-actions{display:flex;flex-wrap:wrap;gap:10px}
+.resource-hub{background:#0a080f}
+.resource-hub-inner{max-width:1400px;padding:clamp(30px,6vw,80px) clamp(20px,5vw,65px)}
+.manifesto-head{display:flex;justify-content:space-between;border-bottom:1px solid rgba(222,180,99,.22);padding-bottom:18px}
+.learning-intro{margin:55px 0 38px}
+.learning-intro h1{font:clamp(44px,6vw,82px)/1 Georgia,serif;letter-spacing:-.045em}
+.journal-path{display:flex;gap:30px;padding:20px 0;color:#d9b56e;font-size:8px;letter-spacing:.17em;border-block:1px solid rgba(222,180,99,.15)}
+.subject-nav{display:flex;flex-wrap:wrap;gap:8px;margin:25px 0 45px}
+.subject-nav a,.chapter-nav a,.journal-resources a{padding:10px 14px;border:1px solid rgba(222,180,99,.22);border-radius:0;color:#e6c77e;text-decoration:none;font-size:10px}
+.journal-subjects{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.journal-card{margin:0;padding:clamp(22px,3vw,38px);border:1px solid rgba(222,180,99,.22);border-radius:2px;background:linear-gradient(145deg,#191120,#0e0a13)}
+.journal-card h2{font:clamp(25px,3vw,38px)/1.1 Georgia,serif}
+.journal-card-head{align-items:start}
+.journal-summary{color:#bfb5c4;line-height:1.75}
+.chapter-nav{display:flex;flex-wrap:wrap;gap:7px;margin:22px 0}
+.chapter-block{margin:10px 0;padding:18px;border-left:1px solid #d9ad58;background:rgba(225,180,91,.045)}
+.chapter-block h3,.chapter-block h4{font:22px Georgia,serif;color:#e8c77e}
+.chapter-block p{color:#bfb5c4;font-size:13px;line-height:1.75}
+.journal-resources{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.account-shell{max-width:1220px;padding:clamp(30px,6vw,85px) clamp(22px,5vw,70px)}
+.account-shell h1{font:clamp(44px,6vw,78px)/1 Georgia,serif}
+.profile-box,.local-tools,.league-card{border:1px solid rgba(222,180,99,.22);border-radius:2px;background:linear-gradient(145deg,#191120,#0e0a13);padding:clamp(22px,3vw,38px)}
+.local-warning{border-radius:0;border-left:2px solid #d9ad58;background:rgba(220,175,87,.07)}
+.field input,.field textarea{border-radius:0;border:1px solid rgba(222,180,99,.3);background:#0b0810;color:#f5eee4}
+.resource-cards{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.resource-cards .resource-card{border:1px solid rgba(222,180,99,.25);border-radius:2px;background:#17101e;padding:32px}
+.owner-ai-setup,.owner-chat{border-radius:2px;border:1px solid rgba(222,180,99,.22);background:#100b16}
+.footer.site-footer{padding:45px clamp(22px,6vw,85px) 20px;background:#06050a;border-top:1px solid rgba(222,180,99,.22)}
+.footer-mark{display:grid;place-items:center;width:48px;height:48px;border:1px solid #d9ad58;color:#edc77a;font:20px Georgia,serif}
+@media(max-width:850px){.mission-layout,.learning-intro,.highlights-heading,.league-intro-grid,.data-section,.help-inner{grid-template-columns:1fr;gap:25px}.tier-grid,.journal-subjects{grid-template-columns:1fr}.home-highlights-grid{grid-template-columns:1fr 1fr}.highlight-card,.highlight-card:nth-child(4),.highlight-card:nth-child(5){grid-column:span 1}.league-steps{grid-template-columns:1fr 1fr}.free-section{grid-template-columns:75px 1fr}.free-stamp{grid-column:2;width:95px;height:95px}.launch-stage{min-height:680px}.launch-track,.launch-slide{min-height:540px}.hero-main-copy{margin-left:0}.home-next-section{align-items:flex-start;flex-direction:column}}
+@media(max-width:560px){.statusbar-inner{min-height:70px;padding:0 16px}.brand{font-size:10px}.brand-emblem{width:36px;height:36px}.statusbar-meta{gap:0}.nav-link{padding:0 10px;font-size:8px}.launch-stage{padding:18px 15px 24px;min-height:620px}.hero-topline{font-size:7px}.launch-track,.launch-slide{min-height:520px}.launch-slide{padding:24px 19px}.hero-identity{gap:14px}.launch-emblem{width:62px;height:62px}.launch-name{font-size:22px}.launch-tagline{font-size:10px}.hero-main-copy h1,.hero-main-copy h2{font-size:48px}.hero-main-copy>p:not(.launch-kicker){font-size:13px}.hero-actions{gap:8px}.hero-actions .btn{width:100%}.launch-hint-label{font-size:7px}.section-kicker{font-size:7px}.mission-section,.home-highlights,.league-intro-section,.data-section,.help-section{padding:55px 20px}.tiers{padding:55px 20px}.home-highlights-grid{grid-template-columns:1fr}.highlight-card,.highlight-card:nth-child(4),.highlight-card:nth-child(5){min-height:210px}.free-section{grid-template-columns:1fr;gap:18px;padding:48px 22px}.free-symbol{width:60px;height:60px;font-size:20px}.free-stamp{grid-column:auto}.league-steps{grid-template-columns:1fr 1fr}.contact-placeholders{grid-template-columns:1fr}.resource-item{grid-template-columns:1fr;gap:5px}.journal-path{gap:12px;font-size:7px}.subject-nav a{font-size:9px}.resource-cards{grid-template-columns:1fr}.footer-main{gap:25px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.highlight-card,.btn{transition:none}}
+
 </style>
 </head>
 <body>
 <section class="splash" id="splash" aria-label="Commerce League introduction">
-  <div class="splash-inner"><div class="splash-emblem" role="img" aria-label="Commerce League gold CL emblem"><span class="splash-energy" aria-hidden="true"></span><div class="splash-cl">CL</div></div><p class="splash-title">COMMERCE <span>LEAGUE</span></p><p class="splash-tagline">commerce is an ego — let’s get into flow</p><div class="splash-divider" aria-hidden="true"><span></span>✦<span></span></div><button class="splash-enter" id="enterSite">ENTER COMMERCE LEAGUE <span aria-hidden="true">↗</span></button><span class="splash-arrow" aria-hidden="true">⌄</span></div>
-</section>
+  <div class="splash-inner"><div class="splash-emblem cl-mark" role="img" aria-label="Commerce League monogram"><svg viewBox="0 0 100 100" aria-hidden="true"><path class="mark-frame" d="M50 5 89 27v46L50 95 11 73V27Z"/><path class="mark-inner" d="M50 15 80 32v36L50 85 20 68V32Z"/><path class="mark-c" d="M62 35a20 20 0 1 0 0 30"/><path class="mark-l" d="M54 30v40h22"/><path class="mark-star" d="m50 2 3 7 7 1-5 5 1 7-6-4-6 4 1-7-5-5 7-1Z"/></svg></div><p class="splash-title">COMMERCE <span>LEAGUE</span></p><p class="splash-tagline">commerce is an ego — let’s get into flow</p><div class="splash-divider" aria-hidden="true"><span></span>✦<span></span></div><button class="splash-enter" id="enterSite">ENTER THE LEAGUE <span aria-hidden="true">↗</span></button><span class="splash-arrow" aria-hidden="true">⌄</span></div></section>
 <div id="siteHome" class="hidden">
-<header class="top statusbar" aria-label="Main navigation"><div class="statusbar-inner"><button class="brand brand-trigger" type="button" id="menuToggle" aria-label="Open Commerce League menu" aria-controls="siteSidebar" aria-expanded="false"><div class="splash-emblem brand-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><span>COMMERCE LEAGUE<small>LEARN · COMPETE · RISE</small></span></button><nav class="statusbar-meta" aria-label="Choose a section"><button class="nav-link" type="button" id="navHome" aria-current="page">Home</button><button class="nav-link" type="button" id="navGeneral" aria-current="false">Journal</button><button class="nav-link" type="button" id="navLeague" aria-current="false">League</button></nav></div></header>
-<div class="sidebar-backdrop hidden" id="sidebarBackdrop"></div><aside class="sidebar hidden" id="siteSidebar" aria-label="Site menu" aria-hidden="true"><div class="sidebar-top"><div class="brand"><div class="splash-emblem brand-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div>COMMERCE LEAGUE<small>LEARN · COMPETE · RISE</small></div></div><button class="sidebar-close" type="button" id="sidebarClose" aria-label="Close menu">×</button></div><nav class="sidebar-nav" aria-label="Site pages"><button class="sidebar-link" type="button" data-view="general">Journal · Class 11</button><button class="sidebar-link" type="button" data-view="cloffice">Cloffice</button></nav><p class="sidebar-note">Browse the Class 11 Journal or open the Faculty and Owner office categories.</p></aside>
+<header class="top statusbar" aria-label="Main navigation"><div class="statusbar-inner"><button class="brand brand-trigger" type="button" id="menuToggle" aria-label="Open Commerce League menu" aria-controls="siteSidebar" aria-expanded="false"><span class="splash-emblem brand-emblem cl-mark" role="img" aria-label="Commerce League monogram"><svg viewBox="0 0 100 100" aria-hidden="true"><path class="mark-frame" d="M50 5 89 27v46L50 95 11 73V27Z"/><path class="mark-inner" d="M50 15 80 32v36L50 85 20 68V32Z"/><path class="mark-c" d="M62 35a20 20 0 1 0 0 30" /><path class="mark-l" d="M54 30v40h22"/><path class="mark-star" d="m50 2 3 7 7 1-5 5 1 7-6-4-6 4 1-7-5-5 7-1Z"/></svg></span><span>COMMERCE LEAGUE<small>LEARN · COMPETE · RISE</small></span></button><nav class="statusbar-meta" aria-label="Choose a section"><button class="nav-link" type="button" id="navHome" aria-current="page">Home</button><button class="nav-link" type="button" id="navGeneral" aria-current="false">Journal</button><button class="nav-link" type="button" id="navLeague" aria-current="false">League</button></nav></div></header>
+<div class="sidebar-backdrop hidden" id="sidebarBackdrop"></div><aside class="sidebar hidden" id="siteSidebar" aria-label="Site menu" aria-hidden="true"><div class="sidebar-top"><div class="brand"><span class="splash-emblem brand-emblem cl-mark" role="img" aria-label="Commerce League monogram"><svg viewBox="0 0 100 100" aria-hidden="true"><path class="mark-frame" d="M50 5 89 27v46L50 95 11 73V27Z"/><path class="mark-inner" d="M50 15 80 32v36L50 85 20 68V32Z"/><path class="mark-c" d="M62 35a20 20 0 1 0 0 30" /><path class="mark-l" d="M54 30v40h22"/><path class="mark-star" d="m50 2 3 7 7 1-5 5 1 7-6-4-6 4 1-7-5-5 7-1Z"/></svg></span><div>COMMERCE LEAGUE<small>LEARN · COMPETE · RISE</small></div></div><button class="sidebar-close" type="button" id="sidebarClose" aria-label="Close menu">×</button></div><nav class="sidebar-nav" aria-label="Site pages"><button class="sidebar-link" type="button" data-view="general">Journal · Class 11</button><button class="sidebar-link" type="button" data-view="cloffice">Cloffice</button></nav><p class="sidebar-note">Browse the Class 11 Journal or open the Faculty and Owner office categories.</p></aside>
 <main>
-<div class="page-view" id="homeView"><section class="panel launch-stage" id="welcome" aria-label="Commerce League announcements"><div class="launch-track" id="announcementSlides" role="region" aria-roledescription="carousel" aria-label="Commerce League stories. Click or tap to advance, or hold to pause." tabindex="0"><article class="launch-slide active" role="group" aria-roledescription="slide" aria-label="1 of 3"><div class="launch-brand"><div class="splash-emblem launch-emblem" role="img" aria-label="Commerce League gold CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div><p class="launch-name">COMMERCE<br>LEAGUE</p><p class="launch-tagline">commerce is an ego — let’s get into flow</p></div></div><div class="launch-copy"><p class="launch-kicker">FREE FOR COMMERCE STUDENTS · INDIA-WIDE</p><h1>Learn. Practice. <span class="title-accent">Compete.</span></h1><p>Commerce League brings learning resources, meaningful practice, and a community built around healthy academic competition into one place.</p></div></article><article class="launch-slide story-slide" role="group" aria-roledescription="slide" aria-label="2 of 3"><div class="launch-side-note"><strong>Six subjects.<br>One learning space.</strong></div><div class="launch-copy"><p class="launch-kicker">CLASS 11 JOURNAL</p><h2>Build your foundation.</h2><p>Explore Accountancy, Mathematics, Business Studies, Economics, English, and Banking through structured guides and trusted learning resources.</p></div></article><article class="launch-slide story-slide" role="group" aria-roledescription="slide" aria-label="3 of 3"><div class="launch-side-note"><strong>Learn together.<br>Play fair.</strong></div><div class="launch-copy"><p class="launch-kicker">THE LEAGUE</p><h2>Earn your place. Keep growing.</h2><p>Qualify through the organiser-set entry process, meet the ongoing standard, and grow through fair challenges with capable peers.</p></div></article></div><div class="launch-hint"><span class="launch-hint-label">A PLATFORM FOR COMMERCE STUDENTS</span><div class="slide-dots" id="slideDots" role="group" aria-label="Choose an introduction slide"><button class="slide-dot active" type="button" aria-label="Go to slide 1" aria-current="true"></button><button class="slide-dot" type="button" aria-label="Go to slide 2" aria-current="false"></button><button class="slide-dot" type="button" aria-label="Go to slide 3" aria-current="false"></button></div></div></section>
-<section class="mission-section" id="our-purpose" aria-labelledby="mission-title">
-  <div class="section-kicker"><span>OUR PURPOSE</span><span>STUDENT-LED · BUILT FOR COMMERCE</span></div>
-  <div class="mission-layout">
-    <div class="mission-heading"><p class="eyebrow">WHAT IS COMMERCE LEAGUE?</p><h2 id="mission-title">What is Commerce <span>League?</span></h2></div>
-    <div class="mission-copy"><p>Commerce League (CL) is a student-run initiative created to help fellow commerce students access better learning resources, practise what they learn, and challenge themselves alongside capable peers.</p><p>It began with CLYRO, a fellow Class 11 commerce student who wanted to make it easier for students to learn together and keep improving.</p></div>
+<div class="page-view" id="homeView">
+<section class="panel launch-stage" id="welcome" aria-label="Commerce League introduction">
+  <div class="hero-orbit hero-orbit-one"></div><div class="hero-orbit hero-orbit-two"></div>
+  <div class="hero-topline"><span>INDEPENDENT STUDENT INITIATIVE</span><span>INDIA · CLASS XI</span></div>
+  <div class="launch-track" id="announcementSlides" role="region" aria-roledescription="carousel" aria-label="Commerce League introduction" tabindex="0">
+    <article class="launch-slide active" role="group" aria-roledescription="slide" aria-label="1 of 3">
+      <div class="hero-identity"><span class="splash-emblem launch-emblem cl-mark" role="img" aria-label="Commerce League monogram"><svg viewBox="0 0 100 100" aria-hidden="true"><path class="mark-frame" d="M50 5 89 27v46L50 95 11 73V27Z"/><path class="mark-inner" d="M50 15 80 32v36L50 85 20 68V32Z"/><path class="mark-c" d="M62 35a20 20 0 1 0 0 30"/><path class="mark-l" d="M54 30v40h22"/><path class="mark-star" d="m50 2 3 7 7 1-5 5 1 7-6-4-6 4 1-7-5-5 7-1Z"/></svg></span><div><p class="hero-brand-overline">THE STUDENT COMMERCE NETWORK</p><p class="launch-name">COMMERCE<br>LEAGUE</p><p class="launch-tagline">commerce is an ego — let’s get into flow</p></div></div>
+      <div class="hero-main-copy"><p class="launch-kicker">FREE FOR COMMERCE STUDENTS · INDIA-WIDE</p><h1>Commerce is more than a subject. <em>It’s a way of thinking.</em></h1><p>Learn the concepts. Practise the thinking. Compete with purpose. A free learning and development space made for commerce students.</p><div class="hero-actions"><button class="btn" type="button" data-open-general>EXPLORE THE JOURNAL <span>↗</span></button><button class="btn secondary" type="button" data-open-league>ENTER THE LEAGUE <span>↗</span></button></div></div>
+      <div class="hero-index"><span>01</span><span>THE IDEA</span></div>
+    </article>
+    <article class="launch-slide story-slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+      <div class="hero-editorial-number">06</div><div class="hero-main-copy"><p class="launch-kicker">THE CLASS XI JOURNAL</p><h2>Six subjects. <em>One stronger foundation.</em></h2><p>Accountancy · Mathematics · Business Studies · Economics · English · Banking. Structured learning paths and useful public resources, brought together in one place.</p><div class="hero-actions"><button class="btn" type="button" data-open-general>DISCOVER THE JOURNAL <span>↗</span></button></div></div><div class="hero-index"><span>02</span><span>THE FOUNDATION</span></div>
+    </article>
+    <article class="launch-slide story-slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
+      <div class="hero-editorial-number">CL</div><div class="hero-main-copy"><p class="launch-kicker">THE LEAGUE EXPERIENCE</p><h2>Earn your place. <em>Grow with your peers.</em></h2><p>Qualification, consistent effort, fair challenges, and shared ambition. A space designed around healthy academic competition and student development.</p><div class="hero-actions"><button class="btn" type="button" data-open-league>DISCOVER THE LEAGUE <span>↗</span></button></div></div><div class="hero-index"><span>03</span><span>THE COMMUNITY</span></div>
+    </article>
   </div>
+  <div class="launch-hint"><span class="launch-hint-label">SCROLL TO EXPLORE COMMERCE LEAGUE</span><div class="slide-dots" id="slideDots" role="group" aria-label="Choose an introduction slide"><button class="slide-dot active" type="button" aria-label="Go to slide 1" aria-current="true"></button><button class="slide-dot" type="button" aria-label="Go to slide 2" aria-current="false"></button><button class="slide-dot" type="button" aria-label="Go to slide 3" aria-current="false"></button></div></div>
 </section>
-<section class="tiers" id="how-it-works" aria-labelledby="how-it-works-title">
-  <div class="tiers-inner">
-    <div class="section-kicker"><span>HOW IT WORKS</span><span>OPEN LEARNING · EARNED LEAGUE ACCESS</span></div>
-    <div class="learning-intro"><div><p class="eyebrow">TWO WAYS TO TAKE PART</p><h2 id="how-it-works-title">Start open. Step up when you’re ready.</h2></div><p class="muted">Every commerce student can begin with General. The League is a higher-challenge path for students who qualify and continue to meet its standard.</p></div>
-    <div class="tier-grid">
-      <article class="tier-card"><span class="tier-badge">OPEN TO COMMERCE STUDENTS</span><h2>General</h2><p class="muted">Build your foundation at your own pace.</p><div class="resource-list"><div class="resource-item"><b>Learning resources</b><span>Guides and links to open courses and textbooks.</span></div><div class="resource-item"><b>Practice</b><span>Use examples and activities from linked learning providers; progress marks save in your browser.</span></div></div><button class="btn secondary" type="button" data-open-general>Explore General <span aria-hidden="true">↗</span></button></article>
-      <article class="tier-card"><span class="tier-badge">QUALIFY AND MAINTAIN THE STANDARD</span><h2>The League</h2><p class="muted">A more challenging path for students ready to compete and keep progressing.</p><div class="resource-list"><div class="resource-item"><b>Entry test</b><span>The discussed qualifying threshold is 60%. Organizers administer qualification; this website does not run or verify the test.</span></div><div class="resource-item"><b>Ongoing standard</b><span>League students are expected to maintain the required standard set by the organizers.</span></div><div class="resource-item"><b>Challenge and progression</b><span>More demanding practice, competitions, and performance-based groups or progression can be arranged where organizers support them.</span></div></div><p class="implementation-note">Membership checks, ranking groups, competition delivery, and ongoing performance tracking are coordinated outside this website.</p><button class="btn" type="button" data-open-league>Explore League access <span aria-hidden="true">↗</span></button></article>
-    </div>
-  </div>
-</section>
-<section class="home-highlights" aria-labelledby="highlights-title">
-  <div class="home-highlights-inner"><div class="section-kicker"><span>THE COMMERCE LEAGUE TOOLKIT</span><span>WHAT YOU CAN FIND HERE</span></div>
-    <div class="highlights-heading"><div><p class="eyebrow">FIVE HIGHLIGHTS</p><h2 id="highlights-title">Useful tools for the next step.</h2></div><p>Each destination reflects what the site offers today, with organizer-led activities described clearly.</p></div>
-    <div class="home-highlights-grid">
-      <a class="highlight-card" href="#" data-open-general><span>01 / JOURNAL</span><h3>Class 11 Journal</h3><p>Commerce subject guides with links to free public courses and textbooks.</p><b>Explore the Journal ↗</b></a>
-      <a class="highlight-card" href="#" data-open-general><span>02 / PRACTICE</span><h3>Practice Zone</h3><p>Follow practice activities from linked learning providers and keep local progress marks.</p><b>Open practice resources ↗</b></a>
-      <a class="highlight-card" href="#league-intro-title"><span>03 / ORGANIZER-LED</span><h3>Competitions</h3><p>Competition opportunities may be organized for League students. Events, entries, and scoring are not hosted on this site.</p><b>About the League ↗</b></a>
-      <a class="highlight-card" href="#" data-open-league><span>04 / QUALIFY</span><h3>The League</h3><p>Explore local profile access and learn how organizers coordinate qualification and membership.</p><b>Explore access ↗</b></a>
-      <a class="highlight-card" href="#" data-open-general><span>05 / KEEP GROWING</span><h3>Student Development</h3><p>Build knowledge across commerce subjects and mark areas you have completed on this device.</p><b>Start learning ↗</b></a>
-    </div>
-  </div>
-</section>
-<section class="free-section" aria-labelledby="free-title">
-  <div class="free-symbol" aria-hidden="true"><span>CL</span></div>
-  <div class="free-content">
-    <p class="eyebrow">MADE FOR STUDENTS</p>
-    <h2 id="free-title">Learning should not come with a price tag.</h2>
-    <p>Commerce League is free for students to use. There are no student participation fees for its learning or competition opportunities.</p>
-    <p class="free-footnote">Students can learn and take part without paying a participation fee.</p>
-  </div>
-  <div class="free-stamp"><strong>FREE</strong><span>STUDENT<br>LEARNING</span></div>
-</section>
-<section class="league-intro-section" aria-labelledby="league-intro-title">
-  <div class="section-kicker"><span>THE LEAGUE</span><span>HEALTHY COMPETITION · SHARED GROWTH</span></div>
-  <div class="league-intro-grid">
-    <div>
-      <p class="eyebrow">FIND YOUR PEOPLE</p>
-      <h2 id="league-intro-title">A little competition can help you <span>go further.</span></h2>
-    </div>
-    <div class="league-intro-copy">
-      <p>In school, a healthy challenge from someone at a similar level can give you a reason to prepare, ask better questions, and keep going. The League is designed around that spirit. Competitions and group arrangements are coordinated by organizers; the website does not host events, rank students, or match peers automatically.</p>
-      <p>League entry follows an organizer-set test, with a 60% qualifying threshold. Organizers may arrange performance-based groups and progression where supported, and students are expected to maintain the required standard. Shared interests and ambitions—whether accounting, business, or a future CA path—can give students more to learn from one another.</p>
-      <p class="implementation-note">League participation and group arrangements are coordinated by the organiser. The website currently stores each student's profile locally; it does not provide built-in chat or automatic student matching.</p>
-      <button class="btn" type="button" data-open-league>Explore League access <span aria-hidden="true">↗</span></button>
-    </div>
-  </div>
-  <div class="league-steps">
-    <article><span>01</span><h3>Qualify</h3><p>Complete the entrance process set by your organiser.</p></article>
-    <article><span>02</span><h3>Find your level</h3><p>Performance-based grouping is intended to make challenges fair and motivating.</p></article>
-    <article><span>03</span><h3>Learn together</h3><p>Exchange ideas, ask questions, and learn from peers with shared goals.</p></article>
-    <article><span>04</span><h3>Keep improving</h3><p>Use preparation and healthy competition to notice what to work on next.</p></article>
-  </div>
-</section>
-<section class="data-section" aria-labelledby="data-title">
-  <div class="data-copy">
-    <p class="eyebrow">YOUR DATA. YOUR DEVICE.</p>
-    <h2 id="data-title">Your League profile stays in your browser.</h2>
-    <p>Without a backend, League profile information and saved progress are stored on the device and browser you use. They are not synced to a central account or permanently collected by Commerce League.</p>
-  </div>
-  <div class="data-points">
-    <p><span>01</span> Use your CL ID and password on the device where your profile is saved.</p>
-    <p><span>02</span> Export a progress backup and import it manually on another device when needed.</p>
-    <p><span>03</span> Keep your own backup. Clearing browser data or changing browsers may remove locally saved information.</p>
-  </div>
-</section>
-<section class="help-section" id="help-us-improve" aria-labelledby="help-title">
-  <div class="help-inner"><div><p class="eyebrow">YOUR FEEDBACK SHAPES WHAT COMES NEXT</p><h2 id="help-title">Help Us Improve</h2></div>
-    <div class="help-copy"><p>Have an idea for a feature, or found something that is not working? We’d like to hear from you. Contact details will be added here soon.</p><div class="contact-placeholders"><p><b>Phone / WhatsApp</b><span>Contact number coming soon</span></p><p><b>Social ID</b><span>Account ID coming soon</span></p></div></div>
-  </div>
-</section>
-<section class="home-next-section" aria-label="Explore Commerce League">
-  <div><p class="eyebrow">START WHERE YOU ARE</p><h2>Build understanding. Put it into practice.</h2></div>
-  <div class="home-next-actions"><button class="btn" type="button" data-open-general>Explore learning <span aria-hidden="true">↗</span></button><button class="btn secondary" type="button" data-open-league>Go to League <span aria-hidden="true">↗</span></button></div>
-</section>
+<section class="mission-section" id="our-purpose" aria-labelledby="mission-title"><div class="section-kicker"><span>01 / THE PURPOSE</span><span>STUDENT-LED · BUILT FOR COMMERCE</span></div><div class="mission-layout"><div class="mission-heading"><p class="eyebrow">WHAT IS COMMERCE LEAGUE?</p><h2 id="mission-title">A place to learn. A reason to <span>go further.</span></h2></div><div class="mission-copy"><p>Commerce League (CL) is a free, student-run initiative created to help commerce students access better learning resources, practise what they learn, and challenge themselves alongside capable peers.</p><p>It began with CLYRO, a fellow Class 11 commerce student, with one belief: access to meaningful learning and competition should not depend on a student's ability to pay.</p></div></div></section>
+<section class="tiers" id="how-it-works" aria-labelledby="how-it-works-title"><div class="tiers-inner"><div class="section-kicker"><span>02 / THE EXPERIENCE</span><span>OPEN LEARNING · EARNED LEAGUE ACCESS</span></div><div class="learning-intro"><div><p class="eyebrow">TWO WAYS TO TAKE PART</p><h2 id="how-it-works-title">Start with learning. Step into the challenge.</h2></div><p class="muted">Every commerce student can begin with General. The League is a higher-challenge path for students who qualify and continue to meet its standard.</p></div><div class="tier-grid"><article class="tier-card tier-general"><span class="tier-number">01</span><span class="tier-badge">OPEN TO EVERY COMMERCE STUDENT</span><h2>General</h2><p class="muted">Your foundation. Your pace. Your next step.</p><div class="resource-list"><div class="resource-item"><b>Learning library</b><span>Subject guides and trusted public learning resources.</span></div><div class="resource-item"><b>Practice pathways</b><span>Examples, study prompts, and ways to track what you have covered.</span></div></div><button class="btn secondary" type="button" data-open-general>EXPLORE GENERAL <span>↗</span></button></article><article class="tier-card tier-league"><span class="tier-number">02</span><span class="tier-badge">QUALIFY · CONTRIBUTE · MAINTAIN</span><h2>The League</h2><p class="muted">A more demanding environment for students ready to grow through fair competition.</p><div class="resource-list"><div class="resource-item"><b>Qualification</b><span>The discussed qualifying threshold is 60%, administered by organisers.</span></div><div class="resource-item"><b>Performance groups</b><span>Progression and peer groups are designed around demonstrated academic standards.</span></div><div class="resource-item"><b>Healthy competition</b><span>Challenges that encourage preparation, clear thinking, and shared improvement.</span></div></div><button class="btn" type="button" data-open-league>EXPLORE THE LEAGUE <span>↗</span></button></article></div></div></section>
+<section class="home-highlights" aria-labelledby="highlights-title"><div class="home-highlights-inner"><div class="section-kicker"><span>03 / INSIDE CL</span><span>THE PLATFORM AT A GLANCE</span></div><div class="highlights-heading"><div><p class="eyebrow">THE COMMERCE LEAGUE ECOSYSTEM</p><h2 id="highlights-title">Everything begins with a better question.</h2></div><p>Explore the learning space, prepare with purpose, and understand what the League is built to become.</p></div><div class="home-highlights-grid"><a class="highlight-card" href="#" data-open-general><span>01 / LEARN</span><h3>Class 11 Journal</h3><p>Six subject pathways with concepts, chapter guides, and trusted resources.</p><b>OPEN JOURNAL ↗</b></a><a class="highlight-card" href="#" data-open-general><span>02 / PRACTISE</span><h3>Practice Zone</h3><p>Turn understanding into application with structured study and practice resources.</p><b>EXPLORE RESOURCES ↗</b></a><a class="highlight-card" href="#" data-open-league><span>03 / COMPETE</span><h3>Competitions</h3><p>Discover the League's vision for organised, fair academic challenges.</p><b>ABOUT THE LEAGUE ↗</b></a><a class="highlight-card" href="#" data-open-league><span>04 / CONNECT</span><h3>Peer Learning</h3><p>Grow alongside students who share your curiosity and academic ambition.</p><b>DISCOVER CL ↗</b></a><a class="highlight-card" href="#" data-open-general><span>05 / DEVELOP</span><h3>Student Development</h3><p>Build subject confidence, independent thinking, and consistent learning habits.</p><b>START LEARNING ↗</b></a></div></div></section>
+<section class="free-section" aria-labelledby="free-title"><div class="free-symbol" aria-hidden="true"><span>CL</span></div><div class="free-content"><p class="eyebrow">A NON-NEGOTIABLE PRINCIPLE</p><h2 id="free-title">Knowledge should be open. Opportunity should be fair.</h2><p>Commerce League is free for students. There are no student participation fees for its learning or competition opportunities.</p><p class="free-footnote">Built on the belief that students should never have to pay to belong.</p></div><div class="free-stamp"><strong>₹0</strong><span>STUDENT<br>FEES</span></div></section>
+<section class="league-intro-section" aria-labelledby="league-intro-title"><div class="section-kicker"><span>04 / THE LEAGUE</span><span>HEALTHY COMPETITION · SHARED GROWTH</span></div><div class="league-intro-grid"><div><p class="eyebrow">FIND YOUR LEVEL. FIND YOUR DRIVE.</p><h2 id="league-intro-title">Compete with purpose. <span>Improve together.</span></h2></div><div class="league-intro-copy"><p>The League is built around a simple idea: a fair challenge among equally committed peers can make learning more focused, more consistent, and more rewarding.</p><p>Entry follows an organiser-set test, with a discussed qualifying threshold of 60%. Students are expected to maintain the required standard. Performance groups and competitions are organiser-led.</p><p class="implementation-note">This website currently provides local profile tools. It does not yet host live competitions, peer matching, or built-in chat.</p><button class="btn" type="button" data-open-league>EXPLORE LEAGUE ACCESS <span>↗</span></button></div></div><div class="league-steps"><article><span>01</span><h3>Qualify</h3><p>Complete the entry process set by your organiser.</p></article><article><span>02</span><h3>Find your level</h3><p>Join a fair performance group where organiser support exists.</p></article><article><span>03</span><h3>Learn together</h3><p>Exchange ideas and learn alongside peers with shared goals.</p></article><article><span>04</span><h3>Keep improving</h3><p>Use preparation and feedback to identify your next step.</p></article></div></section>
+<section class="data-section" aria-labelledby="data-title"><div class="data-copy"><p class="eyebrow">05 / YOUR PROFILE</p><h2 id="data-title">Your learning. Your control.</h2><p>Without a connected backend, League profile information and progress are stored in the browser and device you use—not synced to a central account.</p></div><div class="data-points"><p><span>01</span> Create and access your CL ID on the device where the profile is saved.</p><p><span>02</span> Export a backup and import it manually on another device.</p><p><span>03</span> Keep your backup safe; clearing browser data may remove local information.</p></div></section>
+<section class="help-section" id="help-us-improve" aria-labelledby="help-title"><div class="help-inner"><div><p class="eyebrow">06 / BUILD THIS WITH US</p><h2 id="help-title">Help Us Improve.</h2></div><div class="help-copy"><p>Have an idea for a feature, or found something that is not working? Student feedback helps shape what Commerce League builds next.</p><div class="contact-placeholders"><p><b>PHONE / WHATSAPP</b><span>Contact number coming soon</span></p><p><b>SOCIAL ID</b><span>Account ID coming soon</span></p></div></div></div></section>
+<section class="home-next-section"><div><p class="eyebrow">YOUR NEXT MOVE</p><h2>Make commerce make sense.</h2></div><div class="home-next-actions"><button class="btn" type="button" data-open-general>OPEN THE JOURNAL ↗</button><button class="btn secondary" type="button" data-open-league>EXPLORE THE LEAGUE ↗</button></div></section>
 </div>
 <div class="page-view hidden" id="generalView"><section class="resource-hub journal-hub" id="learning" aria-labelledby="learning-title"><div class="resource-hub-inner">
 <div class="manifesto-head"><p class="eyebrow royal-label">JOURNAL / LEARNING LIBRARY</p><span class="manifesto-index">CLASS XI · SIX SUBJECTS</span></div>
