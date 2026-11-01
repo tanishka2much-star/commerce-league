@@ -917,6 +917,26 @@ html{scroll-behavior:smooth}body{background:#070611;color:var(--text);font-famil
  #homeView>#welcome .launch-track{height:410px}
 }
 
+
+@media(max-width:800px){
+ #homeView>#welcome.launch-stage{min-height:0}
+ #homeView>#welcome .launch-track{height:560px}
+ #homeView>#welcome .launch-slide.active{grid-template-rows:auto auto 160px;gap:8px}
+ #homeView>#welcome .hero-art{display:flex!important;grid-column:1;grid-row:3;align-self:center;justify-self:center;width:min(100%,330px);height:155px;min-height:155px;max-height:155px;margin:0 auto;overflow:hidden}
+ #homeView>#welcome .hero-trophy{width:38%;height:76%;top:0}
+ #homeView>#welcome .hero-book-stack{width:82%;bottom:1%}
+ #homeView>#welcome .hero-book{min-height:24px;padding:3px 9px}
+ #homeView>#welcome .hero-book span{font-size:9px}
+ #homeView>#welcome .hero-crowd{font-size:10px;bottom:0}
+ #homeView>#welcome .hero-index{bottom:8px;right:12px}
+}
+@media(max-width:420px){
+ #homeView>#welcome .launch-track{height:555px}
+ #homeView>#welcome .launch-slide.active{padding:18px 16px 24px}
+ #homeView>#welcome .hero-art{height:145px;min-height:145px;max-height:145px}
+ #homeView>#welcome .hero-book{min-height:22px}
+}
+
 </style>
 </head>
 <body>
