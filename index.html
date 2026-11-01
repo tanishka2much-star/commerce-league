@@ -429,6 +429,100 @@ body,#siteHome,#siteHome main,.page-view,#siteHome section,.page-view section{ba
 @media(prefers-reduced-motion:reduce){.journal-hub *{scroll-behavior:auto!important}}
 
 </style>
+<style>
+
+/* Commerce League visual refresh — v1 */
+:root{
+ --bg:#070b12;--panel:#0d1521;--panel-2:#111d2b;--line:rgba(160,190,220,.16);
+ --text:#f3f7fc;--muted:#9baabd;--blue:#77dcf5;--lime:#d8f58a;
+ --radius:18px;--content:1440px;
+}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.01em}
+button,a,input,select{font-family:inherit}
+.statusbar{position:sticky;top:0;backdrop-filter:blur(18px);background:rgba(5,10,17,.86);border-bottom:1px solid var(--line)}
+.statusbar-inner{max-width:1600px;margin:auto;min-height:72px;padding-inline:clamp(18px,4vw,64px)}
+.statusbar .brand{letter-spacing:1.6px;font-size:11px}
+.statusbar .brand small{letter-spacing:2.2px;color:#91a5ba}
+.brand-emblem{width:38px!important;height:38px!important;min-width:38px!important}
+.statusbar-meta{gap:8px}
+.nav-link{padding:10px 16px;border:1px solid transparent;border-radius:999px;background:transparent;color:#aebdce;font-size:11px;letter-spacing:.8px;transition:.2s}
+.nav-link:hover,.nav-link[aria-current="page"]{border-color:rgba(119,220,245,.28);background:rgba(119,220,245,.09);color:var(--blue)}
+.launch-stage#welcome{min-height:min(760px,calc(100svh - 72px));padding:clamp(34px,6vw,90px) clamp(22px,6vw,96px) 28px;background:radial-gradient(ellipse at 78% 40%,rgba(31,119,157,.2),transparent 38%),linear-gradient(135deg,#09111d 0%,#0b1522 54%,#070c14 100%)}
+.launch-stage#welcome:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 0 49.9%,rgba(119,220,245,.045) 50%,transparent 50.1%),linear-gradient(rgba(119,220,245,.035) 1px,transparent 1px);background-size:100% 100%,100% 58px;mask-image:linear-gradient(90deg,transparent,#000 100%);opacity:.45}
+.launch-track{position:relative;z-index:1;max-width:1440px;margin:auto;min-height:clamp(340px,54vh,570px);display:flex;align-items:center;cursor:default}
+.launch-slide{width:100%;min-height:clamp(340px,54vh,570px);grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,7vw,110px)}
+.launch-brand{align-items:flex-start;flex-direction:column;gap:24px}
+.launch-emblem{width:clamp(88px,9vw,122px);height:clamp(88px,9vw,122px);min-width:clamp(88px,9vw,122px);background:radial-gradient(circle,#0b1c2b,#050a11 70%);box-shadow:0 0 45px rgba(42,173,218,.15)}
+.launch-name{font-size:clamp(36px,5vw,66px);letter-spacing:.04em;line-height:1.03}
+.launch-tagline{font-size:clamp(13px,1.2vw,16px);letter-spacing:.4px;color:#a8ddec}
+.launch-copy{border-left:1px solid rgba(119,220,245,.35);padding:8px 0 8px clamp(24px,4vw,60px)}
+.launch-kicker,.eyebrow,.section-kicker{font-size:10px;letter-spacing:2.8px;color:var(--blue)}
+.launch-copy h1,.launch-copy h2{font-size:clamp(42px,6.2vw,84px);line-height:.99;letter-spacing:-.065em;max-width:780px;margin:0 0 22px}
+.launch-copy p:not(.launch-kicker){font-size:clamp(16px,1.35vw,19px);line-height:1.75;color:#afbdce;max-width:610px}
+.launch-side-note{font-size:clamp(30px,4vw,54px);line-height:1.12;letter-spacing:-.04em;color:#d9e5f1}
+.launch-hint{position:relative;z-index:1;max-width:1440px;padding-top:20px;border-color:var(--line);letter-spacing:1.5px}
+.slide-dots{display:flex;align-items:center;gap:9px}
+.slide-dot{width:7px;height:7px;padding:0;border:0;border-radius:20px;background:#506174;transition:width .25s,background .25s}
+.slide-dot.active{width:26px;background:var(--blue)}
+#our-purpose,.manifesto{background:linear-gradient(145deg,#0b1420,#0d1825 55%,#0a111b);border-color:var(--line)}
+.manifesto{padding:clamp(64px,8vw,116px) clamp(22px,6vw,96px) 42px}
+.manifesto-head,.manifesto-grid,.manifesto-disclaimer,.tiers-inner{max-width:var(--content)}
+.manifesto-opening h2{font-size:clamp(42px,5.6vw,76px);letter-spacing:-.06em}
+.manifesto-story{line-height:1.9;color:#b8c5d4}
+.manifesto-pillars{gap:14px 28px}
+.tiers{padding:clamp(58px,7vw,100px) clamp(22px,6vw,96px);background:#070c13;border-color:var(--line)}
+.tier-grid{gap:18px}
+.tier-card,.journal-card,.resource-card,.highlight-card,.league-card,.profile-box{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(150deg,rgba(17,29,43,.9),rgba(10,17,27,.95));padding:clamp(20px,2.4vw,32px);transition:border-color .2s,transform .2s,background .2s}
+.tier-card:hover,.journal-card:hover,.resource-card:hover,.highlight-card:hover{border-color:rgba(119,220,245,.42);transform:translateY(-3px)}
+.tier-card h2,.journal-card h2{letter-spacing:-.04em}
+.resource-item{border:1px solid rgba(119,220,245,.12);border-left:2px solid var(--blue);border-radius:9px;background:rgba(119,220,245,.045)}
+.btn{border-radius:999px;min-height:48px;padding-inline:22px;background:var(--blue);border-color:var(--blue);font-size:10px;letter-spacing:1.2px;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(72,191,225,.16)}
+.btn.secondary{border-color:#43556a;background:transparent;color:#e4edf6}
+.sidebar{background:rgba(8,15,24,.97);backdrop-filter:blur(20px);border-right:1px solid rgba(119,220,245,.24)}
+.sidebar-link{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:5px 0;background:rgba(255,255,255,.025);color:#d9e4f0}
+.sidebar-link:hover,.sidebar-link[aria-current="page"]{border-color:rgba(119,220,245,.4);background:rgba(119,220,245,.08);color:var(--blue)}
+.page-view>section:not(#welcome){scroll-margin-top:90px}
+#learning,.journal-hub,.resource-hub,.home-highlights,.home-next-section,.help-section,.league-intro-section{padding:clamp(54px,7vw,100px) clamp(20px,5.5vw,88px)}
+.journal-hub,.resource-hub{background:#080e16}
+.journal-hub-inner,.resource-hub-inner,.home-highlights-inner,.help-inner{max-width:var(--content);margin:auto}
+.journal-subjects,.resource-cards,.home-highlights-grid{gap:16px}
+.journal-card,.resource-card{min-height:100%;box-shadow:0 12px 40px rgba(0,0,0,.12)}
+.journal-card-head{border-bottom:1px solid var(--line)}
+.journal-subject-nav a,.subject-nav a,.chapter-nav a{border-radius:999px}
+.section-kicker{font-weight:900}
+h1,h2,h3{letter-spacing:-.035em}
+p{line-height:1.75}
+.field input,.field select{border-radius:10px;background:#080f18;border-color:#334458}
+.field input:focus,.field select:focus{box-shadow:0 0 0 3px rgba(119,220,245,.1)}
+.site-footer{background:#04080e;border-color:var(--line);padding:44px clamp(22px,6vw,96px) 22px}
+.footer-main,.footer-bottom{max-width:var(--content)}
+.footer-nav button,.footer-nav a{color:#aebdce}
+.footer-nav button:hover,.footer-nav a:hover{color:var(--blue)}
+.local-warning{border-radius:12px}
+@media(max-width:760px){
+ .statusbar-inner{min-height:64px;padding-inline:16px}
+ .statusbar-meta{gap:2px}
+ .nav-link{padding:8px 10px;font-size:9px}
+ .launch-stage#welcome{min-height:auto;padding:44px 20px 24px}
+ .launch-track,.launch-slide{min-height:470px}
+ .launch-slide,.launch-slide.active{grid-template-columns:1fr;align-content:center;gap:32px}
+ .launch-brand{flex-direction:row;align-items:center;gap:18px}
+ .launch-emblem{width:76px;height:76px;min-width:76px}
+ .launch-emblem .splash-cl{font-size:52px;letter-spacing:-12px}
+ .launch-name{font-size:clamp(27px,8vw,42px)}
+ .launch-tagline{font-size:11px}
+ .launch-copy{padding:0;border-left:0;border-top:1px solid rgba(119,220,245,.32);padding-top:24px}
+ .launch-copy h1,.launch-copy h2{font-size:clamp(40px,11vw,60px)}
+ .launch-side-note{font-size:36px}
+ .manifesto-grid{gap:26px}
+ .tier-grid{grid-template-columns:1fr}
+ .footer-main,.footer-bottom{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tier-card,.journal-card,.resource-card,.highlight-card,.btn{transition:none}}
+
+</style>
 </head>
 <body>
 <section class="splash" id="splash" aria-label="Commerce League introduction">
@@ -436,7 +530,7 @@ body,#siteHome,#siteHome main,.page-view,#siteHome section,.page-view section{ba
 </section>
 <div id="siteHome" class="hidden">
 <header class="top statusbar" aria-label="Main navigation"><div class="statusbar-inner"><button class="brand brand-trigger" type="button" id="menuToggle" aria-label="Open Commerce League menu" aria-controls="siteSidebar" aria-expanded="false"><div class="splash-emblem brand-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><span>COMMERCE LEAGUE<small>LEARN · COMPETE · RISE</small></span></button><nav class="statusbar-meta" aria-label="Choose a section"><button class="nav-link" type="button" id="navHome" aria-current="page">Home</button><button class="nav-link" type="button" id="navGeneral" aria-current="false">Journal</button><button class="nav-link" type="button" id="navLeague" aria-current="false">League</button></nav></div></header>
-<div class="sidebar-backdrop hidden" id="sidebarBackdrop"></div><aside class="sidebar hidden" id="siteSidebar" aria-label="Site menu" aria-hidden="true"><div class="sidebar-top"><div class="brand"><div class="splash-emblem brand-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div>COMMERCE LEAGUE<small>LEARN · COMPETE · RISE</small></div></div><button class="sidebar-close" type="button" id="sidebarClose" aria-label="Close menu">×</button></div><nav class="sidebar-nav" aria-label="Site pages"><button class="sidebar-link" type="button" data-view="general">Journal · Class 11</button><button class="sidebar-link" type="button" data-view="cloffice">Cloffice</button></nav><p class="sidebar-note">Browse the Class 11 Journal or open the Faculty and Owner office categories.</p></aside>
+<div class="sidebar-backdrop hidden" id="sidebarBackdrop"></div><aside class="sidebar hidden" id="siteSidebar" aria-label="Site menu" aria-hidden="true"><div class="sidebar-top"><div class="brand"><div class="splash-emblem brand-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div>COMMERCE LEAGUE<small>LEARN · COMPETE · RISE</small></div></div><button class="sidebar-close" type="button" id="sidebarClose" aria-label="Close menu">×</button></div><nav class="sidebar-nav" aria-label="Site pages"><button class="sidebar-link" type="button" data-view="home">Home</button><button class="sidebar-link" type="button" data-view="general">Journal · Class 11</button><button class="sidebar-link" type="button" data-view="league">The League</button><button class="sidebar-link" type="button" data-view="cloffice">Cloffice</button></nav><p class="sidebar-note">Explore the homepage, Class 11 Journal, League access, and the Cloffice.</p></aside>
 <main>
 <div class="page-view" id="homeView"><section class="panel launch-stage" id="welcome" aria-label="Commerce League announcements"><div class="launch-track" id="announcementSlides" role="region" aria-roledescription="carousel" aria-label="Commerce League stories. Click or tap to advance, or hold to pause." tabindex="0"><article class="launch-slide active" role="group" aria-roledescription="slide" aria-label="1 of 3"><div class="launch-brand"><div class="splash-emblem launch-emblem" role="img" aria-label="Commerce League circular CL logo"><span class="splash-energy" aria-hidden="true"></span><span class="splash-cl">CL</span></div><div><p class="launch-name">COMMERCE<br>LEAGUE</p><p class="launch-tagline">Commerce is an Ego — Let’s Get Into Flow</p></div></div><div class="launch-copy"><p class="launch-kicker">OUR BELIEF</p><h1>Know the game beneath the numbers.</h1><p>Read the numbers. Question the trade-offs. Understand the people. Make your move with intent.</p></div></article><article class="launch-slide story-slide" role="group" aria-roledescription="slide" aria-label="2 of 3"><div class="launch-side-note"><strong>Think clearly.<br>Choose wisely.</strong></div><div class="launch-copy"><p class="launch-kicker">CL METHOD</p><h2>Ask better questions.</h2><p>Connect accounts, markets, and business choices to real life.</p></div></article><article class="launch-slide story-slide" role="group" aria-roledescription="slide" aria-label="3 of 3"><div class="launch-side-note"><strong>Learn together.<br>Play fair.</strong></div><div class="launch-copy"><p class="launch-kicker">CL SPIRIT</p><h2>Learn. Question. Grow.</h2><p>Share ideas, use evidence, and respect different views.</p></div></article></div><div class="launch-hint"><span class="launch-hint-label">A PLATFORM FOR COMMERCE STUDENTS</span><div class="slide-dots" id="slideDots" role="group" aria-label="Choose an introduction slide"><button class="slide-dot active" type="button" aria-label="Go to slide 1" aria-current="true"></button><button class="slide-dot" type="button" aria-label="Go to slide 2" aria-current="false"></button><button class="slide-dot" type="button" aria-label="Go to slide 3" aria-current="false"></button></div></div></section>
 <section class="mission-section" id="our-purpose" aria-labelledby="mission-title">
