@@ -1,11 +1,18 @@
 # Commerce League
 
-Commerce League is a static GitHub Pages site with open commerce learning resources and a separate CL League student area.
+Commerce League is a static website with open commerce learning resources and a separate CL League student area. It can be hosted on GitHub Pages or Vercel.
 
-## General and League
+## Deploy on Vercel
 
-- **General** contains open foundations in accounting, economics, and business. Students can mark subjects complete.
+The site is plain HTML, CSS, and browser JavaScript. It has no build step or package installation. Import this GitHub repository into Vercel and keep the project root as the Root Directory; the included `vercel.json` serves the root `index.html` as a static site. No environment variables are required.
+
+The League profile and learning progress remain local to each visitor's browser. Vercel hosting does not add centralized accounts or synchronize student data.
+
+## Learning and League
+
+- **General** gives students free access to the Class 11 Journal: Accountancy, Mathematics, Business Studies, Economics (Statistics and Microeconomics), English, and Banking enrichment. Students can save subject completion marks in their browser.
 - **League** provides a local student profile, learning progress, and progress backup tools. League membership, qualification, and group access are coordinated by organizers.
+- Both tiers are free for students.
 
 ## Student profiles and progress
 
@@ -15,5 +22,4 @@ This is not centralized authentication. The static site cannot verify codes agai
 
 ## Run locally
 
-Open `index.html` in a modern browser or publish the repository with GitHub Pages. Browser storage and cryptographic functions work on localhost or HTTPS.
-
+Open `index.html` in a modern browser or publish the repository with GitHub Pages or Vercel. Browser storage and cryptographic functions work on localhost or HTTPS.
